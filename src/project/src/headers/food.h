@@ -9,10 +9,13 @@
 #define HEADERS_FOOD_H_
 
 /* Includes */
+#include <stdlib.h>
 #include "types.h"
+#include "world.h"
+
 
 /* Defines */
-#define FOOD_AMOUNT 10
+#define FOOD_AMOUNT 3
 
 /* Function declarations */
 void initFood(enum_Block *world, enum_Block *food);

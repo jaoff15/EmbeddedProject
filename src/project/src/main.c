@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "headers/entity.h"
 #include "headers/world.h"
-
+#include "headers/food.h"
 
 
 enum_Block world[WIDTH][HEIGHT]; // frame buffer
@@ -22,6 +22,8 @@ enum_Block food[WIDTH][HEIGHT]; // food frame buffer
 
 int main(void) {
 	loadMap(world, MAP1);
+	initFood(world, food);
+//	loadFood(world, food);
 
 	printWorld(world);
 

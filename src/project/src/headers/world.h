@@ -12,13 +12,12 @@
 /* Includes */
 #include "types.h"
 
+
 /* Type definitions */
 typedef enum enum_Block{
 	WALL,
 	PATH,
-	FOOD,
-	PLAYER,
-	ENEMY
+	FOOD
 } enum_Block;
 
 
