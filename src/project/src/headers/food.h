@@ -18,7 +18,7 @@
 #define FOOD_AMOUNT 3
 
 /* Function declarations */
-void initFood(enum_Block *world, enum_Block *food);
-void loadFood(enum_Block *world, enum_Block *food);
+void initFood(World *world, World *food);
+void loadFood(World *world, World *food);
 
 #endif /* HEADERS_FOOD_H_ */

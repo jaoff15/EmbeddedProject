@@ -7,7 +7,7 @@
 
 
 /* Includes */
-#include "headers/world.h"
+#include "../headers/world.h"
 
 /* Variables */
 static const char symbols[3] = {'O','X','F'};
@@ -15,7 +15,7 @@ static const char symbols[3] = {'O','X','F'};
 
 
 
-enum_Block map1[WIDTH][HEIGHT] = {
+BlockType map1[WIDTH][HEIGHT] = {
 		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH},
 		{PATH,WALL,WALL,PATH,PATH,WALL,WALL,PATH},
 		{PATH,WALL,PATH,PATH,PATH,PATH,WALL,PATH},
@@ -25,7 +25,7 @@ enum_Block map1[WIDTH][HEIGHT] = {
 		{PATH,WALL,WALL,PATH,PATH,WALL,WALL,PATH},
 		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH}};
 
-enum_Block map2[WIDTH][HEIGHT] = {
+BlockType map2[WIDTH][HEIGHT] = {
 		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL},
 		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
 		{PATH,PATH,PATH,PATH,PATH,WALL,PATH,PATH},
@@ -41,31 +41,35 @@ void updateMap(){
 }
 
 /* Print out the map to the terminal */
-void printWorld(enum_Block *world){
-	for(int y = 0; y < HEIGHT; y++){
-		for(int x = 0; x < WIDTH; x++){
-			enum_Block *pBlock = world+sizeof(enum_Block)*x+sizeof(enum_Block)*y*WIDTH;
-			printf("%c",symbols[*pBlock]);
+void printWorld(World *world){
+	for(int x = 0; x < WIDTH; x++){
+		for(int y = 0; y < HEIGHT; y++){
+//			BlockType *pBlock = world+sizeof(BlockType)*x+sizeof(BlockType)*y*WIDTH;
+//			printf("%c",symbols[*pBlock]);
+			printf("%c",symbols[world->cells[x][y]]);
 		}
 		printf("\n");
 	}
 }
 
 /* Load a predefined map to the frame buffer */
-void loadMap(enum_Block *world, u8 mapIndex){
-	for(int y = 0; y < HEIGHT; y++){
-		for(int x = 0; x < WIDTH; x++){
-			u8 offset = sizeof(enum_Block)*x+sizeof(enum_Block)*y*WIDTH;
-			enum_Block *pBlock = world+offset;
+void loadMap(World *world, u8 mapIndex){
+	for(int x = 0; x < WIDTH; x++){
+		for(int y = 0; y < HEIGHT; y++){
+//			u8 offset = sizeof(BlockType)*x+sizeof(BlockType)*y*WIDTH;
+//			BlockType *pBlock = world+offset;
 			switch(mapIndex){
 				case 0:
-					*pBlock = map1[y][x];
+//					*pBlock = map1[y][x];
+					world->cells[x][y] = map1[x][y];
 					break;
 				case 1:
-					*pBlock = map2[y][x];
+//					*pBlock = map2[y][x];
+					world->cells[x][y] = map2[x][y];
 					break;
 				default:
-					*pBlock = map1[y][x];
+					world->cells[x][y] = map1[x][y];
+//					*pBlock = map1[y][x];
 				}
 		}
 	}

@@ -11,29 +11,49 @@
 
 /* Includes */
 #include "types.h"
-
-
-/* Type definitions */
-typedef enum enum_Block{
-	WALL,
-	PATH,
-	FOOD
-} enum_Block;
-
-
-enum enum_Maps{
-	MAP1,
-	MAP2
-};
+#include <stdio.h>
 
 /* Global Variables */
 #define WIDTH 	8
 #define HEIGHT 	8
 
+#define EDGE_TOP		7
+#define EDGE_BOTTOM  	0
+#define EDGE_LEFT		0
+#define EDGE_RIGHT		7
+/* 	7
+ * 	^
+ * 	|
+ * 	|
+ * 0|--------->7
+ *  0
+ */
+
+/* Type definitions */
+typedef enum e_BlockType{
+	WALL,
+	PATH,
+	FOOD,
+	P,
+	E
+} BlockType;
+
+
+enum e_Map{
+	MAP1,
+	MAP2
+};
+
+typedef struct s_World{
+	BlockType cells[WIDTH][HEIGHT];
+} World;
+
+
+
 /* Function declarations */
 void updateMap();
-void printWorld(enum_Block *world);
-void loadMap(enum_Block *world, u8 mapIndex);
+void printWorld(World *world);
+void loadMap(World *world, u8 mapIndex);
 
 
 

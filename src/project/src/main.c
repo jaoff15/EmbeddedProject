@@ -17,15 +17,18 @@
 #include "headers/food.h"
 
 
-enum_Block world[WIDTH][HEIGHT]; // frame buffer
-enum_Block food[WIDTH][HEIGHT]; // food frame buffer
+
+World food; 	// food frame buffer
+World world; 	// frame buffer
 
 int main(void) {
-	loadMap(world, MAP1);
-	initFood(world, food);
-//	loadFood(world, food);
+	loadMap(&world, MAP1);
+	initFood(&world, &food);
+	loadFood(&world, &food);
 
-	printWorld(world);
+
+
+	printWorld(&world);
 
 	return EXIT_SUCCESS;
 }

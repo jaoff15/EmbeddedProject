@@ -10,28 +10,39 @@
 
 /* Includes */
 #include "types.h"
-
+#include "world.h"
+#include "score.h"
 
 /* Type definitions */
-typedef enum enum_Entity{
+typedef enum e_EntityType{
 	PLAYER,
 	ENEMY
-} enum_Entity;
+} EntityType;
 
-typedef struct Pos{
+typedef struct s_Pos{
 	u8 x;
 	u8 y;
 } Pos;
 
-typedef struct Entity{
-	char x;
-	char y;
+typedef struct s_Entity{
+	EntityType 	type;
+	Pos 		pos;
 } Entity;
+
+typedef enum e_Move{
+	NONE,
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+}Move;
 
 
 /* Function declarations */
-void initEntity(Entity e, enum_Entity type);
-void setLocation(Entity e, Pos pos);
+void initEntity(Entity *e, EntityType type, Pos pos);
 
+void controlEntity(Entity *e, Move *m);
+
+void moveEntity(Entity *e, World *world, Move m);
 
 #endif /* HEADERS_ENTITY_H_ */
