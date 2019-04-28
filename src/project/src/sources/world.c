@@ -14,14 +14,6 @@ static const char symbols[] = {'W','W','_','o','C','A'};
 
 
 
-
-
-
-
-void updateMap(){
-
-}
-
 /* Print out the map to the terminal */
 void printWorld(World *world){
 	for(int y = WIDTH-1; y >= 0; y--){
@@ -49,4 +41,19 @@ void loadMap(World *world, u8 mapIndex){
 		}
 	}
 }
+
+
+void printGameoverScreen(){
+	for(int y = WIDTH-1; y >= 0; y--){
+		for(int x = 0; x < HEIGHT; x++){
+			if(gameOver[x][y] == 1){
+				printf(" X");
+			}else{
+				printf(" _");
+			}
+		}
+		printf("\n");
+	}
+}
+
 

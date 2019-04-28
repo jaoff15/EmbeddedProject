@@ -15,7 +15,8 @@
 #include "headers/entity.h"
 #include "headers/world.h"
 #include "headers/food.h"
-
+#include "headers/score.h"
+#include <time.h>
 
 World blankWorld;
 World world; 	// frame buffer
@@ -24,7 +25,7 @@ World food; 	// food frame buffer
 
 int main(void) {
 
-
+	srand(time(0));
 	/* Setup game*/
 
 	/* Create world */
@@ -92,18 +93,26 @@ int main(void) {
 		default:
 			nextMove = STANDSTILL;
 		}
-
-		world = blankWorld;
-		loadFood(&world, &food);
-		moveEntity(&player, &world, &food, nextMove);
-		loadEntity(&player, &world);
-		for(u8 i = 0; i < noEnemies; i++){
-			Move move = controlEntity(&enemy[i], &world, &player);
-			moveEntity(&enemy[i], &world, &food, move);
-			loadEntity(&enemy[i], &world);
+		if(nextMove != STANDSTILL){
+			world = blankWorld;
+			loadFood(&world, &food);
+			moveEntity(&player, &world, &food, nextMove);
+			loadEntity(&player, &world);
+			for(u8 i = 0; i < noEnemies; i++){
+				Move move = controlEntity(&enemy[i], &world, &player);
+				moveEntity(&enemy[i], &world, &food, move);
+				loadEntity(&enemy[i], &world);
+			}
+			bool gameover = entityKilled(&player, &enemy, noEnemies);
+			if(gameover){
+				printGameoverScreen();
+			}else{
+				printWorld(&world);
+			}
+			printf("\n");
 		}
-		printWorld(&world);
-		printf("\n");
+
+
 	}
 
 	return EXIT_SUCCESS;

@@ -31,3 +31,5 @@ u16 getScore(){
 u16 getHighscore(){
 	return highscore;
 }
+
+

@@ -26,4 +26,6 @@ typedef double				f64;
 #define TRUE 1
 
 
+
+
 #endif /* HEADERS_TYPES_H_ */

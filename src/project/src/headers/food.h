@@ -15,7 +15,7 @@
 
 
 /* Defines */
-#define FOOD_AMOUNT 3
+#define FOOD_AMOUNT 10
 
 
 /* Function declarations */

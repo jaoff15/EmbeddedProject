@@ -12,6 +12,7 @@
 /* Includes */
 #include <stdio.h>
 #include "types.h"
+#include "time.h"
 
 /* Global Variables */
 #define WIDTH 	8
@@ -50,6 +51,12 @@ typedef struct s_World{
 } World;
 
 
+typedef struct s_Color{
+	u8 red;
+	u8 green;
+	u8 blue;
+} Color;
+
 
 /* Function declarations */
 void updateMap();
@@ -75,6 +82,26 @@ static const BlockType map2[WIDTH][HEIGHT] = {
 		{PATH,PATH,WALL,PATH,PATH,PATH,PATH,PATH},
 		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
 		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL}};
+
+
+#define BLANK   {.red=0,   	.green=0, 	.blue=0}
+#define BLUE    {.red=0,   	.green=0, 	.blue=255}
+#define GREEN   {.red=0,   	.green=255,	.blue=0}
+#define WHITE   {.red=255,  .green=255, .blue=255}
+#define PURPLE  {.red=255,  .green=0, 	.blue=255}
+#define ORANGE  {.red=255, 	.green=125, .blue=50}
+#define YELLOW  {.red=255, 	.green=255, .blue=0}
+#define RED     {.red=255,  .green=0, 	.blue=0}
+
+static u8 gameOver[WIDTH][HEIGHT] = {
+		{1,0,0,0,0,0,0,1},
+		{0,1,0,0,0,0,1,0},
+		{0,0,1,0,0,1,0,0},
+		{0,0,0,1,1,0,0,0},
+		{0,0,0,1,1,0,0,0},
+		{0,0,1,0,0,1,0,0},
+		{0,1,0,0,0,0,1,0},
+		{1,0,0,0,0,0,0,1}};
 
 #endif /* HEADERS_WORLD_H_ */
 

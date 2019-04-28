@@ -20,49 +20,11 @@ void initEntity(Entity *e, EntityType type, Pos pos, Difficulty diff){
  * This function is only used for entities that are not manually controlled */
 Move controlEntity(Entity *entity, World *world, Entity *target){
 	Move nextMove = STANDSTILL;			// Default move
-	u8 x = entity->pos.x;
-	u8 y = entity->pos.y;
-	Move dir[4];
+
 	switch(entity->diff){
 		/* Difficulty: Easy */
 		case EASY:
-			/* Can the entity move up */
-			dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
-
-			/* Can the entity move down */
-			dir[1] 	= (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
-
-			/* Can the entity move left */
-			dir[2] 	= (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
-
-			/* Can the entity move right */
-			dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
-
-
-			/* If entity cannot move */
-			if(!(dir[0] || dir[1] || dir[2] || dir[3])){
-				nextMove = STANDSTILL;
-				break;
-			}
-
-			/* Remove possibility for moving back */
-			dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
-			dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
-			dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
-			dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
-
-
-			/* Select random move from possible moves */
-			Move moves[4];
-			u8 index = 0;
-			for(u8 i = 0; i < 4; i++){
-				if(dir[i]){
-					moves[index] = dir[i];
-					index++;
-				}
-			}
-			u8 i = floor( rand() % index );
-			return moves[ i ];
+			nextMove = getMoveEasy(entity, world, target);
 			break;
 
 		/* Difficulty: Medium */
@@ -83,6 +45,49 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 
 	return nextMove;
 }
+
+Move getMoveEasy(Entity *entity, World *world, Entity *target){
+	u8 x = entity->pos.x;
+	u8 y = entity->pos.y;
+	Move dir[4];
+	/* Can the entity move up */
+	dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
+
+	/* Can the entity move down */
+	dir[1] 	= (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+
+	/* Can the entity move left */
+	dir[2] 	= (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+
+	/* Can the entity move right */
+	dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
+
+
+	/* If entity cannot move */
+	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
+		return STANDSTILL;
+	}
+
+	/* Remove possibility for moving back */
+	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
+	dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
+	dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
+	dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
+
+
+	/* Select random move from possible moves */
+	Move moves[4];
+	u8 index = 0;
+	for(u8 i = 0; i < 4; i++){
+		if(dir[i]){
+			moves[index] = dir[i];
+			index++;
+		}
+	}
+	u8 i = floor( rand() % index );
+	return moves[ i ];
+}
+
 
 /* Move the specified entity in the specified direction (if possible)*/
 void moveEntity(Entity *e, World *world, World *food, Move m){
@@ -144,4 +149,12 @@ void loadEntity(Entity *e,World *world){
 
 
 
+bool entityKilled(Entity *e, Entity *enemy, u8 noEnemies){
+	for(u8 i = 0; i < noEnemies; i++){
+		if(e->pos.x == enemy->pos.x && e->pos.y == enemy->pos.y){
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
 

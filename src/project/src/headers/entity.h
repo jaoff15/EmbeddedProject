@@ -16,6 +16,7 @@
 #include <math.h>
 
 
+
 /* Defines */
 #define MAX_ENEMIES 5
 
@@ -37,8 +38,6 @@ typedef enum e_Difficulty{
 	HARD,					// Enemy only moves after the player
 	IMPOSSIBLE				// Enemy only moves after the player, and collects all food encountered
 } Difficulty;
-
-
 
 
 /* Possible moves */
@@ -64,8 +63,13 @@ void initEntity(Entity *e, EntityType type, Pos pos,Difficulty diff);
 
 Move controlEntity(Entity *enemy, World *world, Entity *player);
 
+void loadEntity(Entity *e,World *world);
+
 void moveEntity(Entity *e, World *world, World *food, Move m);
 
-void loadEntity(Entity *e,World *world);
+bool entityKilled(Entity *e, Entity *enemy, u8 noEnemies);
+
+/* Move algorithm for easy mode */
+Move getMoveEasy(Entity *entity, World *world, Entity *target);
 
 #endif /* HEADERS_ENTITY_H_ */

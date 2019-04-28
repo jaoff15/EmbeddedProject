@@ -9,6 +9,7 @@
 #define HEADERS_SCORE_H_
 
 #include "types.h"
+#include "entity.h"
 
 static u16 score = 0;
 static u16 highscore = 0;
@@ -20,4 +21,8 @@ void resetHighscore();
 
 u16 getScore();
 u16 getHighscore();
+
+
+
+
 #endif /* HEADERS_SCORE_H_ */
