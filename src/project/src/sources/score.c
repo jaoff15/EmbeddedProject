@@ -2,7 +2,7 @@
  * score.c
  *
  *  Created on: Apr 27, 2019
- *      Author: jacoboffersen
+ *      Author: Jacob Offersen
  */
 
 #include "../headers/score.h"

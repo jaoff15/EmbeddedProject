@@ -2,7 +2,7 @@
  * score.h
  *
  *  Created on: Apr 27, 2019
- *      Author: jacoboffersen
+ *      Author: Jacob Offersen
  */
 
 #ifndef HEADERS_SCORE_H_

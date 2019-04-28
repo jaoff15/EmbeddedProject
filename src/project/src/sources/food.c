@@ -2,7 +2,7 @@
  * food.c
  *
  *  Created on: Apr 24, 2019
- *      Author: jacoboffersen
+ *      Author: Jacob Offersen
  */
 
 #include "../headers/food.h"

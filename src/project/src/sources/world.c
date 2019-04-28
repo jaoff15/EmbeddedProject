@@ -2,7 +2,7 @@
  * world.c
  *
  *  Created on: Apr 24, 2019
- *      Author: jacoboffersen
+ *      Author: Jacob Offersen
  */
 
 
@@ -10,30 +10,12 @@
 #include "../headers/world.h"
 
 /* Variables */
-static const char symbols[] = {'W','W','O','2','#','#'};
+static const char symbols[] = {'W','W','_','o','C','A'};
 
 
 
 
-BlockType map1[WIDTH][HEIGHT] = {
-		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH},
-		{PATH,WALL,WALL,PATH,PATH,WALL,WALL,PATH},
-		{PATH,WALL,PATH,PATH,PATH,PATH,WALL,PATH},
-		{PATH,WALL,PATH,WALL,WALL,PATH,WALL,PATH},
-		{PATH,WALL,PATH,WALL,WALL,PATH,WALL,PATH},
-		{PATH,WALL,PATH,PATH,PATH,PATH,WALL,PATH},
-		{PATH,WALL,WALL,PATH,PATH,WALL,WALL,PATH},
-		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH}};
 
-BlockType map2[WIDTH][HEIGHT] = {
-		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL},
-		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
-		{PATH,PATH,PATH,PATH,PATH,WALL,PATH,PATH},
-		{PATH,WALL,PATH,WALL,PATH,PATH,WALL,PATH},
-		{PATH,WALL,PATH,PATH,WALL,PATH,WALL,PATH},
-		{PATH,PATH,WALL,PATH,PATH,PATH,PATH,PATH},
-		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
-		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL}};
 
 
 void updateMap(){
@@ -44,7 +26,7 @@ void updateMap(){
 void printWorld(World *world){
 	for(int y = WIDTH-1; y >= 0; y--){
 		for(int x = 0; x < HEIGHT; x++){
-			printf("_%c",symbols[world->cells[x][y]]);
+			printf(" %c",symbols[world->cells[x][y]]);
 		}
 		printf("\n");
 	}

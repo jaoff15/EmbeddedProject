@@ -21,7 +21,11 @@ World blankWorld;
 World world; 	// frame buffer
 World food; 	// food frame buffer
 
+
 int main(void) {
+
+
+	/* Setup game*/
 
 	/* Create world */
 	loadMap(&world, MAP1);
@@ -36,15 +40,34 @@ int main(void) {
 	loadFood(&world, &food);
 
 
+	/* Get number of enemies */
+	u8 noEnemies = 5;
+
+	/* Set enemy difficulty */
+	Difficulty diff = EASY;
+
 	/* Create player */
 	Entity player;
-	Pos pos;
-	pos.x = 0;
-	pos.y = 3;
-	initEntity(&player,PLAYER,pos);
+	Pos pos = {.x=7, .y=7};
+	initEntity(&player,PLAYER,pos,NO);
 
 	/* Copy entity to world */
 	loadEntity(&player, &world);
+
+	/* Create list Enemy */
+	Entity enemy[MAX_ENEMIES];
+	Pos ps[MAX_ENEMIES] = { {.x=0,.y=0},
+							{.x=0,.y=1},
+							{.x=0,.y=2},
+							{.x=0,.y=3},
+							{.x=0,.y=4}};
+
+	for(u8 i = 0; i < noEnemies; i++){
+		initEntity(&enemy[i], ENEMY, ps[i],diff);
+		loadEntity(&enemy[i], &world);
+
+	}
+
 
 	/* Print world */
 	printWorld(&world);
@@ -74,6 +97,11 @@ int main(void) {
 		loadFood(&world, &food);
 		moveEntity(&player, &world, &food, nextMove);
 		loadEntity(&player, &world);
+		for(u8 i = 0; i < noEnemies; i++){
+			Move move = controlEntity(&enemy[i], &world, &player);
+			moveEntity(&enemy[i], &world, &food, move);
+			loadEntity(&enemy[i], &world);
+		}
 		printWorld(&world);
 		printf("\n");
 	}

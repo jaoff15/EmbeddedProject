@@ -2,73 +2,131 @@
  * entity.c
  *
  *  Created on: Apr 24, 2019
- *      Author: jacoboffersen
+ *      Author: Jacob Offersen
  */
 
 /* Includes */
 #include "../headers/entity.h"
 
 /* Initialize entity */
-void initEntity(Entity *e, EntityType type, Pos pos){
-	e->type = type;
-	e->pos = pos;
+void initEntity(Entity *e, EntityType type, Pos pos, Difficulty diff){
+	e->type 	= type;
+	e->pos 		= pos;
+	e->diff 	= diff;
+	e->lastMove = STANDSTILL;
 }
 
 /* Control entity.
  * This function is only used for entities that are not manually controlled */
-void controlEntity(Entity *e, Move *m){
+Move controlEntity(Entity *entity, World *world, Entity *target){
+	Move nextMove = STANDSTILL;			// Default move
+	u8 x = entity->pos.x;
+	u8 y = entity->pos.y;
+	Move dir[4];
+	switch(entity->diff){
+		/* Difficulty: Easy */
+		case EASY:
+			/* Can the entity move up */
+			dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
 
+			/* Can the entity move down */
+			dir[1] 	= (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+
+			/* Can the entity move left */
+			dir[2] 	= (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+
+			/* Can the entity move right */
+			dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
+
+
+			/* If entity cannot move */
+			if(!(dir[0] || dir[1] || dir[2] || dir[3])){
+				nextMove = STANDSTILL;
+				break;
+			}
+
+			/* Remove possibility for moving back */
+			dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
+			dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
+			dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
+			dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
+
+
+			/* Select random move from possible moves */
+			Move moves[4];
+			u8 index = 0;
+			for(u8 i = 0; i < 4; i++){
+				if(dir[i]){
+					moves[index] = dir[i];
+					index++;
+				}
+			}
+			u8 i = floor( rand() % index );
+			return moves[ i ];
+			break;
+
+		/* Difficulty: Medium */
+		case MEDIUM:
+			break;
+
+		/* Difficulty: Hard */
+		case HARD:
+			break;
+
+		/* Difficulty: Impossible */
+		case IMPOSSIBLE:
+			break;
+
+		default:
+			break;
+	}
+
+	return nextMove;
 }
 
 /* Move the specified entity in the specified direction (if possible)*/
 void moveEntity(Entity *e, World *world, World *food, Move m){
 	u8 x = e->pos.x;
 	u8 y = e->pos.y;
+	u8 newX = x;
+	u8 newY = y;
 	switch(m){
 		case UP:
 			/* Check that the entity is not on the top row of pixels */
 			if(y < EDGE_TOP){
-				e->pos.y = world->cells[x][y+1] != WALL ? y+1 : y;
-//				if(world->cells[x][y+1] != WALL){
-//					/* Entity moves up */
-//					e->pos.y++;
-//				}
+				newY = (world->cells[x][y+1] != WALL ? y+1 : y);
+				e->lastMove = ( newY > y ? UP : STANDSTILL);
 			}
 			break;
 		case DOWN:
 			if(y > EDGE_BOTTOM){
-				e->pos.y = (world->cells[x][y-1] != WALL ? y-1 : y);
-//				if(world->cells[x][y-1] != WALL){
-//					/* Entity moves down */
-//					e->pos.y--;
-//				}
+				newY = (world->cells[x][y-1] != WALL ? y-1 : y);
+				e->lastMove = ( newY < y ? DOWN : STANDSTILL);
 			}
 			break;
 		case LEFT:
 			if(x > EDGE_LEFT){
-				e->pos.x =  world->cells[x-1][y] != WALL ? x-1 : x;
-//				if(world->cells[x-1][y] != WALL){
-//					/* Entity moves left */
-//					e->pos.x--;
-//				}
+				newX 	= (world->cells[x-1][y] != WALL ? x-1 : x);
+				e->lastMove = ( newX < x ? LEFT : STANDSTILL);
 			}
 			break;
 		case RIGHT:
 			if(x < EDGE_RIGHT){
-				e->pos.x =  world->cells[x+1][y] != WALL ? x+1 : x;
-//				if(world->cells[x+1][y] != WALL){
-//					/* Entity moves right */
-//					e->pos.x++;
-//				}
+				newX 	= (world->cells[x+1][y] != WALL ? x+1 : x);
+				e->lastMove = ( newX > x ? RIGHT : STANDSTILL);
 			}
 			break;
-		case NONE:
+		case STANDSTILL:
 			/* Entity stays where it is */
+			e->lastMove = STANDSTILL;
 			break;
 		default:
 			/* Entity stays where it is */
+			e->lastMove = STANDSTILL;
 			break;
 	}
+	e->pos.x = newX;
+	e->pos.y = newY;
 
 	/* If the entity is a player and is moving into a cell with food.
 	 * Increment the players score */

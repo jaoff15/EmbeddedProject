@@ -2,7 +2,7 @@
  * types.h
  *
  *  Created on: Apr 24, 2019
- *      Author: jacoboffersen
+ *      Author: Jacob Offersen
  */
 
 #ifndef HEADERS_TYPES_H_
