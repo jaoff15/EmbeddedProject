@@ -17,6 +17,7 @@
 /* Defines */
 #define FOOD_AMOUNT 3
 
+
 /* Function declarations */
 void initFood(World *world, World *food);
 void loadFood(World *world, World *food);

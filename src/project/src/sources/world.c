@@ -10,7 +10,7 @@
 #include "../headers/world.h"
 
 /* Variables */
-static const char symbols[3] = {'O','X','F'};
+static const char symbols[] = {'W','W','O','2','#','#'};
 
 
 
@@ -42,11 +42,9 @@ void updateMap(){
 
 /* Print out the map to the terminal */
 void printWorld(World *world){
-	for(int x = 0; x < WIDTH; x++){
-		for(int y = 0; y < HEIGHT; y++){
-//			BlockType *pBlock = world+sizeof(BlockType)*x+sizeof(BlockType)*y*WIDTH;
-//			printf("%c",symbols[*pBlock]);
-			printf("%c",symbols[world->cells[x][y]]);
+	for(int y = WIDTH-1; y >= 0; y--){
+		for(int x = 0; x < HEIGHT; x++){
+			printf("_%c",symbols[world->cells[x][y]]);
 		}
 		printf("\n");
 	}
@@ -56,24 +54,17 @@ void printWorld(World *world){
 void loadMap(World *world, u8 mapIndex){
 	for(int x = 0; x < WIDTH; x++){
 		for(int y = 0; y < HEIGHT; y++){
-//			u8 offset = sizeof(BlockType)*x+sizeof(BlockType)*y*WIDTH;
-//			BlockType *pBlock = world+offset;
 			switch(mapIndex){
 				case 0:
-//					*pBlock = map1[y][x];
 					world->cells[x][y] = map1[x][y];
 					break;
 				case 1:
-//					*pBlock = map2[y][x];
 					world->cells[x][y] = map2[x][y];
 					break;
 				default:
 					world->cells[x][y] = map1[x][y];
-//					*pBlock = map1[y][x];
-				}
+			}
 		}
 	}
 }
-
-
 

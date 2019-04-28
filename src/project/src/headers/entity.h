@@ -30,7 +30,7 @@ typedef struct s_Entity{
 } Entity;
 
 typedef enum e_Move{
-	NONE,
+	STANDSTILL,
 	UP,
 	DOWN,
 	LEFT,
@@ -43,6 +43,8 @@ void initEntity(Entity *e, EntityType type, Pos pos);
 
 void controlEntity(Entity *e, Move *m);
 
-void moveEntity(Entity *e, World *world, Move m);
+void moveEntity(Entity *e, World *world, World *food, Move m);
+
+void loadEntity(Entity *e,World *world);
 
 #endif /* HEADERS_ENTITY_H_ */

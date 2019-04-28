@@ -10,8 +10,8 @@
 #define HEADERS_WORLD_H_
 
 /* Includes */
-#include "types.h"
 #include <stdio.h>
+#include "types.h"
 
 /* Global Variables */
 #define WIDTH 	8
@@ -31,11 +31,12 @@
 
 /* Type definitions */
 typedef enum e_BlockType{
+	NONE,
 	WALL,
 	PATH,
 	FOOD,
-	P,
-	E
+	ENTITY_PLAYER,
+	ENTITY_ENEMY
 } BlockType;
 
 
@@ -54,7 +55,6 @@ typedef struct s_World{
 void updateMap();
 void printWorld(World *world);
 void loadMap(World *world, u8 mapIndex);
-
 
 
 

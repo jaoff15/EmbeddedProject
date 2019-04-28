@@ -17,18 +17,66 @@
 #include "headers/food.h"
 
 
-
-World food; 	// food frame buffer
+World blankWorld;
 World world; 	// frame buffer
+World food; 	// food frame buffer
 
 int main(void) {
+
+	/* Create world */
 	loadMap(&world, MAP1);
+
+	/* Make a copy of the world */
+	blankWorld = world;
+
+	/* Place initial food */
 	initFood(&world, &food);
+
+	/* Copy food to world */
 	loadFood(&world, &food);
 
 
+	/* Create player */
+	Entity player;
+	Pos pos;
+	pos.x = 0;
+	pos.y = 3;
+	initEntity(&player,PLAYER,pos);
 
+	/* Copy entity to world */
+	loadEntity(&player, &world);
+
+	/* Print world */
 	printWorld(&world);
+
+	Move nextMove = STANDSTILL;
+	while(1){//for(u8 i = 0; i < 8; i++){
+		printf("Next move: \n");
+		char move = getchar();
+		switch(move){
+		case 'd':
+			nextMove = RIGHT;
+			break;
+		case 'a':
+			nextMove = LEFT;
+			break;
+		case 'w':
+			nextMove = UP;
+			break;
+		case 's':
+			nextMove = DOWN;
+			break;
+		default:
+			nextMove = STANDSTILL;
+		}
+
+		world = blankWorld;
+		loadFood(&world, &food);
+		moveEntity(&player, &world, &food, nextMove);
+		loadEntity(&player, &world);
+		printWorld(&world);
+		printf("\n");
+	}
 
 	return EXIT_SUCCESS;
 }
