@@ -5,31 +5,46 @@
  *      Author: Jacob Offersen
  */
 
+/* Includes */
 #include "../headers/score.h"
 
+/* Increment the player score */
 void incrementScore(){
 	score++;
 }
 
-
+/* Reset the player score */
 void resetScore(){
 	score = 0;
 }
 
-void setHighscore(){
-	highscore = score;
+/* Set the highscore */
+void setHighscore(u16 score_){
+	highscore = score_;
 }
 
+/* Reset the highscore */
 void resetHighscore(){
 	highscore = 0;
 }
 
-
+/* Get the current player score */
 u16 getScore(){
 	return score;
 }
+
+/* Get the current highscore */
 u16 getHighscore(){
 	return highscore;
 }
 
+/* Print the score in a pretty way */
+void printScore(){
+	if(score > highscore){
+		setHighscore(score);
+		printf("New highscore!\nscore: %d\n", getScore());
+	}else{
+		printf("Score: %d\nHighscore: %d\n",getScore(), getHighscore());
+	}
 
+}

@@ -42,7 +42,7 @@ void loadMap(World *world, u8 mapIndex){
 	}
 }
 
-
+/* Print the game over screen to the terminal */
 void printGameoverScreen(){
 	for(int y = WIDTH-1; y >= 0; y--){
 		for(int x = 0; x < HEIGHT; x++){
@@ -54,6 +54,7 @@ void printGameoverScreen(){
 		}
 		printf("\n");
 	}
+	printf("\n");
 }
 
 

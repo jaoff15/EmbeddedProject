@@ -17,14 +17,14 @@ void initEntity(Entity *e, EntityType type, Pos pos, Difficulty diff){
 }
 
 /* Control entity.
- * This function is only used for entities that are not manually controlled */
+ * Only used for entities that are not manually controlled */
 Move controlEntity(Entity *entity, World *world, Entity *target){
 	Move nextMove = STANDSTILL;			// Default move
 
 	switch(entity->diff){
 		/* Difficulty: Easy */
 		case EASY:
-			nextMove = getMoveEasy(entity, world, target);
+			nextMove = getMoveEasy(entity, world);
 			break;
 
 		/* Difficulty: Medium */
@@ -46,7 +46,9 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 	return nextMove;
 }
 
-Move getMoveEasy(Entity *entity, World *world, Entity *target){
+/* Find the next move for a given entity
+ * The returned move is a move in a random direction that is not backwards. */
+Move getMoveEasy(Entity *entity, World *world){
 	u8 x = entity->pos.x;
 	u8 y = entity->pos.y;
 	Move dir[4];
@@ -84,6 +86,7 @@ Move getMoveEasy(Entity *entity, World *world, Entity *target){
 			index++;
 		}
 	}
+	/* Get random move */
 	u8 i = floor( rand() % index );
 	return moves[ i ];
 }
@@ -99,25 +102,37 @@ void moveEntity(Entity *e, World *world, World *food, Move m){
 		case UP:
 			/* Check that the entity is not on the top row of pixels */
 			if(y < EDGE_TOP){
-				newY = (world->cells[x][y+1] != WALL ? y+1 : y);
+				/* Move the entity if there is not wall on the new position */
+				newY 		= (world->cells[x][y+1] != WALL ? y+1 : y);
+
+				/* Save the move in the entity */
 				e->lastMove = ( newY > y ? UP : STANDSTILL);
 			}
 			break;
 		case DOWN:
 			if(y > EDGE_BOTTOM){
-				newY = (world->cells[x][y-1] != WALL ? y-1 : y);
+				/* Move the entity if there is not wall on the new position */
+				newY 		= (world->cells[x][y-1] != WALL ? y-1 : y);
+
+				/* Save the move in the entity */
 				e->lastMove = ( newY < y ? DOWN : STANDSTILL);
 			}
 			break;
 		case LEFT:
 			if(x > EDGE_LEFT){
-				newX 	= (world->cells[x-1][y] != WALL ? x-1 : x);
+				/* Move the entity if there is not wall on the new position */
+				newX 		= (world->cells[x-1][y] != WALL ? x-1 : x);
+
+				/* Save the move in the entity */
 				e->lastMove = ( newX < x ? LEFT : STANDSTILL);
 			}
 			break;
 		case RIGHT:
 			if(x < EDGE_RIGHT){
-				newX 	= (world->cells[x+1][y] != WALL ? x+1 : x);
+				/* Move the entity if there is not wall on the new position */
+				newX 		= (world->cells[x+1][y] != WALL ? x+1 : x);
+
+				/* Save the move in the entity */
 				e->lastMove = ( newX > x ? RIGHT : STANDSTILL);
 			}
 			break;
@@ -130,6 +145,9 @@ void moveEntity(Entity *e, World *world, World *food, Move m){
 			e->lastMove = STANDSTILL;
 			break;
 	}
+
+	/* Save last position and write the new position to the entity */
+	e->lastPos = e->pos;
 	e->pos.x = newX;
 	e->pos.y = newY;
 
@@ -142,19 +160,29 @@ void moveEntity(Entity *e, World *world, World *food, Move m){
 	}
 }
 
+
+/* Load the parsed entity into the world */
 void loadEntity(Entity *e,World *world){
 	/* If player type is player then write 'player' into the world. Otherwise write 'enemy'*/
 	world->cells[e->pos.x][e->pos.y] = ( e->type == PLAYER ? ENTITY_PLAYER : ENTITY_ENEMY);
 }
 
 
-
-bool entityKilled(Entity *e, Entity *enemy, u8 noEnemies){
-	for(u8 i = 0; i < noEnemies; i++){
-		if(e->pos.x == enemy->pos.x && e->pos.y == enemy->pos.y){
-			return TRUE;
-		}
+/* Check if the specified entity has been killed by any of it's enemies */
+bool entityKilled(Entity *e, Entity *enemy){
+	bool killed = FALSE;
+	/* If the entity is in the same block as an enemy.
+	 * Return 'killed'*/
+	if(e->pos.x == enemy->pos.x && e->pos.y == enemy->pos.y){
+		killed = TRUE;
 	}
-	return FALSE;
+	/* If the entity and its enemy has just swapped positions they crossed each others paths
+	 * return 'killed' */
+	if( e->lastPos.x == enemy->pos.x && e->lastPos.y == enemy->pos.y &&
+		enemy->lastPos.x == e->pos.x && enemy->lastPos.y == e->pos.y){
+		killed = TRUE;
+	}
+	/* If the entity was not killed.
+	 * return 'not killed' */
+	return killed;
 }
-

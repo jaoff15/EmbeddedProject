@@ -16,21 +16,25 @@
 #include <math.h>
 
 
-
 /* Defines */
 #define MAX_ENEMIES 5
 
+
 /* Type definitions */
+/* Type of the entity.
+ * Used to specify whether the entity is a player or an enemy */
 typedef enum e_EntityType{
 	PLAYER,
 	ENEMY
 } EntityType;
 
+/* Used to define an entities position in the world */
 typedef struct s_Pos{
 	u8 x;
 	u8 y;
 } Pos;
 
+/* Used to specify the difficulty of an enemy */
 typedef enum e_Difficulty{
 	NO,
 	EASY,					// Enemy moves randomly
@@ -49,27 +53,37 @@ typedef enum e_Move{
 	RIGHT					// Entity moves to the right
 }Move;
 
-
+/* A structure used to hold all data for a specific entity */
 typedef struct s_Entity{
 	Pos 		pos;
 	EntityType 	type;
 	Difficulty  diff;
 	Move		lastMove;
+	Pos 		lastPos;
 } Entity;
 
 
 /* Function declarations */
+
+/* Initialize an entity */
 void initEntity(Entity *e, EntityType type, Pos pos,Difficulty diff);
 
-Move controlEntity(Entity *enemy, World *world, Entity *player);
-
-void loadEntity(Entity *e,World *world);
-
+/* Move the given entity in the given direction. */
 void moveEntity(Entity *e, World *world, World *food, Move m);
 
-bool entityKilled(Entity *e, Entity *enemy, u8 noEnemies);
+/* Load the entity into the world */
+void loadEntity(Entity *e,World *world);
+
+
+/* Check if the given entity has been killed by any its enemy */
+bool entityKilled(Entity *e, Entity *enemy);
+
+
+/* Get the next move of the given entity.
+ * Function called various other functions depending on the difficulty */
+Move controlEntity(Entity *enemy, World *world, Entity *player);
 
 /* Move algorithm for easy mode */
-Move getMoveEasy(Entity *entity, World *world, Entity *target);
+Move getMoveEasy(Entity *entity, World *world);
 
 #endif /* HEADERS_ENTITY_H_ */

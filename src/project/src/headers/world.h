@@ -31,6 +31,7 @@
  */
 
 /* Type definitions */
+/* Used to describe the different blocks in the world */
 typedef enum e_BlockType{
 	NONE,
 	WALL,
@@ -40,17 +41,18 @@ typedef enum e_BlockType{
 	ENTITY_ENEMY
 } BlockType;
 
-
+/* Used to specify the map that should be used */
 enum e_Map{
 	MAP1,
 	MAP2
 };
 
+/* Used to hold a world */
 typedef struct s_World{
 	BlockType cells[WIDTH][HEIGHT];
 } World;
 
-
+/* Can hold an RGB color */
 typedef struct s_Color{
 	u8 red;
 	u8 green;
@@ -83,7 +85,7 @@ static const BlockType map2[WIDTH][HEIGHT] = {
 		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
 		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL}};
 
-
+/* Definition of the various colors */
 #define BLANK   {.red=0,   	.green=0, 	.blue=0}
 #define BLUE    {.red=0,   	.green=0, 	.blue=255}
 #define GREEN   {.red=0,   	.green=255,	.blue=0}
