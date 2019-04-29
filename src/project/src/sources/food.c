@@ -29,3 +29,20 @@ void loadFood(World *world, World *food){
 		}
 	}
 }
+
+
+bool foodEmpty(World *food){
+	bool isEmpty = TRUE;
+	for(int x = 0; x < WIDTH; x++){
+		for(int y = 0; y < HEIGHT; y++){
+			if(food->cells[x][y] == FOOD){
+				isEmpty = FALSE;
+				break;
+			}
+		}
+		if(!isEmpty){
+			break;
+		}
+	}
+	return isEmpty;
+}

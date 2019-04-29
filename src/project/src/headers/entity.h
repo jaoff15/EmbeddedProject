@@ -13,12 +13,13 @@
 #include "world.h"
 #include "score.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 
 
 /* Defines */
 #define MAX_ENEMIES 5
-
+#define INFTY 100
 
 /* Type definitions */
 /* Type of the entity.
@@ -85,5 +86,7 @@ Move controlEntity(Entity *enemy, World *world, Entity *player);
 
 /* Move algorithm for easy mode */
 Move getMoveEasy(Entity *entity, World *world);
+
+Move getMoveHard(Entity *entity, World *world, Entity *target);
 
 #endif /* HEADERS_ENTITY_H_ */

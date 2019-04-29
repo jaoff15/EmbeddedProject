@@ -22,4 +22,6 @@
 void initFood(World *world, World *food);
 void loadFood(World *world, World *food);
 
+bool foodEmpty(World *food);
+
 #endif /* HEADERS_FOOD_H_ */

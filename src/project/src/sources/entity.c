@@ -33,6 +33,7 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 
 		/* Difficulty: Hard */
 		case HARD:
+			nextMove = getMoveHard(entity, world, target);
 			break;
 
 		/* Difficulty: Impossible */
@@ -70,14 +71,14 @@ Move getMoveEasy(Entity *entity, World *world){
 		return STANDSTILL;
 	}
 
-	/* Remove possibility for moving back */
+	/* Remove possibility for moving backwards */
 	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
 	dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
 	dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
 	dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
 
 
-	/* Select random move from possible moves */
+	/* Fill the possible moves into an array and count up how many valid moves there is */
 	Move moves[4];
 	u8 index = 0;
 	for(u8 i = 0; i < 4; i++){
@@ -86,9 +87,82 @@ Move getMoveEasy(Entity *entity, World *world){
 			index++;
 		}
 	}
-	/* Get random move */
+
+	/* Select random move and return it */
 	u8 i = floor( rand() % index );
 	return moves[ i ];
+}
+
+/* Return the move that gets the entity closest to the target
+ * The decision to whether or not the spot is closer is based in the Euclidean distance
+ * between the target and the spot being searched.
+ * To enhance the performance the power and square root is not performed
+ * */
+Move getMoveHard(Entity *entity, World *world, Entity *target){
+	const u8 x = entity->pos.x;
+	const u8 y = entity->pos.y;
+	Move dir[4];
+	/* Can the entity move up */
+	dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
+
+	/* Can the entity move down */
+	dir[1] 	= (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+
+	/* Can the entity move left */
+	dir[2] 	= (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+
+	/* Can the entity move right */
+	dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
+
+//	/* Remove possibility for moving backwards */
+	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
+	dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
+	dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
+	dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
+
+	/* If entity cannot move */
+	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
+		return STANDSTILL;
+	}
+
+	/* Find 'distances' and thereby the best move */
+	f32 ex = entity->pos.x;
+	f32 ey = entity->pos.y;
+	f32 tx = target->pos.x;
+	f32 ty = target->pos.y;
+	f32 distance[4] = {INFTY,INFTY,INFTY,INFTY};
+	u8 currentBest = 0;
+	for(u8 i = 0; i < 4; i++){
+		if(dir[i] != STANDSTILL){
+			switch(dir[i]){
+			case UP:
+//				distance[i] = ((tx - ex)*(tx - ex) + (ty - ey-1.0)*(ty - ey-1.0));
+				distance[i] = (abs(tx - ex) + abs(ty - ey-1.0));
+				break;
+			case DOWN:
+//				distance[i] = ((tx - ex)*(tx - ex) + (ty - ey+1.0)*(ty - ey+1.0));
+				distance[i] = (abs(tx - ex) + abs(ty - ey+1.0));
+				break;
+			case LEFT:
+//				distance[i] = ((tx - ex+1.0)*(tx - ex+1.0) + (ty - ey)*(ty - ey));
+				distance[i] = (abs(tx - ex+1.0) + abs(ty - ey));
+				break;
+			case RIGHT:
+//				distance[i] = ((tx - ex-1.0)*(tx - ex-1.0) + (ty - ey)*(ty - ey));
+				distance[i] = (abs(tx - ex-1.0) + abs(ty - ey));
+				break;
+			default:
+				distance[i] = INFTY;
+				break;
+			}
+			if(distance[currentBest] >= distance[i]){
+				currentBest = i;
+			}
+		}else{
+			distance[i] = INFTY;
+		}
+	}
+	return dir[currentBest];
 }
 
 

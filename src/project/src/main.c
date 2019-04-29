@@ -47,7 +47,7 @@ int main(void) {
 
 
 		/* Get number of enemies */
-		u8 noEnemies = 5;
+		u8 noEnemies = 1;
 
 		/* Set enemy difficulty */
 		Difficulty diff = EASY;
@@ -86,24 +86,28 @@ int main(void) {
 			/* Listen for next move */
 			printf("Next move: \n");
 			char move = getchar();
-			switch(move){
-			case 'd':
-				nextMove = RIGHT;
-				break;
-			case 'a':
-				nextMove = LEFT;
-				break;
-			case 'w':
-				nextMove = UP;
-				break;
-			case 's':
-				nextMove = DOWN;
-				break;
-			default:
-				nextMove = STANDSTILL;
-			}
-			if(nextMove != STANDSTILL){
+			if(move == 'd' || move == 's' || move == 'a' || move == 'w'){
+				switch(move){
+				case 'd':
+					nextMove = RIGHT;
+					break;
+				case 'a':
+					nextMove = LEFT;
+					break;
+				case 'w':
+					nextMove = UP;
+					break;
+				case 's':
+					nextMove = DOWN;
+					break;
+				default:
+					nextMove = STANDSTILL;
+				}
+
 				world = blankWorld;											// Load a blank world
+				if(foodEmpty(&food)){
+					initFood(&world, &food);
+				}
 				loadFood(&world, &food);									// Load food into the world
 				moveEntity(&player, &world, &food, nextMove);				// Move the player
 				loadEntity(&player, &world);								// Load the player into the world
