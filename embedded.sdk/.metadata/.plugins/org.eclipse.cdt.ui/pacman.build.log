@@ -1,0 +1,73 @@
+14:53:29 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/entity.h:12:0,
+                 from ../src/main.c:15:
+../src/headers/types.h:25:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_printf.h:11:0,
+                 from ../src/main.c:7:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/entity.h:12:0,
+                 from ../src/main.c:15:
+../src/headers/types.h:26:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_printf.h:11:0,
+                 from ../src/main.c:7:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+../src/main.c: In function 'main':
+../src/main.c:30:5: warning: implicit declaration of function 'initLedMatrix' [-Wimplicit-function-declaration]
+     initLedMatrix();
+     ^~~~~~~~~~~~~
+../src/main.c: In function 'pacman':
+../src/main.c:128:3: warning: implicit declaration of function 'renderWorld'; did you mean 'printWorld'? [-Wimplicit-function-declaration]
+   renderWorld(&world);
+   ^~~~~~~~~~~
+   printWorld
+../src/main.c:178:4: warning: implicit declaration of function 'usleep'; did you mean 'fseek'? [-Wimplicit-function-declaration]
+    usleep(SLEEP_500ms);
+    ^~~~~~
+    fseek
+../src/main.c:182:3: warning: implicit declaration of function 'printGameoverScreen' [-Wimplicit-function-declaration]
+   printGameoverScreen();            // Print game over screen
+   ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/headers/entity.h:14:0,
+                 from ../src/main.c:15:
+At top level:
+../src/headers/score.h:17:13: warning: 'highscore' defined but not used [-Wunused-variable]
+ static ui16 highscore = 0;
+             ^~~~~~~~~
+../src/headers/score.h:16:13: warning: 'score' defined but not used [-Wunused-variable]
+ static ui16 score = 0;
+             ^~~~~
+In file included from ../src/headers/entity.h:13:0,
+                 from ../src/main.c:15:
+../src/headers/world.h:85:12: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static ui8 gameOver[WIDTH][HEIGHT] = {
+            ^~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/led_matrix.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  79960	   2964	  23536	 106460	  19fdc	pacman.elf
+Finished building: pacman.elf.size
+ 
+
+14:53:30 Build Finished (took 410ms)
+

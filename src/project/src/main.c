@@ -10,12 +10,20 @@
  */
 
 /* Includes */
+/* Zybo and IO includes */
+#include "xparameters.h"
+#include "xbram.h"
+#include "xil_io.h"
+#include "platform.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "headers/entity.h"
 #include "headers/world.h"
 #include "headers/food.h"
 #include "headers/score.h"
+
+
 #include <time.h>
 
 /* Global variables */
