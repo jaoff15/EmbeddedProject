@@ -21,8 +21,8 @@
 #define G 1
 #define B 2
 
-#define FULL_ON  	102		//255*40% = 102
-#define HALF_ON		FULL_ON/2
+#define FULL_ON  	255
+#define HALF_ON		125
 #define FULL_OFF	0
 
 // 3-dimentional array that contains the three different colors
@@ -39,14 +39,14 @@ typedef struct s_Color{
 
 
 // Color definitions
-static const Color RED    	= {.r = FULL_ON, 	.g = FULL_OFF,  .b = FULL_OFF};
-static const Color GREEN  	= {.r = FULL_OFF,   .g = FULL_ON, 	.b = FULL_OFF};
-static const Color BLUE 	= {.r = FULL_OFF,   .g = FULL_OFF,  .b = FULL_ON};
-static const Color YELLOW 	= {.r = FULL_ON, 	.g = FULL_ON, 	.b = FULL_OFF};
-static const Color ORANGE 	= {.r = FULL_ON, 	.g = HALF_ON, 	.b = FULL_OFF};
-static const Color PURPLE 	= {.r = FULL_ON, 	.g = FULL_OFF,  .b = FULL_ON};
-static const Color WHITE  	= {.r = FULL_ON, 	.g = FULL_ON, 	.b = FULL_ON};
-static const Color BLANK 	= {.r = FULL_OFF,   .g = FULL_OFF,  .b = FULL_OFF};
+static const Color RED    	= {.r = 255, .g = 0,   .b = 0};
+static const Color GREEN  	= {.r = 0,   .g = 255, .b = 0};
+static const Color BLUE 	= {.r = 0,   .g = 0,   .b = 255};
+static const Color YELLOW 	= {.r = 255, .g = 255, .b = 0};
+static const Color ORANGE 	= {.r = 255, .g = 120, .b = 0};
+static const Color PURPLE 	= {.r = 255, .g = 0,   .b = 255};
+static const Color WHITE  	= {.r = 255, .g = 255, .b = 255};
+static const Color BLANK 	= {.r = 0,   .g = 0,   .b = 0};
 
 // Initialize the LED matrix
 void initLedMatrix();

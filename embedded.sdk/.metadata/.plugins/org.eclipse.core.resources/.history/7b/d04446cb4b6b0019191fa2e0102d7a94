@@ -21,7 +21,7 @@
 #define G 1
 #define B 2
 
-#define FULL_ON  	102		//255*40% = 102
+#define FULL_ON  	255
 #define HALF_ON		FULL_ON/2
 #define FULL_OFF	0
 
