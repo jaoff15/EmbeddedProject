@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Tue Apr 30 13:19:55 2019
+| Date         : Wed May  1 14:53:44 2019
 | Host         : jacoboffersen running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file LED_RAM_axi_smc_0_utilization_synth.rpt -pb LED_RAM_axi_smc_0_utilization_synth.pb
 | Design       : LED_RAM_axi_smc_0
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 1799 |     0 |     17600 | 10.22 |
-|   LUT as Logic             | 1324 |     0 |     17600 |  7.52 |
-|   LUT as Memory            |  475 |     0 |      6000 |  7.92 |
-|     LUT as Distributed RAM |  320 |     0 |           |       |
-|     LUT as Shift Register  |  155 |     0 |           |       |
-| Slice Registers            | 2386 |     0 |     35200 |  6.78 |
-|   Register as Flip Flop    | 2386 |     0 |     35200 |  6.78 |
+| Slice LUTs*                | 5385 |     0 |     17600 | 30.60 |
+|   LUT as Logic             | 3969 |     0 |     17600 | 22.55 |
+|   LUT as Memory            | 1416 |     0 |      6000 | 23.60 |
+|     LUT as Distributed RAM | 1024 |     0 |           |       |
+|     LUT as Shift Register  |  392 |     0 |           |       |
+| Slice Registers            | 6472 |     0 |     35200 | 18.39 |
+|   Register as Flip Flop    | 6472 |     0 |     35200 | 18.39 |
 |   Register as Latch        |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |    1 |     0 |      8800 |  0.01 |
+| F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 92    |          Yes |         Set |            - |
-| 2294  |          Yes |       Reset |            - |
+| 267   |          Yes |         Set |            - |
+| 6205  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,20 +148,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 2294 |        Flop & Latch |
-| LUT3     |  649 |                 LUT |
-| RAMD32   |  480 |  Distributed Memory |
-| LUT6     |  360 |                 LUT |
-| LUT4     |  305 |                 LUT |
-| LUT5     |  288 |                 LUT |
-| RAMS32   |  160 |  Distributed Memory |
-| SRLC32E  |  154 |  Distributed Memory |
-| LUT2     |  133 |                 LUT |
-| FDSE     |   92 |        Flop & Latch |
-| LUT1     |   49 |                 LUT |
-| CARRY4   |    4 |          CarryLogic |
-| SRL16E   |    1 |  Distributed Memory |
-| MUXF7    |    1 |               MuxFx |
+| FDRE     | 6205 |        Flop & Latch |
+| RAMD32   | 1528 |  Distributed Memory |
+| LUT6     | 1362 |                 LUT |
+| LUT3     | 1088 |                 LUT |
+| LUT2     | 1032 |                 LUT |
+| LUT5     |  868 |                 LUT |
+| LUT4     |  777 |                 LUT |
+| RAMS32   |  504 |  Distributed Memory |
+| SRLC32E  |  370 |  Distributed Memory |
+| FDSE     |  267 |        Flop & Latch |
+| LUT1     |  180 |                 LUT |
+| CARRY4   |   34 |          CarryLogic |
+| SRL16E   |   22 |  Distributed Memory |
 +----------+------+---------------------+
 
 

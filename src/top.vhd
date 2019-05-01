@@ -9,7 +9,15 @@ entity top is
            row          : out std_logic_vector(7 downto 0);
            red          : out std_logic_vector(7 downto 0); 
            green        : out std_logic_vector(7 downto 0);
-           blue         : out std_logic_vector(7 downto 0)        
+           blue         : out std_logic_vector(7 downto 0);
+           Vaux14_0_v_n : in STD_LOGIC;
+           Vaux14_0_v_p : in STD_LOGIC;
+           Vaux15_0_v_n : in STD_LOGIC;
+           Vaux15_0_v_p : in STD_LOGIC;
+           Vaux7_0_v_n : in STD_LOGIC;
+           Vaux7_0_v_p : in STD_LOGIC;
+           Vaux6_0_v_n : in STD_LOGIC;
+           Vaux6_0_v_p : in STD_LOGIC      
         );
 end top;
 
@@ -21,7 +29,15 @@ architecture Behavioral of top is
             row     : out std_logic_vector(7 downto 0);
             red     : out std_logic_vector(7 downto 0);
             green   : out std_logic_vector(7 downto 0);
-            blue    : out std_logic_vector(7 downto 0)
+            blue    : out std_logic_vector(7 downto 0);
+            Vaux14_0_v_n : in STD_LOGIC;
+            Vaux14_0_v_p : in STD_LOGIC;
+            Vaux15_0_v_n : in STD_LOGIC;
+            Vaux15_0_v_p : in STD_LOGIC;
+            Vaux7_0_v_n : in STD_LOGIC;
+            Vaux7_0_v_p : in STD_LOGIC;
+            Vaux6_0_v_n : in STD_LOGIC;
+            Vaux6_0_v_p : in STD_LOGIC
             );
     end component;
 
@@ -33,7 +49,15 @@ port map(
     row         => row,
     red         => red,
     green       => green,
-    blue        => blue
+    blue        => blue,
+    Vaux14_0_v_n        => Vaux14_0_v_n,
+    Vaux14_0_v_p        => Vaux14_0_v_p,
+    Vaux15_0_v_n        => Vaux15_0_v_n,
+    Vaux15_0_v_p        => Vaux15_0_v_p,
+    Vaux7_0_v_n         => Vaux7_0_v_n,
+    Vaux7_0_v_p         => Vaux7_0_v_p,
+    Vaux6_0_v_n         => Vaux6_0_v_n,
+    Vaux6_0_v_p         => Vaux6_0_v_p
     );
 
 

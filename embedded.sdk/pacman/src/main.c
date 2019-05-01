@@ -1,14 +1,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "platform.h"
 #include "xil_printf.h"
 #include "xparameters.h"
 #include "xbram.h"
 #include "xil_io.h"
-#include <string.h>
-
+#include "sleep.h"
 
 /* Pacman */
 #include "headers/entity.h"
@@ -17,6 +17,7 @@
 #include "headers/score.h"
 #include "headers/time.h"
 #include "headers/led_matrix.h"
+#include "headers/movement.h"
 
 //void render(u8 x, u8 y, u8 r, u8 g, u8 b);
 //void clearMemory();
@@ -28,6 +29,7 @@ int main()
     init_platform();
 
     initLedMatrix();
+    initIoDevices();
     pacman();
 
     cleanup_platform();
@@ -44,6 +46,11 @@ void pacman(){
 
 	/* Set randomizer seed */
 	srand(1);
+
+	while(1){
+		char move = getMovement();
+		usleep(SLEEP_500ms);
+	}
 
 	while(1){
 
@@ -107,25 +114,25 @@ void pacman(){
 		bool gameover = FALSE;
 
 		while(!gameover){
-			char move = STANDSTILL;
+			char move = getMovement();
 
 			/* Check for next move */
-			switch(move){
-			case 'd':
-				nextMove = RIGHT;
-				break;
-			case 'a':
-				nextMove = LEFT;
-				break;
-			case 'w':
-				nextMove = UP;
-				break;
-			case 's':
-				nextMove = DOWN;
-				break;
-			default:
-				nextMove = STANDSTILL;
-			}
+//			switch(move){
+//			case 'd':
+//				nextMove = RIGHT;
+//				break;
+//			case 'a':
+//				nextMove = LEFT;
+//				break;
+//			case 'w':
+//				nextMove = UP;
+//				break;
+//			case 's':
+//				nextMove = DOWN;
+//				break;
+//			default:
+//				nextMove = STANDSTILL;
+//			}
 
 			/* Load world */
 			world = blankWorld;											// Load a blank world

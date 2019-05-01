@@ -24,4 +24,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==LED_RAM_rst_ps7
 # IP: bd/LED_RAM/ip/LED_RAM_axi_bram_ctrl_0_bram_0/LED_RAM_axi_bram_ctrl_0_bram_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==LED_RAM_axi_bram_ctrl_0_bram_0 || ORIG_REF_NAME==LED_RAM_axi_bram_ctrl_0_bram_0} -quiet] -quiet
 
+# IP: bd/LED_RAM/ip/LED_RAM_xadc_wiz_0_0/LED_RAM_xadc_wiz_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==LED_RAM_xadc_wiz_0_0 || ORIG_REF_NAME==LED_RAM_xadc_wiz_0_0} -quiet] -quiet
+
 # XDC: bd/LED_RAM/LED_RAM_ooc.xdc

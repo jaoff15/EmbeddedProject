@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Apr 30 13:17:48 2019
-# Process ID: 16463
+# Start of session at: Wed May  1 14:51:13 2019
+# Process ID: 32127
 # Current directory: /home/jacoboffersen/Repos/EmbeddedProject/embedded.runs/LED_RAM_axi_smc_0_synth_1
 # Command line: vivado -log LED_RAM_axi_smc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LED_RAM_axi_smc_0.tcl
 # Log file: /home/jacoboffersen/Repos/EmbeddedProject/embedded.runs/LED_RAM_axi_smc_0_synth_1/LED_RAM_axi_smc_0.vds

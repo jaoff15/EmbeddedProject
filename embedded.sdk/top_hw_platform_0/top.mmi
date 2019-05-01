@@ -12,12 +12,12 @@
   <Processor Endianness="Little" InstPath="led_matrix0/mem_interface0/block_ram_interface0/LED_RAM_i/processing_system7_0">
     <AddressSpace Name="led_matrix0_mem_interface0_block_ram_interface0_LED_RAM_i_processing_system7_0.led_matrix0_mem_interface0_block_ram_interface0_LED_RAM_i_axi_bram_ctrl_0" Begin="1073741824" End="1073750015">
       <BusBlock>
-        <BitLane MemType="RAMB36" Placement="X0Y4">
+        <BitLane MemType="RAMB36" Placement="X2Y7">
           <DataWidth MSB="15" LSB="0"/>
           <AddressRange Begin="0" End="2047"/>
           <Parity ON="false" NumBits="0"/>
         </BitLane>
-        <BitLane MemType="RAMB36" Placement="X0Y5">
+        <BitLane MemType="RAMB36" Placement="X2Y6">
           <DataWidth MSB="31" LSB="16"/>
           <AddressRange Begin="0" End="2047"/>
           <Parity ON="false" NumBits="0"/>

@@ -6,21 +6,27 @@
 C_SRCS += \
 ../src/sources/entity.c \
 ../src/sources/food.c \
+../src/sources/io_devices.c \
 ../src/sources/led_matrix.c \
+../src/sources/movement.c \
 ../src/sources/score.c \
 ../src/sources/world.c 
 
 OBJS += \
 ./src/sources/entity.o \
 ./src/sources/food.o \
+./src/sources/io_devices.o \
 ./src/sources/led_matrix.o \
+./src/sources/movement.o \
 ./src/sources/score.o \
 ./src/sources/world.o 
 
 C_DEPS += \
 ./src/sources/entity.d \
 ./src/sources/food.d \
+./src/sources/io_devices.d \
 ./src/sources/led_matrix.d \
+./src/sources/movement.d \
 ./src/sources/score.d \
 ./src/sources/world.d 
 

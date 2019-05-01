@@ -1,69 +1,46 @@
-14:27:23 **** Auto Build of configuration Debug for project pacman ****
+15:43:24 **** Auto Build of configuration Debug for project pacman ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-Building file: ../src/main.c
+Building file: ../src/sources/movement.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/headers/entity.h:16:0,
-                 from ../src/main.c:14:
-../src/headers/types.h:25:0: warning: "FALSE" redefined
- #define FALSE 0
- 
-In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_printf.h:11:0,
-                 from ../src/main.c:6:
-../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
- #  define FALSE  0U
- 
-In file included from ../src/headers/entity.h:16:0,
-                 from ../src/main.c:14:
-../src/headers/types.h:26:0: warning: "TRUE" redefined
- #define TRUE 1
- 
-In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_printf.h:11:0,
-                 from ../src/main.c:6:
-../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
- #  define TRUE  1U
- 
-../src/main.c: In function 'pacman':
-../src/main.c:160:4: warning: implicit declaration of function 'usleep'; did you mean 'fseek'? [-Wimplicit-function-declaration]
-    usleep(SLEEP_500ms);
-    ^~~~~~
-    fseek
-../src/main.c:164:3: warning: implicit declaration of function 'printGameoverScreen' [-Wimplicit-function-declaration]
-   printGameoverScreen();            // Print game over screen
-   ^~~~~~~~~~~~~~~~~~~
-In file included from ../src/main.c:19:0:
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:15:10: warning: implicit declaration of function 'getJoystickX' [-Wimplicit-function-declaration]
+  s32 x = getJoystickX() - OFFSET;
+          ^~~~~~~~~~~~
+../src/sources/movement.c:16:10: warning: implicit declaration of function 'getJoystickY' [-Wimplicit-function-declaration]
+  s32 y = getJoystickY() - OFFSET;
+          ^~~~~~~~~~~~
+../src/sources/movement.c:20:6: error: expected expression before ')' token
+   if()
+      ^
+../src/sources/movement.c:29:15: warning: format '%d' expects argument of type 'int', but argument 2 has type 's32 {aka long int}' [-Wformat=]
+   printf("x: %d, y: %d\n",x,y);
+              ~^
+              %ld
+../src/sources/movement.c:29:22: warning: format '%d' expects argument of type 'int', but argument 3 has type 's32 {aka long int}' [-Wformat=]
+   printf("x: %d, y: %d\n",x,y);
+                     ~^
+                     %ld
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/movement.h:13,
+                 from ../src/sources/movement.c:9:
 At top level:
-../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
- static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
-           ^~~~~~
-In file included from ../src/headers/entity.h:18:0,
-                 from ../src/main.c:14:
-../src/headers/score.h:17:12: warning: 'highscore' defined but not used [-Wunused-variable]
+../src/sources/../headers/score.h:17:12: warning: 'highscore' defined but not used [-Wunused-variable]
  static u16 highscore = 0;
             ^~~~~~~~~
-../src/headers/score.h:16:12: warning: 'score' defined but not used [-Wunused-variable]
+../src/sources/../headers/score.h:16:12: warning: 'score' defined but not used [-Wunused-variable]
  static u16 score = 0;
             ^~~~~
-In file included from ../src/headers/entity.h:17:0,
-                 from ../src/main.c:14:
-../src/headers/world.h:86:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+In file included from ../src/sources/../headers/entity.h:17:0,
+                 from ../src/sources/../headers/movement.h:13,
+                 from ../src/sources/movement.c:9:
+../src/sources/../headers/world.h:86:11: warning: 'gameOver' defined but not used [-Wunused-variable]
  static u8 gameOver[WIDTH][HEIGHT] = {
+src/sources/subdir.mk:36: recipe for target 'src/sources/movement.o' failed
            ^~~~~~~~
-Finished building: ../src/main.c
- 
-Building target: pacman.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/led_matrix.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: pacman.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  80840	   2964	  23728	 107532	  1a40c	pacman.elf
-Finished building: pacman.elf.size
- 
+make: *** [src/sources/movement.o] Error 1
 
-14:27:24 Build Finished (took 364ms)
+15:43:25 Build Finished (took 315ms)
 

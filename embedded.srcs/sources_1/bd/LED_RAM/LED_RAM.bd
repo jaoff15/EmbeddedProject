@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xF37F20051FA66E9D" bd:device="xc7z010clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="LED_RAM" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x2A2AF9CDA3C15312" bd:device="xc7z010clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="LED_RAM" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -189,6 +189,30 @@
             </spirit:vendorExtensions>
           </spirit:parameter>
         </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>Vaux14_0</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="diff_analog_io" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="diff_analog_io_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>Vaux15_0</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="diff_analog_io" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="diff_analog_io_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>Vaux7_0</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="diff_analog_io" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="diff_analog_io_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>Vaux6_0</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="diff_analog_io" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="diff_analog_io_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
@@ -484,6 +508,7 @@
         <spirit:componentRef spirit:library="ip" spirit:name="smartconnect" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">LED_RAM_axi_smc_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_MI">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_SI">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
@@ -499,6 +524,35 @@
         <spirit:componentRef spirit:library="ip" spirit:name="blk_mem_gen" spirit:vendor="xilinx.com" spirit:version="8.4"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">LED_RAM_axi_bram_ctrl_0_bram_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xadc_wiz_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xadc_wiz" spirit:vendor="xilinx.com" spirit:version="3.3"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">LED_RAM_xadc_wiz_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="INTERFACE_SELECTION">Enable_AXI</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="XADC_STARUP_SELECTION">channel_sequencer</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SEQUENCER_MODE">Continuous</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ENABLE_CALIBRATION_AVERAGING">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ENABLE_RESET">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="OT_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="USER_TEMP_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="VCCINT_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="VCCAUX_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ENABLE_VCCPINT_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ENABLE_VCCPAUX_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ENABLE_VCCDDRO_ALARM">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SINGLE_CHANNEL_SELECTION">TEMPERATURE</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ADC_OFFSET_AND_GAIN_CALIBRATION">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ENABLE_EXTERNAL_MUX">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="EXTERNAL_MUX_CHANNEL">VP_VN</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VP_VN">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VAUXP6_VAUXN6">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VAUXP7_VAUXN7">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VAUXP9_VAUXN9">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VAUXP14_VAUXN14">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VAUXP15_VAUXN15">true</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -523,6 +577,11 @@
         <spirit:activeInterface spirit:busRef="BRAM_PORTA" spirit:componentRef="axi_bram_ctrl_0_bram"/>
         <spirit:activeInterface spirit:busRef="BRAM_PORTB" spirit:componentRef="axi_bram_ctrl_0"/>
       </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>axi_smc_M01_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="M01_AXI" spirit:componentRef="axi_smc"/>
+        <spirit:activeInterface spirit:busRef="s_axi_lite" spirit:componentRef="xadc_wiz_0"/>
+      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -532,6 +591,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_bram_ctrl_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="slowest_sync_clk"/>
+        <spirit:internalPortReference spirit:componentRef="xadc_wiz_0" spirit:portRef="s_axi_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -543,6 +603,7 @@
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="peripheral_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_bram_ctrl_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="xadc_wiz_0" spirit:portRef="s_axi_aresetn"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -554,6 +615,18 @@
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="FIXED_IO/processing_system7_0_FIXED_IO">
         <spirit:activeInterface spirit:busRef="FIXED_IO" spirit:componentRef="processing_system7_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="Vaux14_0/Vaux14_0_1">
+        <spirit:activeInterface spirit:busRef="Vaux14" spirit:componentRef="xadc_wiz_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="Vaux15_0/Vaux15_0_1">
+        <spirit:activeInterface spirit:busRef="Vaux15" spirit:componentRef="xadc_wiz_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="Vaux7_0/Vaux7_0_1">
+        <spirit:activeInterface spirit:busRef="Vaux7" spirit:componentRef="xadc_wiz_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="Vaux6_0/Vaux6_0_1">
+        <spirit:activeInterface spirit:busRef="Vaux6" spirit:componentRef="xadc_wiz_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -591,6 +664,12 @@
             <spirit:displayName>/axi_bram_ctrl_0/S_AXI/Mem0</spirit:displayName>
             <spirit:addressOffset>0x40000000</spirit:addressOffset>
             <spirit:range>8K</spirit:range>
+          </spirit:segment>
+          <spirit:segment>
+            <spirit:name>SEG_xadc_wiz_0_Reg</spirit:name>
+            <spirit:displayName>/xadc_wiz_0/s_axi_lite/Reg</spirit:displayName>
+            <spirit:addressOffset>0x43C00000</spirit:addressOffset>
+            <spirit:range>64K</spirit:range>
           </spirit:segment>
         </spirit:segments>
       </spirit:addressSpace>

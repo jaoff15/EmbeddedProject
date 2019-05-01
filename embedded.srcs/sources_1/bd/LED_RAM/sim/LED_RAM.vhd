@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
---Date        : Tue Apr 30 13:17:29 2019
+--Date        : Wed May  1 14:51:02 2019
 --Host        : jacoboffersen running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target LED_RAM.bd
 --Design      : LED_RAM
@@ -40,10 +40,18 @@ entity LED_RAM is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    Vaux14_0_v_n : in STD_LOGIC;
+    Vaux14_0_v_p : in STD_LOGIC;
+    Vaux15_0_v_n : in STD_LOGIC;
+    Vaux15_0_v_p : in STD_LOGIC;
+    Vaux6_0_v_n : in STD_LOGIC;
+    Vaux6_0_v_p : in STD_LOGIC;
+    Vaux7_0_v_n : in STD_LOGIC;
+    Vaux7_0_v_p : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of LED_RAM : entity is "LED_RAM,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=LED_RAM,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_bram_cntlr_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of LED_RAM : entity is "LED_RAM,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=LED_RAM,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_bram_cntlr_cnt=2,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of LED_RAM : entity is "LED_RAM.hwdef";
 end LED_RAM;
@@ -258,7 +266,26 @@ architecture STRUCTURE of LED_RAM is
     M00_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M00_AXI_rlast : in STD_LOGIC;
     M00_AXI_rvalid : in STD_LOGIC;
-    M00_AXI_rready : out STD_LOGIC
+    M00_AXI_rready : out STD_LOGIC;
+    M01_AXI_awaddr : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    M01_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M01_AXI_awvalid : out STD_LOGIC;
+    M01_AXI_awready : in STD_LOGIC;
+    M01_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M01_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M01_AXI_wvalid : out STD_LOGIC;
+    M01_AXI_wready : in STD_LOGIC;
+    M01_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M01_AXI_bvalid : in STD_LOGIC;
+    M01_AXI_bready : out STD_LOGIC;
+    M01_AXI_araddr : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    M01_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M01_AXI_arvalid : out STD_LOGIC;
+    M01_AXI_arready : in STD_LOGIC;
+    M01_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M01_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M01_AXI_rvalid : in STD_LOGIC;
+    M01_AXI_rready : out STD_LOGIC
   );
   end component LED_RAM_axi_smc_0;
   component LED_RAM_rst_ps7_0_100M_0 is
@@ -287,6 +314,45 @@ architecture STRUCTURE of LED_RAM is
     rsta_busy : out STD_LOGIC
   );
   end component LED_RAM_axi_bram_ctrl_0_bram_0;
+  component LED_RAM_xadc_wiz_0_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    ip2intc_irpt : out STD_LOGIC;
+    vp_in : in STD_LOGIC;
+    vn_in : in STD_LOGIC;
+    vauxp6 : in STD_LOGIC;
+    vauxn6 : in STD_LOGIC;
+    vauxp7 : in STD_LOGIC;
+    vauxn7 : in STD_LOGIC;
+    vauxp14 : in STD_LOGIC;
+    vauxn14 : in STD_LOGIC;
+    vauxp15 : in STD_LOGIC;
+    vauxn15 : in STD_LOGIC;
+    channel_out : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    eoc_out : out STD_LOGIC;
+    alarm_out : out STD_LOGIC;
+    eos_out : out STD_LOGIC;
+    busy_out : out STD_LOGIC
+  );
+  end component LED_RAM_xadc_wiz_0_0;
   signal BRAM_PORTB_0_1_ADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal BRAM_PORTB_0_1_CLK : STD_LOGIC;
   signal BRAM_PORTB_0_1_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -294,6 +360,14 @@ architecture STRUCTURE of LED_RAM is
   signal BRAM_PORTB_0_1_EN : STD_LOGIC;
   signal BRAM_PORTB_0_1_RST : STD_LOGIC;
   signal BRAM_PORTB_0_1_WE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal Vaux14_0_1_V_N : STD_LOGIC;
+  signal Vaux14_0_1_V_P : STD_LOGIC;
+  signal Vaux15_0_1_V_N : STD_LOGIC;
+  signal Vaux15_0_1_V_P : STD_LOGIC;
+  signal Vaux6_0_1_V_N : STD_LOGIC;
+  signal Vaux6_0_1_V_P : STD_LOGIC;
+  signal Vaux7_0_1_V_N : STD_LOGIC;
+  signal Vaux7_0_1_V_P : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -339,6 +413,23 @@ architecture STRUCTURE of LED_RAM is
   signal axi_smc_M00_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M00_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M01_AXI_ARADDR : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal axi_smc_M01_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M01_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M01_AXI_AWADDR : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal axi_smc_M01_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M01_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M01_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M01_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M01_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M01_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M01_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M01_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M01_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M01_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M01_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M01_AXI_WVALID : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -404,10 +495,18 @@ architecture STRUCTURE of LED_RAM is
   signal NLW_axi_bram_ctrl_0_bram_rsta_busy_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_smc_M00_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_smc_M00_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axi_smc_M01_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M01_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_rst_ps7_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps7_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_xadc_wiz_0_alarm_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_xadc_wiz_0_busy_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_xadc_wiz_0_eoc_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_xadc_wiz_0_eos_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
+  signal NLW_xadc_wiz_0_channel_out_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
   attribute BMM_INFO_ADDRESS_SPACE : string;
   attribute BMM_INFO_ADDRESS_SPACE of axi_bram_ctrl_0 : label is "byte  0x40000000 32 > LED_RAM axi_bram_ctrl_0_bram";
   attribute KEEP_HIERARCHY : string;
@@ -435,6 +534,14 @@ architecture STRUCTURE of LED_RAM is
   attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of Vaux14_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux14_0 V_N";
+  attribute X_INTERFACE_INFO of Vaux14_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux14_0 V_P";
+  attribute X_INTERFACE_INFO of Vaux15_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux15_0 V_N";
+  attribute X_INTERFACE_INFO of Vaux15_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux15_0 V_P";
+  attribute X_INTERFACE_INFO of Vaux6_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux6_0 V_N";
+  attribute X_INTERFACE_INFO of Vaux6_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux6_0 V_P";
+  attribute X_INTERFACE_INFO of Vaux7_0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux7_0 V_N";
+  attribute X_INTERFACE_INFO of Vaux7_0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 Vaux7_0 V_P";
   attribute X_INTERFACE_INFO of BRAM_PORTB_0_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 ADDR";
   attribute X_INTERFACE_PARAMETER of BRAM_PORTB_0_addr : signal is "XIL_INTERFACENAME BRAM_PORTB_0, MASTER_TYPE BRAM_CTRL, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32";
   attribute X_INTERFACE_INFO of BRAM_PORTB_0_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 DIN";
@@ -456,6 +563,14 @@ begin
   BRAM_PORTB_0_1_RST <= BRAM_PORTB_0_rst;
   BRAM_PORTB_0_1_WE(3 downto 0) <= BRAM_PORTB_0_we(3 downto 0);
   BRAM_PORTB_0_dout(31 downto 0) <= BRAM_PORTB_0_1_DOUT(31 downto 0);
+  Vaux14_0_1_V_N <= Vaux14_0_v_n;
+  Vaux14_0_1_V_P <= Vaux14_0_v_p;
+  Vaux15_0_1_V_N <= Vaux15_0_v_n;
+  Vaux15_0_1_V_P <= Vaux15_0_v_p;
+  Vaux6_0_1_V_N <= Vaux6_0_v_n;
+  Vaux6_0_1_V_P <= Vaux6_0_v_p;
+  Vaux7_0_1_V_N <= Vaux7_0_v_n;
+  Vaux7_0_1_V_P <= Vaux7_0_v_p;
 axi_bram_ctrl_0: component LED_RAM_axi_bram_ctrl_0_0
      port map (
       bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
@@ -553,6 +668,25 @@ axi_smc: component LED_RAM_axi_smc_0
       M00_AXI_wready => axi_smc_M00_AXI_WREADY,
       M00_AXI_wstrb(3 downto 0) => axi_smc_M00_AXI_WSTRB(3 downto 0),
       M00_AXI_wvalid => axi_smc_M00_AXI_WVALID,
+      M01_AXI_araddr(10 downto 0) => axi_smc_M01_AXI_ARADDR(10 downto 0),
+      M01_AXI_arprot(2 downto 0) => NLW_axi_smc_M01_AXI_arprot_UNCONNECTED(2 downto 0),
+      M01_AXI_arready => axi_smc_M01_AXI_ARREADY,
+      M01_AXI_arvalid => axi_smc_M01_AXI_ARVALID,
+      M01_AXI_awaddr(10 downto 0) => axi_smc_M01_AXI_AWADDR(10 downto 0),
+      M01_AXI_awprot(2 downto 0) => NLW_axi_smc_M01_AXI_awprot_UNCONNECTED(2 downto 0),
+      M01_AXI_awready => axi_smc_M01_AXI_AWREADY,
+      M01_AXI_awvalid => axi_smc_M01_AXI_AWVALID,
+      M01_AXI_bready => axi_smc_M01_AXI_BREADY,
+      M01_AXI_bresp(1 downto 0) => axi_smc_M01_AXI_BRESP(1 downto 0),
+      M01_AXI_bvalid => axi_smc_M01_AXI_BVALID,
+      M01_AXI_rdata(31 downto 0) => axi_smc_M01_AXI_RDATA(31 downto 0),
+      M01_AXI_rready => axi_smc_M01_AXI_RREADY,
+      M01_AXI_rresp(1 downto 0) => axi_smc_M01_AXI_RRESP(1 downto 0),
+      M01_AXI_rvalid => axi_smc_M01_AXI_RVALID,
+      M01_AXI_wdata(31 downto 0) => axi_smc_M01_AXI_WDATA(31 downto 0),
+      M01_AXI_wready => axi_smc_M01_AXI_WREADY,
+      M01_AXI_wstrb(3 downto 0) => axi_smc_M01_AXI_WSTRB(3 downto 0),
+      M01_AXI_wvalid => axi_smc_M01_AXI_WVALID,
       S00_AXI_araddr(31 downto 0) => processing_system7_0_M_AXI_GP0_ARADDR(31 downto 0),
       S00_AXI_arburst(1 downto 0) => processing_system7_0_M_AXI_GP0_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => processing_system7_0_M_AXI_GP0_ARCACHE(3 downto 0),
@@ -689,5 +823,43 @@ rst_ps7_0_100M: component LED_RAM_rst_ps7_0_100M_0
       peripheral_aresetn(0) => rst_ps7_0_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
+    );
+xadc_wiz_0: component LED_RAM_xadc_wiz_0_0
+     port map (
+      alarm_out => NLW_xadc_wiz_0_alarm_out_UNCONNECTED,
+      busy_out => NLW_xadc_wiz_0_busy_out_UNCONNECTED,
+      channel_out(4 downto 0) => NLW_xadc_wiz_0_channel_out_UNCONNECTED(4 downto 0),
+      eoc_out => NLW_xadc_wiz_0_eoc_out_UNCONNECTED,
+      eos_out => NLW_xadc_wiz_0_eos_out_UNCONNECTED,
+      ip2intc_irpt => NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED,
+      s_axi_aclk => processing_system7_0_FCLK_CLK0,
+      s_axi_araddr(10 downto 0) => axi_smc_M01_AXI_ARADDR(10 downto 0),
+      s_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
+      s_axi_arready => axi_smc_M01_AXI_ARREADY,
+      s_axi_arvalid => axi_smc_M01_AXI_ARVALID,
+      s_axi_awaddr(10 downto 0) => axi_smc_M01_AXI_AWADDR(10 downto 0),
+      s_axi_awready => axi_smc_M01_AXI_AWREADY,
+      s_axi_awvalid => axi_smc_M01_AXI_AWVALID,
+      s_axi_bready => axi_smc_M01_AXI_BREADY,
+      s_axi_bresp(1 downto 0) => axi_smc_M01_AXI_BRESP(1 downto 0),
+      s_axi_bvalid => axi_smc_M01_AXI_BVALID,
+      s_axi_rdata(31 downto 0) => axi_smc_M01_AXI_RDATA(31 downto 0),
+      s_axi_rready => axi_smc_M01_AXI_RREADY,
+      s_axi_rresp(1 downto 0) => axi_smc_M01_AXI_RRESP(1 downto 0),
+      s_axi_rvalid => axi_smc_M01_AXI_RVALID,
+      s_axi_wdata(31 downto 0) => axi_smc_M01_AXI_WDATA(31 downto 0),
+      s_axi_wready => axi_smc_M01_AXI_WREADY,
+      s_axi_wstrb(3 downto 0) => axi_smc_M01_AXI_WSTRB(3 downto 0),
+      s_axi_wvalid => axi_smc_M01_AXI_WVALID,
+      vauxn14 => Vaux14_0_1_V_N,
+      vauxn15 => Vaux15_0_1_V_N,
+      vauxn6 => Vaux6_0_1_V_N,
+      vauxn7 => Vaux7_0_1_V_N,
+      vauxp14 => Vaux14_0_1_V_P,
+      vauxp15 => Vaux15_0_1_V_P,
+      vauxp6 => Vaux6_0_1_V_P,
+      vauxp7 => Vaux7_0_1_V_P,
+      vn_in => '0',
+      vp_in => '0'
     );
 end STRUCTURE;

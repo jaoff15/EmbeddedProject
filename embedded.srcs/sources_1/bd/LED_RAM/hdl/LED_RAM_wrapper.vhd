@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
---Date        : Tue Apr 30 13:17:29 2019
+--Date        : Wed May  1 14:51:03 2019
 --Host        : jacoboffersen running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target LED_RAM_wrapper.bd
 --Design      : LED_RAM_wrapper
@@ -40,7 +40,15 @@ entity LED_RAM_wrapper is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    Vaux14_0_v_n : in STD_LOGIC;
+    Vaux14_0_v_p : in STD_LOGIC;
+    Vaux15_0_v_n : in STD_LOGIC;
+    Vaux15_0_v_p : in STD_LOGIC;
+    Vaux6_0_v_n : in STD_LOGIC;
+    Vaux6_0_v_p : in STD_LOGIC;
+    Vaux7_0_v_n : in STD_LOGIC;
+    Vaux7_0_v_p : in STD_LOGIC
   );
 end LED_RAM_wrapper;
 
@@ -74,7 +82,15 @@ architecture STRUCTURE of LED_RAM_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    Vaux14_0_v_n : in STD_LOGIC;
+    Vaux14_0_v_p : in STD_LOGIC;
+    Vaux15_0_v_n : in STD_LOGIC;
+    Vaux15_0_v_p : in STD_LOGIC;
+    Vaux7_0_v_n : in STD_LOGIC;
+    Vaux7_0_v_p : in STD_LOGIC;
+    Vaux6_0_v_n : in STD_LOGIC;
+    Vaux6_0_v_p : in STD_LOGIC
   );
   end component LED_RAM;
 begin
@@ -107,6 +123,14 @@ LED_RAM_i: component LED_RAM
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      Vaux14_0_v_n => Vaux14_0_v_n,
+      Vaux14_0_v_p => Vaux14_0_v_p,
+      Vaux15_0_v_n => Vaux15_0_v_n,
+      Vaux15_0_v_p => Vaux15_0_v_p,
+      Vaux6_0_v_n => Vaux6_0_v_n,
+      Vaux6_0_v_p => Vaux6_0_v_p,
+      Vaux7_0_v_n => Vaux7_0_v_n,
+      Vaux7_0_v_p => Vaux7_0_v_p
     );
 end STRUCTURE;

@@ -11,7 +11,15 @@ entity mem_interface is
            done         : out std_logic                     := '0';
            red          : out std_logic_vector(63 downto 0) := (others => '0'); 
            green        : out std_logic_vector(63 downto 0) := (others => '0');
-           blue         : out std_logic_vector(63 downto 0) := (others => '0')
+           blue         : out std_logic_vector(63 downto 0) := (others => '0');
+           Vaux14_0_v_n : in STD_LOGIC;
+           Vaux14_0_v_p : in STD_LOGIC;
+           Vaux15_0_v_n : in STD_LOGIC;
+           Vaux15_0_v_p : in STD_LOGIC;
+           Vaux7_0_v_n : in STD_LOGIC;
+           Vaux7_0_v_p : in STD_LOGIC;
+           Vaux6_0_v_n : in STD_LOGIC;
+           Vaux6_0_v_p : in STD_LOGIC
     );
 end mem_interface;
 
@@ -22,7 +30,15 @@ architecture Behavioral of mem_interface is
             BRAM_PORTB_0_addr   : in  std_logic_vector ( 31 downto 0 )  := (others => '0');
             BRAM_PORTB_0_clk    : in  std_logic                         := '0';
             BRAM_PORTB_0_dout   : out std_logic_vector ( 31 downto 0 )  := (others => '0');
-            BRAM_PORTB_0_en     : in  std_logic                         := '0'
+            BRAM_PORTB_0_en     : in  std_logic                         := '0';
+            Vaux14_0_v_n : in STD_LOGIC;
+            Vaux14_0_v_p : in STD_LOGIC;
+            Vaux15_0_v_n : in STD_LOGIC;
+            Vaux15_0_v_p : in STD_LOGIC;
+            Vaux7_0_v_n : in STD_LOGIC;
+            Vaux7_0_v_p : in STD_LOGIC;
+            Vaux6_0_v_n : in STD_LOGIC;
+            Vaux6_0_v_p : in STD_LOGIC
       );
     end component;
     
@@ -137,7 +153,15 @@ port map(
         BRAM_PORTB_0_addr   => addr,
         BRAM_PORTB_0_clk    => clk,
         BRAM_PORTB_0_dout   => data_out,
-        BRAM_PORTB_0_en     => '1'
+        BRAM_PORTB_0_en     => '1',
+        Vaux14_0_v_n        => Vaux14_0_v_n,
+        Vaux14_0_v_p        => Vaux14_0_v_p,
+        Vaux15_0_v_n        => Vaux15_0_v_n,
+        Vaux15_0_v_p        => Vaux15_0_v_p,
+        Vaux7_0_v_n         => Vaux7_0_v_n,
+        Vaux7_0_v_p         => Vaux7_0_v_p,
+        Vaux6_0_v_n         => Vaux6_0_v_n,
+        Vaux6_0_v_p         => Vaux6_0_v_p
 );
 
 end Behavioral;
