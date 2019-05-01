@@ -9,16 +9,18 @@
 #define HEADERS_ENTITY_H_
 
 /* Includes */
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "types.h"
 #include "world.h"
 #include "score.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include "colors.h"
 
 
 /* Defines */
-#define MAX_ENEMIES 5
+#define MAX_ENEMIES 4
 #define INFTY 100
 
 /* Type definitions */
@@ -31,8 +33,8 @@ typedef enum e_EntityType{
 
 /* Used to define an entities position in the world */
 typedef struct s_Pos{
-	ui8 x;
-	ui8 y;
+	u8 x;
+	u8 y;
 } Pos;
 
 /* Used to specify the difficulty of an enemy */
@@ -61,13 +63,18 @@ typedef struct s_Entity{
 	Difficulty  diff;
 	Move		lastMove;
 	Pos 		lastPos;
+	Color		color;
 } Entity;
 
+typedef struct e_Entities{
+	Entity *entity[MAX_ENEMIES+1];
+	u8 entityCount;
+} Entities;
 
 /* Function declarations */
 
 /* Initialize an entity */
-void initEntity(Entity *e, EntityType type, Pos pos,Difficulty diff);
+void initEntity(Entity *e, EntityType type, Pos pos,Difficulty diff, Color color);
 
 /* Move the given entity in the given direction. */
 void moveEntity(Entity *e, World *world, World *food, Move m);
@@ -88,5 +95,9 @@ Move controlEntity(Entity *enemy, World *world, Entity *player);
 Move getMoveEasy(Entity *entity, World *world);
 
 Move getMoveHard(Entity *entity, World *world, Entity *target);
+
+
+void initEntities(Entities *entities);
+void registerEntity(Entities *entities, Entity *e);
 
 #endif /* HEADERS_ENTITY_H_ */

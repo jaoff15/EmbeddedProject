@@ -1,7 +1,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <time.h>
 
 #include "platform.h"
 #include "xil_printf.h"
@@ -17,6 +16,7 @@
 #include "headers/food.h"
 #include "headers/score.h"
 #include "headers/time.h"
+#include "headers/led_matrix.h"
 
 //void render(u8 x, u8 y, u8 r, u8 g, u8 b);
 //void clearMemory();
@@ -35,37 +35,6 @@ int main()
 }
 
 
-
-//
-//// Function to reset memory
-//void clearMemory(){
-//	for(u8 col = 0; col < 8; col++){
-//		for(u8 row = 0; row < 8; row++){
-//			render(col, row, 0, 0, 0);
-//		}
-//	}
-//}
-//
-//
-//// Function to render a pixel to the display
-//void render(u8 x, u8 y, u8 r, u8 g, u8 b){
-//	u32 Addr = XPAR_BRAM_0_BASEADDR + x*4 + y*32;
-//	u32 value = 0x00000000;
-//	value +=(r << 16);
-//	value +=(g << 8);
-//	value +=(b);
-//	Xil_Out32(Addr, value);
-//}
-
-
-
-
-
-
-
-
-
-
 void pacman(){
 	printf("Start: \n");
 	World blankWorld;
@@ -76,8 +45,6 @@ void pacman(){
 	/* Set randomizer seed */
 	srand(1);
 
-
-
 	while(1){
 
 		/* Setup game*/
@@ -87,55 +54,62 @@ void pacman(){
 		/* Make a copy of the world */
 		blankWorld = world;
 
-		/* Place initial food */
-		initFood(&world, &food);
-
-		/* Copy food to world */
-		loadFood(&world, &food);
+//		/* Place initial food */
+//		initFood(&world, &food);
+//
+//		/* Copy food to world */
+//		loadFood(&world, &food);
 
 
 		/* Get number of enemies */
-		u8 noEnemies = 1;
+		u8 noEnemies = MAX_ENEMIES;
 
 		/* Set enemy difficulty */
-		Difficulty diff = HARD;
+		Difficulty difficulty = HARD;
+
+		/* List of entities */
+		Entities entities;
+		initEntities(&entities);
 
 		/* Create player */
 		Entity player;
-		Pos pos = {.x=4, .y=7};
-		initEntity(&player,PLAYER,pos,NO);
+		Pos pos = {.x=3, .y=2};
+		initEntity(&player,PLAYER,pos,NO, YELLOW);
+		registerEntity(&entities, &player);
 
 		/* Copy entity to world */
-		loadEntity(&player, &world);
+//		loadEntity(&player, &world);
 
 		/* Create list Enemy */
 		Entity enemy[MAX_ENEMIES];
 		Pos ps[MAX_ENEMIES] = { {.x=0,.y=0},
-								{.x=0,.y=1},
-								{.x=0,.y=2},
-								{.x=0,.y=3},
-								{.x=0,.y=4}};
+								{.x=7,.y=0},
+								{.x=0,.y=7},
+								{.x=7,.y=7}};
+
+		Color cols[MAX_ENEMIES] = {RED, PINK, BLUE, ORANGE};
 
 		/* Initialize enemies and load them into the world */
 		for(u8 i = 0; i < noEnemies; i++){
-			initEntity(&enemy[i], ENEMY, ps[i],diff);
-			loadEntity(&enemy[i], &world);
-
+			initEntity(&enemy[i], ENEMY, ps[i],difficulty, cols[i]);
+			registerEntity(&entities, &enemy[i]);
+//			loadEntity(&enemy[i], &world);
 		}
 
 		/* Print world */
 //		printWorld(&world);
-		renderWorld(&world);
+//		renderWorld(&world,&entities);
 
+		/* Enter first move */
 		Move nextMove = STANDSTILL;
 
+		/* Initialize the game state */
 		bool gameover = FALSE;
-
 
 		while(!gameover){
 			char move = STANDSTILL;
-			/* Check for next move */
 
+			/* Check for next move */
 			switch(move){
 			case 'd':
 				nextMove = RIGHT;
@@ -153,13 +127,20 @@ void pacman(){
 				nextMove = STANDSTILL;
 			}
 
+			/* Load world */
 			world = blankWorld;											// Load a blank world
-			if(foodEmpty(&food)){
-				initFood(&world, &food);
+
+			/* Load food */
+			if(foodEmpty(&food)){										// If world is empty
+				initFood(&world, &food);								// Create more food
 			}
 			loadFood(&world, &food);									// Load food into the world
+
+			/* Load player */
 			moveEntity(&player, &world, &food, nextMove);				// Move the player
 			loadEntity(&player, &world);								// Load the player into the world
+
+			/* Load enemies */
 			for(u8 i = 0; i < noEnemies; i++){							// For each active enemy
 				Move move = controlEntity(&enemy[i], &world, &player);	// 	 Get next move for enemy
 				moveEntity(&enemy[i], &world, &food, move);				// 	 Move enemy
@@ -173,8 +154,9 @@ void pacman(){
 					break;
 				}
 			}
+			/* Render world */
 //			printWorld(&world);											// Print world
-			renderWorld(&world);
+			renderWorld(&world,&entities);
 			usleep(SLEEP_500ms);
 		}
 		printScore();														// Print the score board

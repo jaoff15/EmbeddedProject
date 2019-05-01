@@ -9,10 +9,10 @@
 
 void initFood(World *world, World *food){
 	clearFood(food);
-	ui8 foodLeft = FOOD_AMOUNT;
+	u8 foodLeft = FOOD_AMOUNT;
 	while(foodLeft > 0){
-		ui8 x = rand() % 8;
-		ui8 y = rand() % 8;
+		u8 x = rand() % 8;
+		u8 y = rand() % 8;
 		if(world->cells[x][y] == PATH && food->cells[x][y] != FOOD){
 			food->cells[x][y] = FOOD;
 			foodLeft--;

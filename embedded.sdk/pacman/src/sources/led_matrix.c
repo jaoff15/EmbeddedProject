@@ -45,28 +45,29 @@ void getPixel(Pos pos, Color *col){
 }
 
 
-void renderWorld(World *world){
+void renderWorld(World *world, Entities *entities){
 	for(u8 y = 0; y < HEIGHT; y++){
-			for(int x = 0; x < WIDTH; x++){
-//	for(int y = 0; y < HEIGHT; y++){
-//		for(int x = 0; x < WIDTH; x++){
+			for(u8 x = 0; x < WIDTH; x++){
 			BlockType block = world->cells[x][y];
 			Pos pos = {.x=WIDTH-1-x, .y=y};
 			switch(block){
 				case WALL:
-					setPixel(pos, BLUE);
+					setPixel(pos, GREEN);
 					break;
 				case PATH:
 					setPixel(pos, BLANK);
 					break;
 				case FOOD:
-					setPixel(pos, WHITE);
+					setPixel(pos, PURPLE);
 					break;
-				case ENTITY_PLAYER:
-					setPixel(pos, YELLOW);
-					break;
-				case ENTITY_ENEMY:
-					setPixel(pos, RED);
+				case ENTITY:
+					setPixel(pos, BLANK);
+					for(u8 i = 0; i < entities->entityCount; i++){
+						if(entities->entity[i]->pos.x == x && entities->entity[i]->pos.y == y){
+							setPixel(pos, entities->entity[i]->color);
+							break;
+						}
+					}
 					break;
 				default:
 					setPixel(pos, BLANK);
@@ -91,9 +92,7 @@ void writePixelToDevice(Pos pos){
 // Writes all pixel values to the device
 void writeAllPixelToDevice(){
 	for(u8 y = 0; y < HEIGHT; y++){
-		for(int x = 0; x < WIDTH; x++){
-//	for(u8 y = 0; y < HEIGHT; y++){
-//		for(u8 x = 0; x < WIDTH; x++){
+		for(u8 x = 0; x < WIDTH; x++){
 			Pos pos = {.x=WIDTH-1-x, .y=y};
 			writePixelToDevice(pos);
 		}

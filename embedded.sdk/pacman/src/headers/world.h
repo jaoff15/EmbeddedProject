@@ -37,8 +37,9 @@ typedef enum e_BlockType{
 	WALL,
 	PATH,
 	FOOD,
-	ENTITY_PLAYER,
-	ENTITY_ENEMY
+	ENTITY
+//	ENTITY_PLAYER,
+//	ENTITY_ENEMY
 } BlockType;
 
 /* Used to specify the map that should be used */
@@ -58,7 +59,7 @@ typedef struct s_World{
 /* Function declarations */
 void updateMap();
 void printWorld(World *world);
-void loadMap(World *world, ui8 mapIndex);
+void loadMap(World *world, u8 mapIndex);
 
 static const BlockType map1[WIDTH][HEIGHT] = {
 		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH},
@@ -82,7 +83,7 @@ static const BlockType map2[WIDTH][HEIGHT] = {
 
 
 
-static ui8 gameOver[WIDTH][HEIGHT] = {
+static u8 gameOver[WIDTH][HEIGHT] = {
 		{1,0,0,0,0,0,0,1},
 		{0,1,0,0,0,0,1,0},
 		{0,0,1,0,0,1,0,0},

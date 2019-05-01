@@ -10,14 +10,14 @@
 
 /* Type definitions */
 typedef unsigned char		bool;
-typedef unsigned char		ui8;
-typedef signed char			si8;
-typedef short unsigned int  ui16;
-typedef short signed int 	si16;
-typedef unsigned int 		ui32;
-typedef signed int 			si32;
-typedef long unsigned int 	ui64;
-typedef long signed int 	si64;
+typedef unsigned char		u8;
+typedef signed char			s8;
+typedef short unsigned int  u16;
+typedef short signed int 	s16;
+//typedef unsigned int 		ui32;
+//typedef signed int 			si32;
+//typedef long unsigned int 	ui64;
+//typedef long signed int 	si64;
 typedef float 				f32;
 typedef double				f64;
 

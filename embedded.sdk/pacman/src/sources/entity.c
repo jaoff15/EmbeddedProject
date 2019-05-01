@@ -9,11 +9,12 @@
 #include "../headers/entity.h"
 
 /* Initialize entity */
-void initEntity(Entity *e, EntityType type, Pos pos, Difficulty diff){
+void initEntity(Entity *e, EntityType type, Pos pos, Difficulty diff, Color color){
 	e->type 	= type;
 	e->pos 		= pos;
 	e->diff 	= diff;
 	e->lastMove = STANDSTILL;
+	e->color    = color;
 }
 
 /* Control entity.
@@ -50,8 +51,8 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 /* Find the next move for a given entity
  * The returned move is a move in a random direction that is not backwards. */
 Move getMoveEasy(Entity *entity, World *world){
-	ui8 x = entity->pos.x;
-	ui8 y = entity->pos.y;
+	u8 x = entity->pos.x;
+	u8 y = entity->pos.y;
 	Move dir[4];
 	/* Can the entity move up */
 	dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
@@ -80,8 +81,8 @@ Move getMoveEasy(Entity *entity, World *world){
 
 	/* Fill the possible moves into an array and count up how many valid moves there is */
 	Move moves[4];
-	ui8 index = 0;
-	for(ui8 i = 0; i < 4; i++){
+	u8 index = 0;
+	for(u8 i = 0; i < 4; i++){
 		if(dir[i]){
 			moves[index] = dir[i];
 			index++;
@@ -89,7 +90,7 @@ Move getMoveEasy(Entity *entity, World *world){
 	}
 
 	/* Select random move and return it */
-	ui8 i = floor( rand() % index );
+	u8 i = floor( rand() % index );
 	return moves[ i ];
 }
 
@@ -99,8 +100,8 @@ Move getMoveEasy(Entity *entity, World *world){
  * To enhance the performance the power and square root is not performed
  * */
 Move getMoveHard(Entity *entity, World *world, Entity *target){
-	const ui8 x = entity->pos.x;
-	const ui8 y = entity->pos.y;
+	const u8 x = entity->pos.x;
+	const u8 y = entity->pos.y;
 	Move dir[4];
 	/* Can the entity move up */
 	dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
@@ -126,36 +127,32 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 	}
 
 	/* Find 'distances' and thereby the best move */
-	f32 ex = entity->pos.x;
-	f32 ey = entity->pos.y;
 	f32 tx = target->pos.x;
 	f32 ty = target->pos.y;
 	f32 distance[4] = {INFTY,INFTY,INFTY,INFTY};
-	ui8 currentBest = 0;
-	for(ui8 i = 0; i < 4; i++){
+//	printf("E\n");
+	u8 currentBest = 0;
+	for(u8 i = 0; i < 4; i++){
 		if(dir[i] != STANDSTILL){
 			switch(dir[i]){
 			case UP:
-//				distance[i] = ((tx - ex)*(tx - ex) + (ty - ey-1.0)*(ty - ey-1.0));
-				distance[i] = (abs(tx - ex) + abs(ty - ey-1.0));
+				distance[i] = (abs((tx - x)*(tx - x))     + abs((ty - y-1.0)*(ty - y-1.0)));
 				break;
 			case DOWN:
-//				distance[i] = ((tx - ex)*(tx - ex) + (ty - ey+1.0)*(ty - ey+1.0));
-				distance[i] = (abs(tx - ex) + abs(ty - ey+1.0));
+				distance[i] = (abs((tx - x)*(tx - x))     + abs((ty - y+1.0)*(ty - y+1.0)));
 				break;
 			case LEFT:
-//				distance[i] = ((tx - ex+1.0)*(tx - ex+1.0) + (ty - ey)*(ty - ey));
-				distance[i] = (abs(tx - ex+1.0) + abs(ty - ey));
+				distance[i] = (abs((tx - x+1.0)*(tx - x+1.0)) + abs((ty - y)*(ty - y)));
 				break;
 			case RIGHT:
-//				distance[i] = ((tx - ex-1.0)*(tx - ex-1.0) + (ty - ey)*(ty - ey));
-				distance[i] = (abs(tx - ex-1.0) + abs(ty - ey));
+				distance[i] = (abs((tx - x-1.0)*(tx - x-1.0)) + abs((ty - y)*(ty - y)));
 				break;
 			default:
 				distance[i] = INFTY;
 				break;
 			}
 			if(distance[currentBest] >= distance[i]){
+//				printf("dist: %d\n",(int)distance[i]);
 				currentBest = i;
 			}
 		}else{
@@ -168,10 +165,10 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 
 /* Move the specified entity in the specified direction (if possible)*/
 void moveEntity(Entity *e, World *world, World *food, Move m){
-	ui8 x = e->pos.x;
-	ui8 y = e->pos.y;
-	ui8 newX = x;
-	ui8 newY = y;
+	u8 x = e->pos.x;
+	u8 y = e->pos.y;
+	u8 newX = x;
+	u8 newY = y;
 	switch(m){
 		case UP:
 			/* Check that the entity is not on the top row of pixels */
@@ -238,7 +235,7 @@ void moveEntity(Entity *e, World *world, World *food, Move m){
 /* Load the parsed entity into the world */
 void loadEntity(Entity *e,World *world){
 	/* If player type is player then write 'player' into the world. Otherwise write 'enemy'*/
-	world->cells[e->pos.x][e->pos.y] = ( e->type == PLAYER ? ENTITY_PLAYER : ENTITY_ENEMY);
+	world->cells[e->pos.x][e->pos.y] = ENTITY; //( e->type == PLAYER ? ENTITY_PLAYER : ENTITY_ENEMY);
 }
 
 
@@ -259,4 +256,13 @@ bool entityKilled(Entity *e, Entity *enemy){
 	/* If the entity was not killed.
 	 * return 'not killed' */
 	return killed;
+}
+
+void initEntities(Entities *entities){
+	entities->entityCount = 0;
+}
+
+void registerEntity(Entities *entities, Entity *e){
+	entities->entity[entities->entityCount] = e;
+	entities->entityCount++;
 }

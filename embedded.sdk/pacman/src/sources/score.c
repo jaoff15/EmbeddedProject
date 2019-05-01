@@ -19,7 +19,7 @@ void resetScore(){
 }
 
 /* Set the highscore */
-void setHighscore(ui16 score_){
+void setHighscore(u16 score_){
 	highscore = score_;
 }
 
@@ -29,12 +29,12 @@ void resetHighscore(){
 }
 
 /* Get the current player score */
-ui16 getScore(){
+u16 getScore(){
 	return score;
 }
 
 /* Get the current highscore */
-ui16 getHighscore(){
+u16 getHighscore(){
 	return highscore;
 }
 

@@ -16,10 +16,8 @@ static const char symbols[] = {'W','W','_','o','C','A'};
 
 /* Print out the map to the terminal */
 void printWorld(World *world){
-	for(int y = HEIGHT-1; y >= 0; y--){
-		for(int x = 0; x < WIDTH; x++){
-//	for(int y = WIDTH-1; y >= 0; y--){
-//		for(int x = 0; x < HEIGHT; x++){
+	for(u8 y = HEIGHT-1; y >= 0; y--){
+		for(u8 x = 0; x < WIDTH; x++){
 			printf(" %c",symbols[world->cells[x][y]]);
 		}
 		printf("\n");
@@ -28,9 +26,9 @@ void printWorld(World *world){
 }
 
 /* Load a predefined map to the frame buffer */
-void loadMap(World *world, ui8 mapIndex){
-	for(int x = 0; x < WIDTH; x++){
-		for(int y = 0; y < HEIGHT; y++){
+void loadMap(World *world, u8 mapIndex){
+	for(u8 x = 0; x < WIDTH; x++){
+		for(u8 y = 0; y < HEIGHT; y++){
 			switch(mapIndex){
 				case 0:
 					world->cells[x][y] = map1[x][y];
@@ -47,8 +45,8 @@ void loadMap(World *world, ui8 mapIndex){
 
 /* Print the game over screen to the terminal */
 void printGameoverScreen(){
-	for(int y = HEIGHT-1; y >= 0; y--){
-		for(int x = 0; x < WIDTH; x++){
+	for(s8 y = HEIGHT-1; y >= 0; y--){
+		for(u8 x = 0; x < WIDTH; x++){
 			if(gameOver[x][y] == 1){
 				printf(" X");
 			}else{

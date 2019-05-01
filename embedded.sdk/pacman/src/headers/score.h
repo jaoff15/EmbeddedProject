@@ -13,8 +13,8 @@
 #include "entity.h"
 
 /* Global Variables */
-static ui16 score = 0;
-static ui16 highscore = 0;
+static u16 score = 0;
+static u16 highscore = 0;
 
 
 /* Function declarations */
@@ -26,16 +26,16 @@ void incrementScore();
 void resetScore();
 
 /* Set the highscore */
-void setHighscore(ui16 score_);
+void setHighscore(u16 score_);
 
 /* Reset the highscore */
 void resetHighscore();
 
 /* Get the current player score */
-ui16 getScore();
+u16 getScore();
 
 /* Get the current highscore */
-ui16 getHighscore();
+u16 getHighscore();
 
 /* Print the score in a pretty way */
 void printScore();
