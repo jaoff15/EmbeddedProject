@@ -10,12 +10,9 @@
 
 /* Includes */
 #include <stdlib.h>
+#include "defines.h"
 #include "types.h"
 #include "world.h"
-
-
-/* Defines */
-#define FOOD_AMOUNT 10
 
 
 /* Function declarations */

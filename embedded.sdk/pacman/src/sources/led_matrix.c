@@ -45,39 +45,7 @@ void getPixel(Pos pos, Color *col){
 }
 
 
-void renderWorld(World *world, Entities *entities){
-	for(u8 y = 0; y < HEIGHT; y++){
-			for(u8 x = 0; x < WIDTH; x++){
-			BlockType block = world->cells[x][y];
-			Pos pos = {.x=WIDTH-1-x, .y=y};
-			switch(block){
-				case WALL:
-					setPixel(pos, GREEN);
-					break;
-				case PATH:
-					setPixel(pos, BLANK);
-					break;
-				case FOOD:
-					setPixel(pos, PURPLE);
-					break;
-				case ENTITY:
-					setPixel(pos, BLANK);
-					for(u8 i = 0; i < entities->entityCount; i++){
-						if(entities->entity[i]->pos.x == x && entities->entity[i]->pos.y == y){
-							setPixel(pos, entities->entity[i]->color);
-							break;
-						}
-					}
-					break;
-				default:
-					setPixel(pos, BLANK);
-					break;
-			}
 
-		}
-	}
-	writeAllPixelToDevice();
-}
 
 // Writes the specified pixel to the device
 void writePixelToDevice(Pos pos){

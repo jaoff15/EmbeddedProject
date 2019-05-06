@@ -24,7 +24,7 @@ void initIoDevices(){
 
 	XAdcPs_SetSequencerMode(XAdcInstPtr, XADCPS_SEQ_MODE_CONTINPASS);
 
-
+	void calibrateControl();
 }
 
 u32 getButton(){

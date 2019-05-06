@@ -2,4 +2,5 @@ embedded.cache/*
 embedded.sim*
 */webtalk/*
 */.metadata/*
-embedded.sdk/.metadata/*
+*.metadata/*
+*.plugins*

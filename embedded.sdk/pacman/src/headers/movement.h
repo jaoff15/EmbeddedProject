@@ -14,8 +14,7 @@
 #include "io_devices.h"
 
 /* Defines */
-#define OFFSET				33000
-#define MIN_VALUE			10000
+#define MIN_VALUE			5000
 #define STANDSTILL_TOP 		40000
 #define STANDSTILL_BOTTOM 	28000
 
@@ -40,5 +39,11 @@
  * X = 33300
  * Y = 63000
  * */
+
+
+Move getMovement();
+
+
+u32 getSleepTime();
 
 #endif /* SRC_HEADERS_MOVEMENT_H_ */

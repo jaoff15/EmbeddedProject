@@ -13,7 +13,6 @@
 #include "xbram.h"
 #include "xil_io.h"
 #include "types.h"
-#include "entity.h"
 #include "colors.h"
 
 
@@ -49,5 +48,5 @@ void writeAllPixelToDevice();
 // Write pixel value to the LED matrix
 void ledMatrixOut(u32 addr, u32 data);
 
-void renderWorld(World *world, Entities *entities);
+
 #endif /* SRC_LED_MATRIX_H_ */

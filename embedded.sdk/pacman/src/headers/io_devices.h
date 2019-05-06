@@ -28,7 +28,11 @@
 #define YAXIS 	 CH_14
 #define POTMETER CH_15
 
+/* Calibration offsets */
+static u16 offsetX;
+static u16 offsetY;
 
 void initIoDevices();
+
 
 #endif /* SRC_HEADERS_IO_DEVICES_H_ */

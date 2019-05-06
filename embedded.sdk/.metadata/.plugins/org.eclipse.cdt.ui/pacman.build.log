@@ -1,31 +1,20 @@
-15:43:24 **** Auto Build of configuration Debug for project pacman ****
+17:52:12 **** Auto Build of configuration Debug for project pacman ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-Building file: ../src/sources/movement.c
+Building file: ../src/sources/world.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
-../src/sources/movement.c: In function 'getMovement':
-../src/sources/movement.c:15:10: warning: implicit declaration of function 'getJoystickX' [-Wimplicit-function-declaration]
-  s32 x = getJoystickX() - OFFSET;
-          ^~~~~~~~~~~~
-../src/sources/movement.c:16:10: warning: implicit declaration of function 'getJoystickY' [-Wimplicit-function-declaration]
-  s32 y = getJoystickY() - OFFSET;
-          ^~~~~~~~~~~~
-../src/sources/movement.c:20:6: error: expected expression before ')' token
-   if()
-      ^
-../src/sources/movement.c:29:15: warning: format '%d' expects argument of type 'int', but argument 2 has type 's32 {aka long int}' [-Wformat=]
-   printf("x: %d, y: %d\n",x,y);
-              ~^
-              %ld
-../src/sources/movement.c:29:22: warning: format '%d' expects argument of type 'int', but argument 3 has type 's32 {aka long int}' [-Wformat=]
-   printf("x: %d, y: %d\n",x,y);
-                     ~^
-                     %ld
-In file included from ../src/sources/../headers/entity.h:18:0,
-                 from ../src/sources/../headers/movement.h:13,
-                 from ../src/sources/movement.c:9:
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
+../src/sources/world.c: In function 'renderWorld':
+../src/sources/world.c:69:6: warning: implicit declaration of function 'setPixel' [-Wimplicit-function-declaration]
+      setPixel(pos, GREEN);     // Make it green
+      ^~~~~~~~
+../src/sources/world.c:94:2: warning: implicit declaration of function 'writeAllPixelToDevice' [-Wimplicit-function-declaration]
+  writeAllPixelToDevice();
+  ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/sources/../headers/entity.h:19:0,
+                 from ../src/sources/../headers/world.h:16,
+                 from ../src/sources/world.c:10:
 At top level:
 ../src/sources/../headers/score.h:17:12: warning: 'highscore' defined but not used [-Wunused-variable]
  static u16 highscore = 0;
@@ -33,14 +22,19 @@ At top level:
 ../src/sources/../headers/score.h:16:12: warning: 'score' defined but not used [-Wunused-variable]
  static u16 score = 0;
             ^~~~~
-In file included from ../src/sources/../headers/entity.h:17:0,
-                 from ../src/sources/../headers/movement.h:13,
-                 from ../src/sources/movement.c:9:
-../src/sources/../headers/world.h:86:11: warning: 'gameOver' defined but not used [-Wunused-variable]
- static u8 gameOver[WIDTH][HEIGHT] = {
-src/sources/subdir.mk:36: recipe for target 'src/sources/movement.o' failed
-           ^~~~~~~~
-make: *** [src/sources/movement.o] Error 1
+Finished building: ../src/sources/world.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90876	   3100	  23984	 117960	  1ccc8	pacman.elf
+Finished building: pacman.elf.size
+ 
 
-15:43:25 Build Finished (took 315ms)
+17:52:13 Build Finished (took 363ms)
 
