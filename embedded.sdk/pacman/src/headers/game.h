@@ -11,7 +11,8 @@
 /* Includes */
 #include "types.h"
 #include "entity.h"
-
+#include <sleep.h>
+#include "time.h"
 
 
 /* Function declarations */

@@ -15,9 +15,9 @@
 
 #include "defines.h"
 #include "types.h"
-#include "world.h"
 #include "score.h"
-#include "colors.h"
+#include "entity_types.h"
+#include "world_types.h"
 
 
 /* Function declarations */

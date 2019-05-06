@@ -1,28 +1,141 @@
-17:52:12 **** Auto Build of configuration Debug for project pacman ****
+19:29:21 **** Auto Build of configuration Debug for project pacman ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-Building file: ../src/sources/world.c
+Building file: ../src/sources/io_devices.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
-../src/sources/world.c: In function 'renderWorld':
-../src/sources/world.c:69:6: warning: implicit declaration of function 'setPixel' [-Wimplicit-function-declaration]
-      setPixel(pos, GREEN);     // Make it green
-      ^~~~~~~~
-../src/sources/world.c:94:2: warning: implicit declaration of function 'writeAllPixelToDevice' [-Wimplicit-function-declaration]
-  writeAllPixelToDevice();
-  ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../src/sources/../headers/entity.h:19:0,
-                 from ../src/sources/../headers/world.h:16,
-                 from ../src/sources/world.c:10:
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/io_devices.c
+ 
+Building file: ../src/sources/movement.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:22:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  if(y < -MIN_VALUE && y < abs(x)){
+                           ^~~
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/movement.c:9:
 At top level:
-../src/sources/../headers/score.h:17:12: warning: 'highscore' defined but not used [-Wunused-variable]
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/sources/movement.c
+ 
+Building file: ../src/sources/pacman.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/../headers/pacman.h:18,
+                 from ../src/sources/pacman.c:8:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+In file included from ../src/sources/../headers/pacman.h:13:0,
+                 from ../src/sources/pacman.c:8:
+../src/sources/../headers/world.h:51:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/../headers/pacman.h:13,
+                 from ../src/sources/pacman.c:8:
+../src/sources/../headers/led_matrix.h:23:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/pacman.h:12,
+                 from ../src/sources/pacman.c:8:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
  static u16 highscore = 0;
             ^~~~~~~~~
-../src/sources/../headers/score.h:16:12: warning: 'score' defined but not used [-Wunused-variable]
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
  static u16 score = 0;
             ^~~~~
-Finished building: ../src/sources/world.c
+Finished building: ../src/sources/pacman.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:12:
+../src/headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:10:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:12:
+../src/headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:10:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+In file included from ../src/headers/pacman.h:13:0,
+                 from ../src/main.c:13:
+../src/headers/world.h:51:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/headers/world.h:16:0,
+                 from ../src/headers/pacman.h:13,
+                 from ../src/main.c:13:
+../src/headers/led_matrix.h:23:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/headers/entity.h:18:0,
+                 from ../src/headers/pacman.h:12,
+                 from ../src/main.c:13:
+../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+In file included from ../src/main.c:12:0:
+../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/main.c
  
 Building target: pacman.elf
 Invoking: ARM v7 gcc linker
@@ -32,9 +145,9 @@ Finished building target: pacman.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  90876	   3100	  23984	 117960	  1ccc8	pacman.elf
+  89980	   2844	  24352	 117176	  1c9b8	pacman.elf
 Finished building: pacman.elf.size
  
 
-17:52:13 Build Finished (took 363ms)
+19:29:21 Build Finished (took 514ms)
 

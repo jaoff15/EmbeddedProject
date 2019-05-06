@@ -8,16 +8,14 @@
 
 #include "../headers/movement.h"
 
-void calibrateControl(){
-	offsetX = getJoystickX();
-	offsetY = getJoystickY();
-}
 
+
+/* Get next player move. Read the joystick position and output a new move */
 Move getMovement(){
 	Move move = STANDSTILL;
 	// Get and normalize x and y positions
-	s32 x = getJoystickX() - offsetX;
-	s32 y = getJoystickY() - offsetY;
+	s32 x = getJoystickX();
+	s32 y = getJoystickY();
 
 
 	// Up
@@ -40,6 +38,7 @@ Move getMovement(){
 	return move;
 }
 
+/* Get the sleep time. Read the potmeter and output an amount of millisec to sleep */
 u32 getSleepTime(){
 	return (u32)(getPotmeter()/655)*10000+100000;			// 100ms -> 1100ms
 }

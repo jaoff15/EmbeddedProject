@@ -24,6 +24,14 @@
 #define FULL_OFF	0
 
 
+/* Type definitions */
+/* Can hold an RGB color */
+typedef struct s_Color{
+	u8 r;
+	u8 g;
+	u8 b;
+} Color;
+
 
 // Color definitions
 static const Color BLANK 	= {.r = FULL_OFF,   .g = FULL_OFF,  .b = FULL_OFF}; // PATH

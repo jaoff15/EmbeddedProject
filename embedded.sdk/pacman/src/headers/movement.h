@@ -10,40 +10,17 @@
 
 /* Includes */
 #include "types.h"
-#include "entity.h"
+#include "entity_types.h"
 #include "io_devices.h"
+#include <math.h>
 
 /* Defines */
 #define MIN_VALUE			5000
-#define STANDSTILL_TOP 		40000
-#define STANDSTILL_BOTTOM 	28000
 
-
-/* No movement:
- * X = 33600
- * Y = 33300
- *
- * Right:
- * X = 4400
- * Y = 33300
- *
- * Left:
- * X = 60000
- * Y = 33300
- *
- * Up:
- * X = 33300
- * Y = 2500
- *
- * Down:
- * X = 33300
- * Y = 63000
- * */
-
-
+/* Get next player move. Read the joystick position and output a new move */
 Move getMovement();
 
-
+/* Get the sleep time. Read the potmeter and output an amount of millisec to sleep */
 u32 getSleepTime();
 
 #endif /* SRC_HEADERS_MOVEMENT_H_ */

@@ -9,8 +9,10 @@
 #define HEADERS_SCORE_H_
 
 /* Includes */
+#include <stdio.h>
 #include "types.h"
-#include "entity.h"
+
+
 
 /* Global Variables */
 static u16 score = 0;

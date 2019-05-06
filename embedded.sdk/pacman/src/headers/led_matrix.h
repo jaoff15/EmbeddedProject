@@ -12,8 +12,10 @@
 #include "xparameters.h"
 #include "xbram.h"
 #include "xil_io.h"
+#include "defines.h"
 #include "types.h"
 #include "colors.h"
+#include "entity_types.h"
 
 
 

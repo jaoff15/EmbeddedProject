@@ -12,7 +12,7 @@
 #include "xparameters.h"
 #include "xadcps.h"
 #include "xstatus.h"
-
+#include "movement.h"
 
 /* Defines */
 
@@ -32,7 +32,23 @@
 static u16 offsetX;
 static u16 offsetY;
 
+/* Setup Xadc and call calibration task to calibrate joystick */
 void initIoDevices();
+
+/* Get state of button */
+u32 getButton();
+
+/* Get joystick X position */
+u32 getJoystickX();
+
+/* Get joystick Y position */
+u32 getJoystickY();
+
+/* Get potmeter position */
+u32 getPotmeter();
+
+/* Get offsets used to calibrate the joysticks to around (0,0) */
+void calibrateControl();
 
 
 #endif /* SRC_HEADERS_IO_DEVICES_H_ */

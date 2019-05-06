@@ -13,7 +13,16 @@
 #include <stdio.h>
 #include "types.h"
 #include "time.h"
-#include "entity.h"
+#include "led_matrix.h"
+#include "entity_types.h"
+#include "world_types.h"
+
+
+/* Used to specify the map that should be used */
+enum e_Map{
+	MAP1,
+	MAP2
+};
 
 
 /* Global variables */

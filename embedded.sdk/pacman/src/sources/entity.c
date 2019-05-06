@@ -94,6 +94,11 @@ Move getMoveEasy(Entity *entity, World *world){
 	return moves[ i ];
 }
 
+Move getMoveMedium(Entity *entity, World *world, Entity *target){
+
+}
+
+
 /* Return the move that gets the entity closest to the target
  * The decision to whether or not the spot is closer is based in the Euclidean distance
  * between the target and the spot being searched.

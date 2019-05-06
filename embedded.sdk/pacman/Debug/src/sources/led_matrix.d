@@ -15,8 +15,9 @@ src/sources/led_matrix.o src/sources/led_matrix.o: \
  ../../pacman_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
  ../../pacman_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h \
  ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h \
- ../src/sources/../headers/types.h ../src/sources/../headers/defines.h \
- ../src/sources/../headers/colors.h
+ ../src/sources/../headers/defines.h ../src/sources/../headers/types.h \
+ ../src/sources/../headers/colors.h \
+ ../src/sources/../headers/entity_types.h
 
 ../src/sources/../headers/led_matrix.h:
 
@@ -50,8 +51,10 @@ src/sources/led_matrix.o src/sources/led_matrix.o: \
 
 ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:
 
-../src/sources/../headers/types.h:
-
 ../src/sources/../headers/defines.h:
 
+../src/sources/../headers/types.h:
+
 ../src/sources/../headers/colors.h:
+
+../src/sources/../headers/entity_types.h:

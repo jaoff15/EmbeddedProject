@@ -9,7 +9,6 @@
 #include "../headers/led_matrix.h"
 
 
-
 // Initialize the LED matrix
 void initLedMatrix(){
 	resetAllPixels();
@@ -20,17 +19,12 @@ void initLedMatrix(){
 void resetAllPixels(){
 	for(u8 y = 0; y < HEIGHT; y++){
 		for(u8 x = 0; x < WIDTH; x++){
-			setPixelValue(x, y, 0, 0, 0);
+			Pos pos = {.x=x, .y=y};
+			setPixel(pos, BLANK);
 		}
 	}
 }
 
-// Writes r, g and b colors to the specified x,y pixel
-void setPixelValue(u8 x, u8 y, u8 r, u8 g, u8 b){
-	matrix[x][y][R] = r;
-	matrix[x][y][G] = g;
-	matrix[x][y][B] = b;
-}
 
 // Write the col specified by the col struct to the position specified
 void setPixel(Pos pos, Color col){
@@ -38,13 +32,6 @@ void setPixel(Pos pos, Color col){
 	matrix[pos.x][pos.y][G] = col.g;
 	matrix[pos.x][pos.y][B] = col.b;
 }
-void getPixel(Pos pos, Color *col){
-	col->r = matrix[pos.x][pos.y][R];
-	col->g = matrix[pos.x][pos.y][G];
-	col->b = matrix[pos.x][pos.y][B];
-}
-
-
 
 
 // Writes the specified pixel to the device

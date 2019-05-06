@@ -94,12 +94,17 @@ void renderWorld(World *world, Entities *entities){
 	writeAllPixelToDevice();
 }
 
-/* Write the gameover screen to the frame buffer. The gameover screen is all red */
+/* Write the gameover screen to the frame buffer. The gameover screen is a red cross */
 void renderGameoverScreen(){
 	for(u8 y = 0; y < HEIGHT; y++){				// For each y
 		for(u8 x = 0; x < WIDTH; x++){			// For each x
 			Pos pos = {.x=x, .y=y};				// Get position
-			setPixel(pos, RED);					// Set pixel to red
+			if(gameOver[x][y] == 1){
+				setPixel(pos, RED);				// Set pixel to red
+			} else{
+				setPixel(pos, BLANK);			// Set pixel to black/blank
+			}
+
 		}
 	}
 	writeAllPixelToDevice();					// Write it to the led matrix
