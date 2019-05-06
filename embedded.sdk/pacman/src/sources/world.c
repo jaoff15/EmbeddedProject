@@ -26,37 +26,14 @@ void printWorld(World *world){
 }
 
 /* Load a predefined map to the frame buffer */
-void loadMap(World *world, u8 mapIndex){
+void loadMap(World *world){
 	for(u8 x = 0; x < WIDTH; x++){
 		for(u8 y = 0; y < HEIGHT; y++){
-			switch(mapIndex){
-				case 0:
-					world->cells[x][y] = map1[x][y];
-					break;
-				case 1:
-					world->cells[x][y] = map2[x][y];
-					break;
-				default:
-					world->cells[x][y] = map1[x][y];
-			}
+			world->cells[x][y] = map1[x][y];
 		}
 	}
 }
 
-/* Print the game over screen to the terminal */
-void printGameoverScreen(){
-	for(s8 y = HEIGHT-1; y >= 0; y--){
-		for(u8 x = 0; x < WIDTH; x++){
-			if(gameOver[x][y] == 1){
-				printf(" X");
-			}else{
-				printf(" _");
-			}
-		}
-		printf("\n");
-	}
-	printf("\n");
-}
 
 /* Render the current world to the led matrix */
 void renderWorld(World *world, Entities *entities){

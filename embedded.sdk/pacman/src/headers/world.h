@@ -18,13 +18,6 @@
 #include "world_types.h"
 
 
-/* Used to specify the map that should be used */
-enum e_Map{
-	MAP1,
-	MAP2
-};
-
-
 /* Global variables */
 static const BlockType map1[WIDTH][HEIGHT] = {
 		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH},
@@ -35,17 +28,6 @@ static const BlockType map1[WIDTH][HEIGHT] = {
 		{PATH,WALL,PATH,PATH,PATH,PATH,WALL,PATH},
 		{PATH,WALL,WALL,PATH,PATH,WALL,WALL,PATH},
 		{PATH,PATH,PATH,PATH,PATH,PATH,PATH,PATH}};
-
-static const BlockType map2[WIDTH][HEIGHT] = {
-		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL},
-		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
-		{PATH,PATH,PATH,PATH,PATH,WALL,PATH,PATH},
-		{PATH,WALL,PATH,WALL,PATH,PATH,WALL,PATH},
-		{PATH,WALL,PATH,PATH,WALL,PATH,WALL,PATH},
-		{PATH,PATH,WALL,PATH,PATH,PATH,PATH,PATH},
-		{WALL,PATH,PATH,WALL,WALL,PATH,PATH,WALL},
-		{WALL,WALL,PATH,PATH,PATH,PATH,WALL,WALL}};
-
 
 
 static u8 gameOver[WIDTH][HEIGHT] = {
@@ -59,10 +41,17 @@ static u8 gameOver[WIDTH][HEIGHT] = {
 		{1,0,0,0,0,0,0,1}};
 
 /* Function declarations */
-void updateMap();
+
+/* Print out the map to the terminal */
 void printWorld(World *world);
-void loadMap(World *world, u8 mapIndex);
+
+/* Load a predefined map to the frame buffer */
+void loadMap(World *world);
+
+/* Render the current world to the led matrix */
 void renderWorld(World *world, Entities *entities);
+
+/* Write the gameover screen to the frame buffer. The gameover screen is a red cross */
 void renderGameoverScreen();
 
 #endif /* HEADERS_WORLD_H_ */

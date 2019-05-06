@@ -5,9 +5,10 @@
  *      Author: jacoboffersen
  */
 
-
+/* Includes */
 #include "../headers/io_devices.h"
 
+/* Global variables */
 static XAdcPs XAdcInst;      /* XADC driver instance */
 static XAdcPs *XAdcInstPtr;	 /* Pointer to driver istance */
 

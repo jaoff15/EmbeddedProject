@@ -12,13 +12,20 @@
 #include <stdlib.h>
 #include "defines.h"
 #include "types.h"
-#include "world.h"
+#include "world_types.h"
 
 
 /* Function declarations */
+/* Place food randomly around the map */
 void initFood(World *world, World *food);
+
+/* Put food into the world */
 void loadFood(World *world, World *food);
+
+/* Remove all food */
 void clearFood(World *food);
+
+/* Test if all food is gone from the world */
 bool foodEmpty(World *food);
 
 #endif /* HEADERS_FOOD_H_ */

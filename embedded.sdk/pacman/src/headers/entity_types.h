@@ -8,6 +8,7 @@
 #ifndef SRC_HEADERS_ENTITY_TYPES_H_
 #define SRC_HEADERS_ENTITY_TYPES_H_
 
+/* Includes */
 #include "types.h"
 #include "defines.h"
 #include "colors.h"
@@ -30,9 +31,9 @@ typedef struct s_Pos{
 typedef enum e_Difficulty{
 	NO,
 	EASY,					// Enemy moves randomly
-	MEDIUM,					// Enemy moves like the original pacman. Follows the player for 5 sec and runs away for 5 sec
+//	MEDIUM,					// Enemy moves like the original pacman. Follows the player for 5 sec and runs away for 5 sec
 	HARD,					// Enemy only moves after the player
-	IMPOSSIBLE				// Enemy only moves after the player, and collects all food encountered
+//	IMPOSSIBLE				// Enemy only moves after the player, and collects all food encountered
 } Difficulty;
 
 

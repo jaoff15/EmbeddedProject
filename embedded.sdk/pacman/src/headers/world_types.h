@@ -8,6 +8,7 @@
 #ifndef SRC_HEADERS_WORLD_TYPES_H_
 #define SRC_HEADERS_WORLD_TYPES_H_
 
+/* Includes */
 #include "defines.h"
 
 /* Used to describe the different blocks in the world */

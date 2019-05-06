@@ -15,7 +15,6 @@
 #include "movement.h"
 
 /* Defines */
-
 #define XADC_DEVICE_ID 		XPAR_XADCPS_0_DEVICE_ID
 
 #define CH_6   XADCPS_CH_AUX_MIN + 6  // 22

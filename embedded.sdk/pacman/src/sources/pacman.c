@@ -5,6 +5,7 @@
  *      Author: jacoboffersen
  */
 
+/* Includes */
 #include "../headers/pacman.h"
 
 void pacman(u8 enemyCount, Difficulty difficulty){
@@ -13,7 +14,7 @@ void pacman(u8 enemyCount, Difficulty difficulty){
 	World food; 		// Food frame buffer
 
 	/* Set randomizer seed */
-	srand(1);
+	srand(getJoystickX() + getJoystickY() + getPotmeter());
 
 	/* Initialize the game states */
 	bool gameStarted = FALSE;											// Mark game as not started yet (used by countdown function)
@@ -23,7 +24,7 @@ void pacman(u8 enemyCount, Difficulty difficulty){
 
 		/* Setup game*/
 		/* Create world */
-		loadMap(&world, MAP1);											// Load map into world
+		loadMap(&world);											// Load map into world
 
 		/* Make a copy of the world */
 		blankWorld = world;
@@ -71,13 +72,17 @@ void pacman(u8 enemyCount, Difficulty difficulty){
 			loadFood(&world, &food);									// Load food into the world
 
 			/* Load player */
-			moveEntity(&player, &world, &food, nextMove);				// Move the player
+			if(gameStarted){
+				moveEntity(&player, &world, &food, nextMove);				// Move the player
+			}
 			loadEntity(&player, &world);								// Load the player into the world
 
 			/* Load enemies */
 			for(u8 i = 0; i < enemyCount; i++){							// For each active enemy
 				Move move = controlEntity(&enemy[i], &world, &player);	// 	 Get next move for enemy
-				moveEntity(&enemy[i], &world, &food, move);				// 	 Move enemy
+				if(gameStarted){
+					moveEntity(&enemy[i], &world, &food, move);				// 	 Move enemy
+				}
 				loadEntity(&enemy[i], &world);							//   Load enemy into the world
 			}
 
@@ -85,6 +90,7 @@ void pacman(u8 enemyCount, Difficulty difficulty){
 			for(u8 i = 0; i < enemyCount; i++){							// For each active enemy
 				gameover = entityKilled(&player, &enemy[i]);			// Check if they killed the player
 				if(gameover){											// If so break the for loop
+					clearFood(&food);
 					break;
 				}
 			}

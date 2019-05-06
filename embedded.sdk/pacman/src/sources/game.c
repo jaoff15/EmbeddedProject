@@ -5,25 +5,21 @@
  *      Author: jacoboffersen
  */
 
+/* Includes */
 #include "../headers/game.h"
 
+/* Listen to uart and read out inputtet difficulty */
 Difficulty getDifficulty(){
-	printf( "Enter difficulty (0 = easy, 3 = difficult: ");
+	printf( "Enter difficulty (1 = easy, 2 = hard): ");
 	Difficulty difficulty = NO;
 	while(difficulty == NO){
 		char input = getchar( );
 		switch(input){
-		case '0':
-			difficulty = EASY;
-			break;
 		case '1':
-			difficulty = MEDIUM;
+			difficulty = EASY;
 			break;
 		case '2':
 			difficulty = HARD;
-			break;
-		case '3':
-			difficulty = IMPOSSIBLE;
 			break;
 		default:
 			difficulty = NO;
@@ -33,7 +29,7 @@ Difficulty getDifficulty(){
 }
 
 
-
+/* Listen to uart and read out amount of enemies */
 u8 getEnemyAmount(){
 	printf("Enter amount of enemies (1-4):");
 	u8 enemies = 0;
@@ -59,7 +55,7 @@ u8 getEnemyAmount(){
 	return enemies;
 }
 
-/* Do a 3 sec countdown */
+/* Make a countdown before the game starts. Counts down for 3 sec */
 bool countDown(){
 	for(u8 i = 3; i >= 1; i--){
 		printf("%i\n",(int)i);

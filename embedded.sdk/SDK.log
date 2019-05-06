@@ -8009,3 +8009,666 @@ con
 ----------------End of Script----------------
 
 19:28:42 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:48:04 INFO  : Disconnected from the channel tcfchan#40.
+19:48:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:48:05 INFO  : 'fpga -state' command is executed.
+19:48:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:48:05 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:48:05 INFO  : 'jtag frequency' command is executed.
+19:48:05 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:48:05 INFO  : Context for 'APU' is selected.
+19:48:06 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:48:06 INFO  : 'configparams force-mem-access 1' command is executed.
+19:48:06 INFO  : Context for 'APU' is selected.
+19:48:06 INFO  : 'stop' command is executed.
+19:48:07 INFO  : 'ps7_init' command is executed.
+19:48:07 INFO  : 'ps7_post_config' command is executed.
+19:48:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:48:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:07 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:48:07 INFO  : 'configparams force-mem-access 0' command is executed.
+19:48:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:48:07 INFO  : Memory regions updated for context APU
+19:48:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:07 INFO  : 'con' command is executed.
+19:48:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:48:07 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:48:17 INFO  : Disconnected from the channel tcfchan#41.
+19:48:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:48:19 INFO  : 'fpga -state' command is executed.
+19:48:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:48:19 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:48:19 INFO  : 'jtag frequency' command is executed.
+19:48:19 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:48:19 INFO  : Context for 'APU' is selected.
+19:48:20 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:48:20 INFO  : 'configparams force-mem-access 1' command is executed.
+19:48:20 INFO  : Context for 'APU' is selected.
+19:48:20 INFO  : 'stop' command is executed.
+19:48:20 INFO  : 'ps7_init' command is executed.
+19:48:20 INFO  : 'ps7_post_config' command is executed.
+19:48:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:48:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:20 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:48:20 INFO  : 'configparams force-mem-access 0' command is executed.
+19:48:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:48:20 INFO  : Memory regions updated for context APU
+19:48:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:21 INFO  : 'con' command is executed.
+19:48:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:48:21 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:48:49 INFO  : Disconnected from the channel tcfchan#42.
+19:48:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:48:50 INFO  : 'fpga -state' command is executed.
+19:48:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:48:50 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:48:50 INFO  : 'jtag frequency' command is executed.
+19:48:50 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:48:50 INFO  : Context for 'APU' is selected.
+19:48:52 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:48:52 INFO  : 'configparams force-mem-access 1' command is executed.
+19:48:52 INFO  : Context for 'APU' is selected.
+19:48:52 INFO  : 'stop' command is executed.
+19:48:52 INFO  : 'ps7_init' command is executed.
+19:48:52 INFO  : 'ps7_post_config' command is executed.
+19:48:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:48:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:52 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:48:52 INFO  : 'configparams force-mem-access 0' command is executed.
+19:48:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:48:52 INFO  : Memory regions updated for context APU
+19:48:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:48:52 INFO  : 'con' command is executed.
+19:48:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:48:52 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:49:44 INFO  : Disconnected from the channel tcfchan#43.
+19:49:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:49:45 INFO  : 'fpga -state' command is executed.
+19:49:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:49:45 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:49:45 INFO  : 'jtag frequency' command is executed.
+19:49:45 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:49:45 INFO  : Context for 'APU' is selected.
+19:49:47 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:49:47 INFO  : 'configparams force-mem-access 1' command is executed.
+19:49:47 INFO  : Context for 'APU' is selected.
+19:49:47 INFO  : 'stop' command is executed.
+19:49:47 INFO  : 'ps7_init' command is executed.
+19:49:47 INFO  : 'ps7_post_config' command is executed.
+19:49:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:49:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:47 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:49:47 INFO  : 'configparams force-mem-access 0' command is executed.
+19:49:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:49:47 INFO  : Memory regions updated for context APU
+19:49:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:47 INFO  : 'con' command is executed.
+19:49:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:49:47 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:50:16 INFO  : Disconnected from the channel tcfchan#44.
+19:50:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:50:17 INFO  : 'fpga -state' command is executed.
+19:50:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:50:17 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:50:17 INFO  : 'jtag frequency' command is executed.
+19:50:17 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:50:17 INFO  : Context for 'APU' is selected.
+19:50:18 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:50:18 INFO  : 'configparams force-mem-access 1' command is executed.
+19:50:18 INFO  : Context for 'APU' is selected.
+19:50:18 INFO  : 'stop' command is executed.
+19:50:18 INFO  : 'ps7_init' command is executed.
+19:50:18 INFO  : 'ps7_post_config' command is executed.
+19:50:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:50:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:19 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:50:19 INFO  : 'configparams force-mem-access 0' command is executed.
+19:50:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:50:19 INFO  : Memory regions updated for context APU
+19:50:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:19 INFO  : 'con' command is executed.
+19:50:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:50:19 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:53:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:53:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:53:23 INFO  : FPGA configured successfully with bitstream "/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/top.bit"
+19:53:26 INFO  : Disconnected from the channel tcfchan#45.
+19:53:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:53:28 INFO  : 'fpga -state' command is executed.
+19:53:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:53:28 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:53:28 INFO  : 'jtag frequency' command is executed.
+19:53:28 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:53:28 INFO  : Context for 'APU' is selected.
+19:53:29 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:53:29 INFO  : 'configparams force-mem-access 1' command is executed.
+19:53:29 INFO  : Context for 'APU' is selected.
+19:53:29 INFO  : 'stop' command is executed.
+19:53:29 INFO  : 'ps7_init' command is executed.
+19:53:29 INFO  : 'ps7_post_config' command is executed.
+19:53:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:53:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:53:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:53:30 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:53:30 INFO  : 'configparams force-mem-access 0' command is executed.
+19:53:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:53:30 INFO  : Memory regions updated for context APU
+19:53:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:53:30 INFO  : 'con' command is executed.
+19:53:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:53:30 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+19:54:29 INFO  : Disconnected from the channel tcfchan#46.
+19:54:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+19:54:30 INFO  : 'fpga -state' command is executed.
+19:54:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:54:30 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+19:54:30 INFO  : 'jtag frequency' command is executed.
+19:54:30 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+19:54:30 INFO  : Context for 'APU' is selected.
+19:54:31 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+19:54:31 INFO  : 'configparams force-mem-access 1' command is executed.
+19:54:31 INFO  : Context for 'APU' is selected.
+19:54:31 INFO  : 'stop' command is executed.
+19:54:31 INFO  : 'ps7_init' command is executed.
+19:54:31 INFO  : 'ps7_post_config' command is executed.
+19:54:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:54:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:32 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:54:32 INFO  : 'configparams force-mem-access 0' command is executed.
+19:54:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:54:32 INFO  : Memory regions updated for context APU
+19:54:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:32 INFO  : 'con' command is executed.
+19:54:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+19:54:32 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:00:03 INFO  : Disconnected from the channel tcfchan#47.
+20:00:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:00:05 INFO  : 'fpga -state' command is executed.
+20:00:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:00:05 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:00:05 INFO  : 'jtag frequency' command is executed.
+20:00:05 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:00:05 INFO  : Context for 'APU' is selected.
+20:00:06 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:00:06 INFO  : 'configparams force-mem-access 1' command is executed.
+20:00:06 INFO  : Context for 'APU' is selected.
+20:00:06 INFO  : 'stop' command is executed.
+20:00:06 INFO  : 'ps7_init' command is executed.
+20:00:06 INFO  : 'ps7_post_config' command is executed.
+20:00:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:00:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:00:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:00:07 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:00:07 INFO  : 'configparams force-mem-access 0' command is executed.
+20:00:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:00:07 INFO  : Memory regions updated for context APU
+20:00:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:00:07 INFO  : 'con' command is executed.
+20:00:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:00:07 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:03:31 INFO  : Disconnected from the channel tcfchan#48.
+20:03:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:03:32 INFO  : 'fpga -state' command is executed.
+20:03:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:03:33 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:03:33 INFO  : 'jtag frequency' command is executed.
+20:03:33 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:03:33 INFO  : Context for 'APU' is selected.
+20:03:34 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:03:34 INFO  : 'configparams force-mem-access 1' command is executed.
+20:03:34 INFO  : Context for 'APU' is selected.
+20:03:34 INFO  : 'stop' command is executed.
+20:03:34 INFO  : 'ps7_init' command is executed.
+20:03:34 INFO  : 'ps7_post_config' command is executed.
+20:03:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:03:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:34 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:03:34 INFO  : 'configparams force-mem-access 0' command is executed.
+20:03:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:03:34 INFO  : Memory regions updated for context APU
+20:03:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:34 INFO  : 'con' command is executed.
+20:03:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:03:34 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:06:18 INFO  : Disconnected from the channel tcfchan#49.
+20:06:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:06:21 INFO  : 'fpga -state' command is executed.
+20:06:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:06:21 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:06:21 INFO  : 'jtag frequency' command is executed.
+20:06:21 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:06:21 INFO  : Context for 'APU' is selected.
+20:06:22 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:06:22 INFO  : 'configparams force-mem-access 1' command is executed.
+20:06:23 INFO  : Context for 'APU' is selected.
+20:06:23 INFO  : 'stop' command is executed.
+20:06:23 INFO  : 'ps7_init' command is executed.
+20:06:23 INFO  : 'ps7_post_config' command is executed.
+20:06:23 INFO  : 'configparams force-mem-access 0' command is executed.
+20:06:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:06:23 INFO  : Memory regions updated for context APU
+20:06:23 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:06:55 INFO  : Disconnected from the channel tcfchan#50.
+20:06:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:06:56 INFO  : 'fpga -state' command is executed.
+20:06:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:06:56 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:06:56 INFO  : 'jtag frequency' command is executed.
+20:06:56 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:06:56 INFO  : Context for 'APU' is selected.
+20:06:57 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:06:57 INFO  : 'configparams force-mem-access 1' command is executed.
+20:06:57 INFO  : Context for 'APU' is selected.
+20:06:57 INFO  : 'stop' command is executed.
+20:06:57 INFO  : 'ps7_init' command is executed.
+20:06:57 INFO  : 'ps7_post_config' command is executed.
+20:06:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:06:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:58 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:06:58 INFO  : 'configparams force-mem-access 0' command is executed.
+20:06:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:06:58 INFO  : Memory regions updated for context APU
+20:06:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:58 INFO  : 'con' command is executed.
+20:06:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:06:58 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:07:18 INFO  : Disconnected from the channel tcfchan#51.
+20:07:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:07:19 INFO  : 'fpga -state' command is executed.
+20:07:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:07:19 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:07:19 INFO  : 'jtag frequency' command is executed.
+20:07:19 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:07:19 INFO  : Context for 'APU' is selected.
+20:07:21 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:07:21 INFO  : 'configparams force-mem-access 1' command is executed.
+20:07:21 INFO  : Context for 'APU' is selected.
+20:07:21 INFO  : 'stop' command is executed.
+20:07:21 INFO  : 'ps7_init' command is executed.
+20:07:21 INFO  : 'ps7_post_config' command is executed.
+20:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:07:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:07:21 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:07:21 INFO  : 'configparams force-mem-access 0' command is executed.
+20:07:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:07:21 INFO  : Memory regions updated for context APU
+20:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:07:21 INFO  : 'con' command is executed.
+20:07:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:07:21 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:08:23 INFO  : Disconnected from the channel tcfchan#52.
+20:08:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:08:24 INFO  : 'fpga -state' command is executed.
+20:08:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:08:24 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:08:24 INFO  : 'jtag frequency' command is executed.
+20:08:24 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:08:24 INFO  : Context for 'APU' is selected.
+20:08:25 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:08:25 INFO  : 'configparams force-mem-access 1' command is executed.
+20:08:25 INFO  : Context for 'APU' is selected.
+20:08:26 INFO  : 'stop' command is executed.
+20:08:26 INFO  : 'ps7_init' command is executed.
+20:08:26 INFO  : 'ps7_post_config' command is executed.
+20:08:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:08:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:26 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:08:26 INFO  : 'configparams force-mem-access 0' command is executed.
+20:08:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:08:26 INFO  : Memory regions updated for context APU
+20:08:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:26 INFO  : 'con' command is executed.
+20:08:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:08:26 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:09:07 INFO  : Disconnected from the channel tcfchan#53.
+20:09:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:09:09 INFO  : 'fpga -state' command is executed.
+20:09:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:09:09 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:09:09 INFO  : 'jtag frequency' command is executed.
+20:09:09 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:09:09 INFO  : Context for 'APU' is selected.
+20:09:10 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:09:10 INFO  : 'configparams force-mem-access 1' command is executed.
+20:09:10 INFO  : Context for 'APU' is selected.
+20:09:10 INFO  : 'stop' command is executed.
+20:09:10 INFO  : 'ps7_init' command is executed.
+20:09:10 INFO  : 'ps7_post_config' command is executed.
+20:09:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:09:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:11 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:09:11 INFO  : 'configparams force-mem-access 0' command is executed.
+20:09:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:09:11 INFO  : Memory regions updated for context APU
+20:09:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:11 INFO  : 'con' command is executed.
+20:09:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:09:11 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+20:09:16 INFO  : Disconnected from the channel tcfchan#54.
+20:09:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1' command is executed.
+20:09:17 INFO  : 'fpga -state' command is executed.
+20:09:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:09:17 INFO  : Jtag cable 'Digilent Zybo 210279772620A' is selected.
+20:09:17 INFO  : 'jtag frequency' command is executed.
+20:09:17 INFO  : Sourcing of '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl' is done.
+20:09:17 INFO  : Context for 'APU' is selected.
+20:09:18 INFO  : Hardware design information is loaded from '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf'.
+20:09:18 INFO  : 'configparams force-mem-access 1' command is executed.
+20:09:18 INFO  : Context for 'APU' is selected.
+20:09:18 INFO  : 'stop' command is executed.
+20:09:19 INFO  : 'ps7_init' command is executed.
+20:09:19 INFO  : 'ps7_post_config' command is executed.
+20:09:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+20:09:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:19 INFO  : The application '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:09:19 INFO  : 'configparams force-mem-access 0' command is executed.
+20:09:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:09:19 INFO  : Memory regions updated for context APU
+20:09:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:19 INFO  : 'con' command is executed.
+20:09:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0
+con
+----------------End of Script----------------
+
+20:09:19 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'

@@ -18,11 +18,8 @@
 #include "entity_types.h"
 
 
-
 // 3-dimentional array that contains the three different colors
 static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
-
-
 
 
 // Initialize the LED matrix

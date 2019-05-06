@@ -42,11 +42,12 @@ Move controlEntity(Entity *enemy, World *world, Entity *player);
 
 /* Move algorithm for easy mode */
 Move getMoveEasy(Entity *entity, World *world);
-
 Move getMoveHard(Entity *entity, World *world, Entity *target);
 
-
+/* Initialize the entity list containing all entities in the world */
 void initEntities(Entities *entities);
+
+/* Register a new entity to the entity list */
 void registerEntity(Entities *entities, Entity *e);
 
 #endif /* HEADERS_ENTITY_H_ */

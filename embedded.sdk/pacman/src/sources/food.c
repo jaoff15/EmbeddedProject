@@ -5,8 +5,10 @@
  *      Author: Jacob Offersen
  */
 
+/* Includes */
 #include "../headers/food.h"
 
+/* Place food randomly around the map */
 void initFood(World *world, World *food){
 	clearFood(food);
 	u8 foodLeft = FOOD_AMOUNT;
@@ -20,7 +22,7 @@ void initFood(World *world, World *food){
 	}
 }
 
-
+/* Remove all food */
 void clearFood(World *food){
 	for(int x = 0; x < WIDTH; x++){
 		for(int y = 0; y < HEIGHT; y++){
@@ -29,6 +31,7 @@ void clearFood(World *food){
 	}
 }
 
+/* Put food into the world */
 void loadFood(World *world, World *food){
 	for(int x = 0; x < WIDTH; x++){
 		for(int y = 0; y < HEIGHT; y++){
@@ -40,6 +43,7 @@ void loadFood(World *world, World *food){
 }
 
 
+/* Test if all food is gone from the world */
 bool foodEmpty(World *food){
 	bool isEmpty = TRUE;
 	for(int x = 0; x < WIDTH; x++){

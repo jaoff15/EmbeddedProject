@@ -34,21 +34,25 @@ typedef struct s_Color{
 
 
 // Color definitions
-static const Color BLANK 	= {.r = FULL_OFF,   .g = FULL_OFF,  .b = FULL_OFF}; // PATH
+/* Path */
+static const Color BLANK 	= {.r = FULL_OFF,   .g = FULL_OFF,  .b = FULL_OFF};
 
-static const Color GREEN  	= {.r = FULL_OFF,   .g = FULL_ON, 	.b = FULL_OFF}; // Wall
+/* Wall */
+static const Color GREEN  	= {.r = FULL_OFF,   .g = FULL_ON, 	.b = FULL_OFF};
 
-static const Color WHITE  	= {.r = ONE_FIFTH, 	.g = ONE_FIFTH, 	.b = ONE_FIFTH};  // Food
-static const Color PURPLE  	= {.r = ONE_TENTH, 	.g = FULL_OFF, 	    .b = ONE_TENTH};  // Food
+/* Food */
+static const Color PURPLE  	= {.r = ONE_TENTH, 	.g = FULL_OFF, 	.b = ONE_TENTH};
 
 /* Enemies */
 static const Color RED    	= {.r = FULL_ON, 	.g = FULL_OFF,  .b = FULL_OFF};
 static const Color BLUE 	= {.r = FULL_OFF,   .g = FULL_OFF,  .b = FULL_ON};
-static const Color ORANGE 	= {.r = FULL_ON, 	.g = ONE_THIRD, 	.b = FULL_OFF};
+static const Color ORANGE 	= {.r = FULL_ON, 	.g = ONE_THIRD, .b = FULL_OFF};
 static const Color PINK 	= {.r = FULL_ON, 	.g = ONE_FIFTH, .b = ONE_FIFTH};
 
-/* Player */
+/* Player color */
 static const Color YELLOW 	= {.r = FULL_ON, 	.g = FULL_ON, 	.b = FULL_OFF};
 
+/* Additional color definitions */
+static const Color WHITE  	= {.r = ONE_FIFTH, 	.g = ONE_FIFTH, .b = ONE_FIFTH};
 
 #endif /* SRC_HEADERS_COLORS_H_ */

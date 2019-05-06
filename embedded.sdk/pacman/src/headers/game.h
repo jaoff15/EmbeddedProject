@@ -16,11 +16,13 @@
 
 
 /* Function declarations */
-
+/* Listen to uart and read out inputtet difficulty */
 Difficulty getDifficulty();
 
+/* Listen to uart and read out amount of enemies */
 u8 getEnemyAmount();
 
+/* Make a countdown before the game starts. Counts down for 3 sec */
 bool countDown();
 
 #endif /* SRC_HEADERS_GAME_H_ */

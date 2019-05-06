@@ -8,7 +8,8 @@
 #ifndef SRC_HEADERS_PACMAN_H_
 #define SRC_HEADERS_PACMAN_H_
 
-
+/* Includes */
+#include <time.h>
 #include "entity.h"
 #include "world.h"
 #include "food.h"
@@ -18,6 +19,7 @@
 #include "movement.h"
 #include "game.h"
 
+/* The pacman game */
 void pacman(u8 enemyCount, Difficulty difficulty);
 
 

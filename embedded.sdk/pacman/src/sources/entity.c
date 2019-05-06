@@ -28,17 +28,9 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 			nextMove = getMoveEasy(entity, world);
 			break;
 
-		/* Difficulty: Medium */
-		case MEDIUM:
-			break;
-
 		/* Difficulty: Hard */
 		case HARD:
 			nextMove = getMoveHard(entity, world, target);
-			break;
-
-		/* Difficulty: Impossible */
-		case IMPOSSIBLE:
 			break;
 
 		default:
@@ -94,11 +86,6 @@ Move getMoveEasy(Entity *entity, World *world){
 	return moves[ i ];
 }
 
-Move getMoveMedium(Entity *entity, World *world, Entity *target){
-
-}
-
-
 /* Return the move that gets the entity closest to the target
  * The decision to whether or not the spot is closer is based in the Euclidean distance
  * between the target and the spot being searched.
@@ -120,7 +107,7 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 	/* Can the entity move right */
 	dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
 
-//	/* Remove possibility for moving backwards */
+	/* Remove possibility for moving backwards */
 	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
 	dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
 	dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
@@ -135,7 +122,6 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 	f32 tx = target->pos.x;
 	f32 ty = target->pos.y;
 	f32 distance[4] = {INFTY,INFTY,INFTY,INFTY};
-//	printf("E\n");
 	u8 currentBest = 0;
 	for(u8 i = 0; i < 4; i++){
 		if(dir[i] != STANDSTILL){
@@ -157,7 +143,6 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 				break;
 			}
 			if(distance[currentBest] >= distance[i]){
-//				printf("dist: %d\n",(int)distance[i]);
 				currentBest = i;
 			}
 		}else{
@@ -263,10 +248,12 @@ bool entityKilled(Entity *e, Entity *enemy){
 	return killed;
 }
 
+/* Initialize the entity list containing all entities in the world */
 void initEntities(Entities *entities){
 	entities->entityCount = 0;
 }
 
+/* Register a new entity to the entity list */
 void registerEntity(Entities *entities, Entity *e){
 	entities->entity[entities->entityCount] = e;
 	entities->entityCount++;
