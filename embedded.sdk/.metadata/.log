@@ -2291,3 +2291,9 @@ Created Time: 2019-05-01 15:17:49.292
 
 !ENTRY com.xilinx.sdk.utils 0 0 2019-05-01 15:41:35.156
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-01 16:22:34.299
+!MESSAGE XSCT Command: [disconnect tcfchan#10], Thread: Thread-1500
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-01 16:22:34.302
+!MESSAGE XSCT command with result: [disconnect tcfchan#10], Result: [null, ]. Thread: Thread-1500

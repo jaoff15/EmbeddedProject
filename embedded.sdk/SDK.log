@@ -6184,3 +6184,4 @@ con
 ----------------End of Script----------------
 
 15:41:35 INFO  : Launch script is exported to file '/home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_pacman.elf_on_local.tcl'
+16:22:34 INFO  : Disconnected from the channel tcfchan#10.

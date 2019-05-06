@@ -1,4 +1,5 @@
-embedded.cache*
+embedded.cache/*
 embedded.sim*
 */webtalk/*
 */.metadata/*
+embedded.sdk/.metadata/*
