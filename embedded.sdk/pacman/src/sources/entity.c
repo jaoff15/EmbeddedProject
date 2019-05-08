@@ -126,21 +126,21 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 	for(u8 i = 0; i < 4; i++){
 		if(dir[i] != STANDSTILL){
 			switch(dir[i]){
-			case UP:
-				distance[i] = (abs((tx - x)*(tx - x))     + abs((ty - y-1.0)*(ty - y-1.0)));
-				break;
-			case DOWN:
-				distance[i] = (abs((tx - x)*(tx - x))     + abs((ty - y+1.0)*(ty - y+1.0)));
-				break;
-			case LEFT:
-				distance[i] = (abs((tx - x+1.0)*(tx - x+1.0)) + abs((ty - y)*(ty - y)));
-				break;
-			case RIGHT:
-				distance[i] = (abs((tx - x-1.0)*(tx - x-1.0)) + abs((ty - y)*(ty - y)));
-				break;
-			default:
-				distance[i] = INFTY;
-				break;
+				case UP:
+					distance[i] = (abs((tx - x))     + abs((ty - y-1.0)));
+					break;
+				case DOWN:
+					distance[i] = (abs((tx - x))     + abs((ty - y+1.0)));
+					break;
+				case LEFT:
+					distance[i] = (abs((tx - x+1.0)) + abs((ty - y)));
+					break;
+				case RIGHT:
+					distance[i] = (abs((tx - x-1.0)) + abs((ty - y)));
+					break;
+				default:
+					distance[i] = INFTY;
+					break;
 			}
 			if(distance[currentBest] >= distance[i]){
 				currentBest = i;

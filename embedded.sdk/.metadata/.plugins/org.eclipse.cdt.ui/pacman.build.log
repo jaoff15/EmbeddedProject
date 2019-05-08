@@ -1,141 +1,19 @@
-14:49:27 **** Auto Build of configuration Debug for project pacman ****
+17:02:15 **** Auto Build of configuration Debug for project pacman ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-Building file: ../src/sources/io_devices.c
+Building file: ../src/sources/entity.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
-In file included from ../src/sources/../headers/movement.h:12:0,
-                 from ../src/sources/../headers/io_devices.h:15,
-                 from ../src/sources/io_devices.c:9:
-../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
- #define FALSE 0
- 
-In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
-                 from ../src/sources/../headers/io_devices.h:13,
-                 from ../src/sources/io_devices.c:9:
-../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
- #  define FALSE  0U
- 
-In file included from ../src/sources/../headers/movement.h:12:0,
-                 from ../src/sources/../headers/io_devices.h:15,
-                 from ../src/sources/io_devices.c:9:
-../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
- #define TRUE 1
- 
-In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
-                 from ../src/sources/../headers/io_devices.h:13,
-                 from ../src/sources/io_devices.c:9:
-../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
- #  define TRUE  1U
- 
-Finished building: ../src/sources/io_devices.c
- 
-Building file: ../src/sources/movement.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
-../src/sources/movement.c: In function 'getMovement':
-../src/sources/movement.c:24:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
-  if(y < -MIN_VALUE && y < abs(x)){
-                           ^~~
-In file included from ../src/sources/../headers/movement.h:14:0,
-                 from ../src/sources/movement.c:9:
-At top level:
-../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
- static u16 offsetY;
-            ^~~~~~~
-../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
- static u16 offsetX;
-            ^~~~~~~
-Finished building: ../src/sources/movement.c
- 
-Building file: ../src/sources/pacman.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
-In file included from ../src/sources/../headers/movement.h:14:0,
-                 from ../src/sources/../headers/pacman.h:19,
-                 from ../src/sources/pacman.c:9:
-../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
- static u16 offsetY;
-            ^~~~~~~
-../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
- static u16 offsetX;
-            ^~~~~~~
-In file included from ../src/sources/../headers/pacman.h:14:0,
-                 from ../src/sources/pacman.c:9:
-../src/sources/../headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
- static u8 gameOver[WIDTH][HEIGHT] = {
-           ^~~~~~~~
-In file included from ../src/sources/../headers/world.h:16:0,
-                 from ../src/sources/../headers/pacman.h:14,
-                 from ../src/sources/pacman.c:9:
-../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
- static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
-           ^~~~~~
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
 In file included from ../src/sources/../headers/entity.h:18:0,
-                 from ../src/sources/../headers/pacman.h:13,
-                 from ../src/sources/pacman.c:9:
+                 from ../src/sources/entity.c:9:
 ../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
  static u16 highscore = 0;
             ^~~~~~~~~
 ../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
  static u16 score = 0;
             ^~~~~
-Finished building: ../src/sources/pacman.c
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/headers/movement.h:12:0,
-                 from ../src/headers/io_devices.h:15,
-                 from ../src/main.c:6:
-../src/headers/types.h:28:0: warning: "FALSE" redefined
- #define FALSE 0
- 
-In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
-                 from ../src/main.c:4:
-../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
- #  define FALSE  0U
- 
-In file included from ../src/headers/movement.h:12:0,
-                 from ../src/headers/io_devices.h:15,
-                 from ../src/main.c:6:
-../src/headers/types.h:29:0: warning: "TRUE" redefined
- #define TRUE 1
- 
-In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
-                 from ../src/main.c:4:
-../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
- #  define TRUE  1U
- 
-In file included from ../src/headers/pacman.h:14:0,
-                 from ../src/main.c:7:
-../src/headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
- static u8 gameOver[WIDTH][HEIGHT] = {
-           ^~~~~~~~
-In file included from ../src/headers/world.h:16:0,
-                 from ../src/headers/pacman.h:14,
-                 from ../src/main.c:7:
-../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
- static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
-           ^~~~~~
-In file included from ../src/headers/entity.h:18:0,
-                 from ../src/headers/pacman.h:13,
-                 from ../src/main.c:7:
-../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
- static u16 highscore = 0;
-            ^~~~~~~~~
-../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
- static u16 score = 0;
-            ^~~~~
-In file included from ../src/main.c:6:0:
-../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
- static u16 offsetY;
-            ^~~~~~~
-../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
- static u16 offsetX;
-            ^~~~~~~
-Finished building: ../src/main.c
+Finished building: ../src/sources/entity.c
  
 Building target: pacman.elf
 Invoking: ARM v7 gcc linker
@@ -145,9 +23,9 @@ Finished building target: pacman.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  89300	   2780	  24160	 116240	  1c610	pacman.elf
+  89108	   2780	  24160	 116048	  1c550	pacman.elf
 Finished building: pacman.elf.size
  
 
-14:49:28 Build Finished (took 510ms)
+17:02:15 Build Finished (took 360ms)
 

@@ -50,10 +50,17 @@ void calibrateControl(){
 	offsetY = getJoystickY();
 }
 
+/* Get the position of the joystick */
+//Pos getJoystickPosition(){
+//	Pos pos;
+//	pos.x = (u16) getJoystickX() - offsetX;
+//	pos.y = (u16) getJoystickY() - offsetY;
+//	return pos;
+//}
 
+/* Get the position of the joystick */
 Pos getJoystickPosition(){
-	Pos pos;
-	pos.x = (u16) getJoystickX() - offsetX;
-	pos.y = (u16) getJoystickY() - offsetY;
+	Pos pos = {	.x = (u16) getJoystickX() - offsetX,
+				.y = (u16) getJoystickY() - offsetY};
 	return pos;
 }
