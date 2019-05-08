@@ -40,5 +40,8 @@ Move getMovement(){
 
 /* Get the sleep time. Read the potmeter and output an amount of millisec to sleep */
 u32 getSleepTime(){
-	return (u32)(getPotmeter()/655)*10000+100000;			// 100ms -> 1100ms
+	u32 raw = getPotmeter();					// 0 -> 65536
+	f64 scaled = raw / 72.8; 					// 0 -> 900
+	u32 time = (u32) scaled + 100;				// 100 -> 1000 [us]
+	return (u32)1000 * time;					// 100 -> 1000 [ms]
 }
