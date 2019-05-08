@@ -13,6 +13,7 @@
 #include "xadcps.h"
 #include "xstatus.h"
 #include "movement.h"
+#include "entity_types.h"
 
 /* Defines */
 #define XADC_DEVICE_ID 		XPAR_XADCPS_0_DEVICE_ID
@@ -31,6 +32,7 @@
 static u16 offsetX;
 static u16 offsetY;
 
+
 /* Setup Xadc and call calibration task to calibrate joystick */
 void initIoDevices();
 
@@ -42,6 +44,9 @@ u32 getJoystickX();
 
 /* Get joystick Y position */
 u32 getJoystickY();
+
+/* Get the position of the joystick */
+Pos getJoystickPosition();
 
 /* Get potmeter position */
 u32 getPotmeter();

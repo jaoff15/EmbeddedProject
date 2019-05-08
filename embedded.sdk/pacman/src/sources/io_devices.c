@@ -31,12 +31,12 @@ u32 getButton(){
 
 /* Get joystick X position */
 u32 getJoystickX(){
-	return XAdcPs_GetAdcData(XAdcInstPtr, XAXIS) - offsetX;
+	return XAdcPs_GetAdcData(XAdcInstPtr, XAXIS);
 }
 
 /* Get joystick Y position */
 u32 getJoystickY(){
-	return XAdcPs_GetAdcData(XAdcInstPtr, YAXIS) - offsetY;
+	return XAdcPs_GetAdcData(XAdcInstPtr, YAXIS);
 }
 
 /* Get potmeter position */
@@ -46,8 +46,14 @@ u32 getPotmeter(){
 
 /* Get offsets used to calibrate the joysticks to around (0,0) */
 void calibrateControl(){
-	offsetX = 0;
-	offsetY = 0;
 	offsetX = getJoystickX();
 	offsetY = getJoystickY();
+}
+
+
+Pos getJoystickPosition(){
+	Pos pos;
+	pos.x = (u16) getJoystickX() - offsetX;
+	pos.y = (u16) getJoystickY() - offsetY;
+	return pos;
 }

@@ -23,8 +23,8 @@ typedef enum e_EntityType{
 
 /* Used to define an entities position in the world */
 typedef struct s_Pos{
-	u8 x;
-	u8 y;
+	s16 x;
+	s16 y;
 } Pos;
 
 /* Used to specify the difficulty of an enemy */

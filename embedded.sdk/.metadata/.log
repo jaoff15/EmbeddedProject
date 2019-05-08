@@ -2760,3 +2760,759 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-21
 
 !ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:24:22.167
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-21
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:17.080
+!MESSAGE XSCT Command: [disconnect tcfchan#4], Thread: Thread-398
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:17.082
+!MESSAGE XSCT command with result: [disconnect tcfchan#4], Result: [null, ]. Thread: Thread-398
+
+!ENTRY com.xilinx.sdk.utils 1 0 2019-05-08 14:28:18.082
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.083
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.087
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#5]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.087
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.100
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.101
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.109
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.110
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.135
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.135
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.162
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.162
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.171
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.172
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.173
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#5]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.173
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.179
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.179
+!MESSAGE XSCT Command: [version -server], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.180
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.3]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.180
+!MESSAGE XSCT Command: [version], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.181
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2018.3
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.181
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.187
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.187
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.204
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.204
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.210
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.210
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.227
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.227
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.233
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.233
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.246
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.246
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.250
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.250
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.260
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.260
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.264
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.264
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.275
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.275
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.279
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.279
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.290
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.290
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zybo 210279772620A" && level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.302
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zybo 210279772620A" && level == 0}], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.302
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.303
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.303
+!MESSAGE XSCT Command: [source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.305
+!MESSAGE XSCT command with result: [source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.305
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.320
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:18.320
+!MESSAGE XSCT Command: [loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.517
+!MESSAGE XSCT command with result: [loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]], Result: [null, top_3]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.517
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.518
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.518
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.534
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.535
+!MESSAGE XSCT Command: [stop], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.543
+!MESSAGE XSCT command with result: [stop], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.544
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.880
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.880
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.884
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.884
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.900
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.900
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.911
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.912
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.928
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:19.928
+!MESSAGE XSCT Command: [dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.140
+!MESSAGE XSCT command with result: [dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.141
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.142
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.149
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.199
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.199
+!MESSAGE XSCT Command: [con], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:28:20.217
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:06.416
+!MESSAGE XSCT Command: [disconnect tcfchan#5], Thread: Thread-666
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:06.446
+!MESSAGE XSCT command with result: [disconnect tcfchan#5], Result: [null, ]. Thread: Thread-666
+
+!ENTRY com.xilinx.sdk.utils 1 0 2019-05-08 14:47:07.418
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.419
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.431
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#6]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.432
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.464
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.464
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.482
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.482
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.503
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.504
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.523
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.524
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.541
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.542
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.545
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#6]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.546
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.565
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.566
+!MESSAGE XSCT Command: [version -server], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.569
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.3]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.570
+!MESSAGE XSCT Command: [version], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.571
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2018.3
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.572
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.589
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.589
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.609
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.610
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.617
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.617
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.633
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.633
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.637
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.638
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.649
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.649
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.653
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.653
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.665
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.666
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.670
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.670
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.681
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.681
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.685
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.685
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.695
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.695
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zybo 210279772620A" && level == 0}], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.706
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zybo 210279772620A" && level == 0}], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.706
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.707
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.707
+!MESSAGE XSCT Command: [source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.710
+!MESSAGE XSCT command with result: [source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.711
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.726
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:07.727
+!MESSAGE XSCT Command: [loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.854
+!MESSAGE XSCT command with result: [loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]], Result: [null, top_4]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.854
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.855
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.855
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.872
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.872
+!MESSAGE XSCT Command: [stop], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.881
+!MESSAGE XSCT command with result: [stop], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:08.882
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.450
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.451
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.472
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.473
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.505
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.506
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.546
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.547
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.569
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.569
+!MESSAGE XSCT Command: [dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.795
+!MESSAGE XSCT command with result: [dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.795
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.796
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.803
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.845
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.845
+!MESSAGE XSCT Command: [con], Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:47:09.862
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:04.006
+!MESSAGE XSCT Command: [disconnect tcfchan#6], Thread: Thread-725
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:04.008
+!MESSAGE XSCT command with result: [disconnect tcfchan#6], Result: [null, ]. Thread: Thread-725
+
+!ENTRY com.xilinx.sdk.utils 1 0 2019-05-08 14:48:05.008
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.009
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.019
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#7]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.020
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.033
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.034
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.040
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.040
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.054
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.054
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.076
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==0} -index 1], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.077
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.090
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.091
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.093
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#7]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.094
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.113
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.114
+!MESSAGE XSCT Command: [version -server], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.116
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.3]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.116
+!MESSAGE XSCT Command: [version], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.117
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2018.3
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.117
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.126
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.126
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.143
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.143
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.148
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.148
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.165
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.165
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.170
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.170
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.188
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.188
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.193
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.193
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.210
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.211
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.215
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.215
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.231
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.231
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.236
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zybo 210279772620A]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.236
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.251
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zybo 210279772620A" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z010 (idcode 13722093 irlen 6 fpga)]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.251
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zybo 210279772620A" && level == 0}], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.265
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zybo 210279772620A" && level == 0}], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.265
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.266
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.266
+!MESSAGE XSCT Command: [source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.269
+!MESSAGE XSCT command with result: [source /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/ps7_init.tcl], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.269
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.289
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:05.289
+!MESSAGE XSCT Command: [loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.441
+!MESSAGE XSCT command with result: [loadhw -hw /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]], Result: [null, top_5]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.441
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.442
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.443
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.458
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.458
+!MESSAGE XSCT Command: [stop], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.467
+!MESSAGE XSCT command with result: [stop], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.467
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.614
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.614
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.618
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.618
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.633
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.633
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.663
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.664
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.710
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.711
+!MESSAGE XSCT Command: [dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.912
+!MESSAGE XSCT command with result: [dow /home/jacoboffersen/Repos/EmbeddedProject/embedded.sdk/pacman/Debug/pacman.elf], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.913
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.914
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.920
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.966
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279772620A"} -index 0], Result: [null, ]. Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.966
+!MESSAGE XSCT Command: [con], Thread: Worker-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2019-05-08 14:48:06.981
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-14
