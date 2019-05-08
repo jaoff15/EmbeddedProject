@@ -59,10 +59,10 @@ Move getMoveEasy(Entity *entity, World *world){
 	dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
 
 
-	/* If entity cannot move */
-	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
-		return STANDSTILL;
-	}
+//	/* If entity cannot move */
+//	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
+//		return STANDSTILL;
+//	}
 
 	/* Remove possibility for moving backwards */
 	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
@@ -114,39 +114,41 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 	dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
 
 	/* If entity cannot move */
-	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
-		return STANDSTILL;
-	}
+//	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
+//		return STANDSTILL;
+//	}
 
 	/* Find 'distances' and thereby the best move */
-	f32 tx = target->pos.x;
-	f32 ty = target->pos.y;
-	f32 distance[4] = {INFTY,INFTY,INFTY,INFTY};
-	u8 currentBest = 0;
-	for(u8 i = 0; i < 4; i++){
-		if(dir[i] != STANDSTILL){
-			switch(dir[i]){
-				case UP:
-					distance[i] = (abs((tx - x))     + abs((ty - y-1.0)));
+	f32 tx = target->pos.x;							// Read target x position
+	f32 ty = target->pos.y;							// Read target y position
+	f32 currentBestDist = INFTY;					// Initialize variable to keep track of best dist
+	u8 currentBest = 0;								// Mark the current best distance
+	for(u8 i = 0; i < 4; i++){						// For each direction
+		if(dir[i] != STANDSTILL){					// Check if it is a valid move
+			f32 nx = x;								// Copy entity x pos
+			f32 ny = y;								// Copy entity y pos
+			switch(dir[i]){							// Find the current move
+				case UP:							// If Up
+					ny = y + 1.0;					// Add one to the y pos
 					break;
-				case DOWN:
-					distance[i] = (abs((tx - x))     + abs((ty - y+1.0)));
+				case DOWN:							// If Down
+					ny = y - 1.0;					// Subtract one from the y pos
 					break;
-				case LEFT:
-					distance[i] = (abs((tx - x+1.0)) + abs((ty - y)));
+				case RIGHT:							// If Right
+					nx = x + 1.0;					// Add one to the x pos
 					break;
-				case RIGHT:
-					distance[i] = (abs((tx - x-1.0)) + abs((ty - y)));
+				case LEFT:							// If Left
+					nx = x - 1.0;					// Subtract one from the x pos
 					break;
 				default:
-					distance[i] = INFTY;
 					break;
 			}
-			if(distance[currentBest] >= distance[i]){
-				currentBest = i;
+			f32 distance = (abs(((f32)tx - nx)) +	// Get 'distance'
+							abs(((f32)ty - ny)));
+			if(currentBestDist >= distance){		// If distance is better than the current best
+				currentBest 	= i;				// Mark move as the best
+				currentBestDist = distance;			// Save current best distance
 			}
-		}else{
-			distance[i] = INFTY;
 		}
 	}
 	return dir[currentBest];

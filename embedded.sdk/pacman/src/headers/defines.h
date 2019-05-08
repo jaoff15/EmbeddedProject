@@ -10,7 +10,7 @@
 
 /* Entity */
 #define MAX_ENEMIES 4
-#define INFTY 100
+#define INFTY 1000
 
 
 /* Food */

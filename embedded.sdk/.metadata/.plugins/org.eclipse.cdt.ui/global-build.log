@@ -2264,3 +2264,1138 @@ arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
   89108	   2780	  24160	 116048	  1c550	pacman.elf
 Finished building: pacman.elf.size
  
+17:11:08 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:149:8: error: decrement of read-only variable 'y'
+       y--;
+        ^~
+../src/sources/entity.c:152:7: error: increment of read-only variable 'y'
+      y++;
+       ^~
+../src/sources/entity.c:155:7: error: increment of read-only variable 'x'
+      x++;
+       ^~
+../src/sources/entity.c:158:7: error: decrement of read-only variable 'x'
+      x--;
+       ^~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:11:15 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88788	   2780	  24160	 115728	  1c410	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:11:22 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:12:42 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88788	   2780	  24160	 115728	  1c410	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:13:43 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:15:21 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+               ~^
+               %f
+../src/sources/entity.c:163:23: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+                      ~^
+                      %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88868	   2780	  24160	 115808	  1c460	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:17:17 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88868	   2780	  24160	 115808	  1c460	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:18:46 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88868	   2780	  24160	 115808	  1c460	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:19:34 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88884	   2780	  24160	 115824	  1c470	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:19:36 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:20:36 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88884	   2780	  24160	 115824	  1c470	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:21:57 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building file: ../src/sources/food.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/food.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/food.d" -MT"src/sources/food.o" -o "src/sources/food.o" "../src/sources/food.c"
+Finished building: ../src/sources/food.c
+ 
+Building file: ../src/sources/game.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/game.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/game.d" -MT"src/sources/game.o" -o "src/sources/game.o" "../src/sources/game.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/game.h:13,
+                 from ../src/sources/game.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/game.c
+ 
+Building file: ../src/sources/io_devices.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/io_devices.c
+ 
+Building file: ../src/sources/led_matrix.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/led_matrix.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/led_matrix.d" -MT"src/sources/led_matrix.o" -o "src/sources/led_matrix.o" "../src/sources/led_matrix.c"
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/led_matrix.c
+ 
+Building file: ../src/sources/movement.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:24:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  if(y < -MIN_VALUE && y < abs(x)){
+                           ^~~
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/movement.c:9:
+At top level:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/sources/movement.c
+ 
+Building file: ../src/sources/pacman.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/../headers/pacman.h:19,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+In file included from ../src/sources/../headers/pacman.h:14:0,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/../headers/pacman.h:14,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/pacman.h:13,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/pacman.c
+ 
+Building file: ../src/sources/world.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/world.c:10:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+Finished building: ../src/sources/world.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+In file included from ../src/headers/pacman.h:14:0,
+                 from ../src/main.c:7:
+../src/headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/headers/world.h:16:0,
+                 from ../src/headers/pacman.h:14,
+                 from ../src/main.c:7:
+../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/headers/entity.h:18:0,
+                 from ../src/headers/pacman.h:13,
+                 from ../src/main.c:7:
+../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+In file included from ../src/main.c:6:0:
+../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88884	   2780	  24160	 115824	  1c470	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:22:17 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:23:06 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+               ~^
+               %f
+../src/sources/entity.c:163:23: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+                      ~^
+                      %f
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88948	   2780	  24160	 115888	  1c4b0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:25:04 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+               ~^
+               %f
+../src/sources/entity.c:163:23: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+                      ~^
+                      %f
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88948	   2780	  24160	 115888	  1c4b0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:33:36 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveEasy':
+../src/sources/entity.c:50:17: error: 'EDGE_TOP' undeclared (first use in this function)
+  dir[0]  = (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
+                 ^~~~~~~~
+../src/sources/entity.c:50:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/sources/entity.c:53:17: error: 'EDGE_BOTTOM' undeclared (first use in this function); did you mean 'EDGE_TOP'?
+  dir[1]  = (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+                 ^~~~~~~~~~~
+                 EDGE_TOP
+../src/sources/entity.c:56:17: error: 'EDGE_LEFT' undeclared (first use in this function); did you mean 'EDGE_TOP'?
+  dir[2]  = (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+                 ^~~~~~~~~
+                 EDGE_TOP
+../src/sources/entity.c:59:17: error: 'EDGE_RIGHT' undeclared (first use in this function); did you mean 'EDGE_LEFT'?
+  dir[3]  = (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
+                 ^~~~~~~~~~
+                 EDGE_LEFT
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:99:17: error: 'EDGE_TOP' undeclared (first use in this function)
+  dir[0]  = (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
+                 ^~~~~~~~
+../src/sources/entity.c:102:17: error: 'EDGE_BOTTOM' undeclared (first use in this function); did you mean 'EDGE_TOP'?
+  dir[1]  = (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+                 ^~~~~~~~~~~
+                 EDGE_TOP
+../src/sources/entity.c:105:17: error: 'EDGE_LEFT' undeclared (first use in this function); did you mean 'EDGE_TOP'?
+  dir[2]  = (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+                 ^~~~~~~~~
+                 EDGE_TOP
+../src/sources/entity.c:108:17: error: 'EDGE_RIGHT' undeclared (first use in this function); did you mean 'EDGE_LEFT'?
+  dir[3]  = (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
+                 ^~~~~~~~~~
+                 EDGE_LEFT
+../src/sources/entity.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+               ~^
+               %f
+../src/sources/entity.c:163:23: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+                      ~^
+                      %f
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+../src/sources/entity.c: In function 'moveEntity':
+../src/sources/entity.c:186:11: error: 'EDGE_TOP' undeclared (first use in this function)
+    if(y < EDGE_TOP){
+           ^~~~~~~~
+../src/sources/entity.c:195:11: error: 'EDGE_BOTTOM' undeclared (first use in this function); did you mean 'EDGE_TOP'?
+    if(y > EDGE_BOTTOM){
+           ^~~~~~~~~~~
+           EDGE_TOP
+../src/sources/entity.c:204:11: error: 'EDGE_LEFT' undeclared (first use in this function); did you mean 'EDGE_TOP'?
+    if(x > EDGE_LEFT){
+           ^~~~~~~~~
+           EDGE_TOP
+../src/sources/entity.c:213:11: error: 'EDGE_RIGHT' undeclared (first use in this function); did you mean 'EDGE_LEFT'?
+    if(x < EDGE_RIGHT){
+           ^~~~~~~~~~
+           EDGE_LEFT
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+make: *** [src/sources/entity.o] Error 1
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+17:33:41 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+               ~^
+               %f
+../src/sources/entity.c:163:23: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+    printf("x: %d, y: %d \n",nx, ny);
+                      ~^
+                      %f
+../src/sources/entity.c:165:19: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+    printf("dist: %d\n",distance[i]);
+                  ~^    ~~~~~~~~~~~
+                  %f
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building file: ../src/sources/food.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/food.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/food.d" -MT"src/sources/food.o" -o "src/sources/food.o" "../src/sources/food.c"
+Finished building: ../src/sources/food.c
+ 
+Building file: ../src/sources/game.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/game.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/game.d" -MT"src/sources/game.o" -o "src/sources/game.o" "../src/sources/game.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/game.h:13,
+                 from ../src/sources/game.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/game.c
+ 
+Building file: ../src/sources/io_devices.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/io_devices.c
+ 
+Building file: ../src/sources/led_matrix.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/led_matrix.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/led_matrix.d" -MT"src/sources/led_matrix.o" -o "src/sources/led_matrix.o" "../src/sources/led_matrix.c"
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/led_matrix.c
+ 
+Building file: ../src/sources/movement.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:24:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  if(y < -MIN_VALUE && y < abs(x)){
+                           ^~~
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/movement.c:9:
+At top level:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/sources/movement.c
+ 
+Building file: ../src/sources/pacman.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/../headers/pacman.h:19,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+In file included from ../src/sources/../headers/pacman.h:14:0,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/../headers/pacman.h:14,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/pacman.h:13,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/pacman.c
+ 
+Building file: ../src/sources/world.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/world.c:10:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+Finished building: ../src/sources/world.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+In file included from ../src/headers/pacman.h:14:0,
+                 from ../src/main.c:7:
+../src/headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/headers/world.h:16:0,
+                 from ../src/headers/pacman.h:14,
+                 from ../src/main.c:7:
+../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/headers/entity.h:18:0,
+                 from ../src/headers/pacman.h:13,
+                 from ../src/main.c:7:
+../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+In file included from ../src/main.c:6:0:
+../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88948	   2780	  24160	 115888	  1c4b0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:37:09 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88852	   2780	  24160	 115792	  1c450	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:39:01 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:124:24: error: 'INTFY' undeclared (first use in this function); did you mean 'INFTY'?
+  f32 currentBestDist = INTFY;
+                        ^~~~~
+                        INFTY
+../src/sources/entity.c:124:24: note: each undeclared identifier is reported only once for each function it appears in
+../src/sources/entity.c:146:4: error: 'distance' undeclared (first use in this function); did you mean 'viscanf'?
+    distance[i] = (abs(((f32)tx - nx)) + abs(((f32)ty - ny)));
+    ^~~~~~~~
+    viscanf
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:39:07 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:146:4: error: 'distance' undeclared (first use in this function); did you mean 'viscanf'?
+    distance[i] = (abs(((f32)tx - nx)) + abs(((f32)ty - ny)));
+    ^~~~~~~~
+    viscanf
+../src/sources/entity.c:146:4: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+make: *** [src/sources/entity.o] Error 1
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+17:39:19 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:147:12: error: subscripted value is neither array nor pointer nor vector
+    distance[i] = (abs(((f32)tx - nx)) + abs(((f32)ty - ny)));
+            ^
+../src/sources/entity.c:148:34: error: subscripted value is neither array nor pointer nor vector
+    if(currentBestDist >= distance[i]){
+                                  ^
+../src/sources/entity.c:130:8: warning: variable 'distance' set but not used [-Wunused-but-set-variable]
+    f32 distance;
+        ^~~~~~~~
+../src/sources/entity.c:152:4: error: 'distance' undeclared (first use in this function); did you mean 'viscanf'?
+    distance[i] = INFTY;
+    ^~~~~~~~
+    viscanf
+../src/sources/entity.c:152:4: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+make: *** [src/sources/entity.o] Error 1
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+17:39:26 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:152:4: error: 'distance' undeclared (first use in this function); did you mean 'viscanf'?
+    distance[i] = INFTY;
+    ^~~~~~~~
+    viscanf
+../src/sources/entity.c:152:4: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:39:57 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:150:5: error: 'currentbestDist' undeclared (first use in this function); did you mean 'currentBestDist'?
+     currentbestDist = distance;
+     ^~~~~~~~~~~~~~~
+     currentBestDist
+../src/sources/entity.c:150:5: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:40:06 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88708	   2780	  24160	 115648	  1c3c0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:40:09 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88708	   2780	  24160	 115648	  1c3c0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:46:52 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88644	   2780	  24160	 115584	  1c380	pacman.elf
+Finished building: pacman.elf.size
+ 

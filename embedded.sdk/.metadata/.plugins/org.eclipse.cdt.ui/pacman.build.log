@@ -1,4 +1,4 @@
-17:02:15 **** Auto Build of configuration Debug for project pacman ****
+17:46:52 **** Auto Build of configuration Debug for project pacman ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -23,9 +23,9 @@ Finished building target: pacman.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  89108	   2780	  24160	 116048	  1c550	pacman.elf
+  88644	   2780	  24160	 115584	  1c380	pacman.elf
 Finished building: pacman.elf.size
  
 
-17:02:15 Build Finished (took 360ms)
+17:46:53 Build Finished (took 360ms)
 
