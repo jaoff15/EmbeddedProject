@@ -36,7 +36,6 @@ Move getMovement(){
 	else if(x < -MIN_VALUE && x < abs(y)){
 		move = RIGHT;
 	}
-
 	return move;
 }
 

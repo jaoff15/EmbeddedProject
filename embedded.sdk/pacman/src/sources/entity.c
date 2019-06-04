@@ -43,48 +43,44 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 /* Find the next move for a given entity
  * The returned move is a move in a random direction that is not backwards. */
 Move getMoveEasy(Entity *entity, World *world){
-	u8 x = entity->pos.x;
-	u8 y = entity->pos.y;
-	Move dir[4];
-	/* Can the entity move up */
-	dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
+	const Move 		moves[] = {UP, 		 DOWN, 		  LEFT,      RIGHT};
+	const Direction dirs[]  = {D_UP, 	 D_DOWN, 	  D_LEFT,    D_RIGHT};
+	const u8        edges[] = {EDGE_TOP, EDGE_BOTTOM, EDGE_LEFT, EDGE_RIGHT};
 
-	/* Can the entity move down */
-	dir[1] 	= (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+	const u8 x = entity->pos.x;	// Read X
+	const u8 y = entity->pos.y;	// Read Y
+	Move dir[4];				// Array of directions
 
-	/* Can the entity move left */
-	dir[2] 	= (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+	dir[0] 	= (y < edges[0] ? moves[0] : STANDSTILL);
+	dir[1] 	= (y > edges[1] ? moves[1] : STANDSTILL);
+	dir[2] 	= (x > edges[2] ? moves[2] : STANDSTILL);
+	dir[3] 	= (x < edges[3] ? moves[3] : STANDSTILL);
 
-	/* Can the entity move right */
-	dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
-
-
-//	/* If entity cannot move */
-//	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
-//		return STANDSTILL;
-//	}
-
-	/* Remove possibility for moving backwards */
-	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
-	dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
-	dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
-	dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
-
-
-	/* Fill the possible moves into an array and count up how many valid moves there is */
-	Move moves[4];
-	u8 index = 0;
 	for(u8 i = 0; i < 4; i++){
-		if(dir[i]){
-			moves[index] = dir[i];
-			index++;
+		dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]);	// Check walls
+		if(moves[i] == UP || moves[i] == LEFT){
+			dir[i] = (entity->lastMove == moves[i+1] 				 ? STANDSTILL : dir[i]);	// Check if last move
+		}else{
+			dir[i] = (entity->lastMove == moves[i-1] 				 ? STANDSTILL : dir[i]);	// Check if last move
+		}
+	}
+
+	/* Fill valid moves into an array and count up how many valid moves there is */
+	Move validMoves[4];
+	u8 validMovesCount = 0;
+	for(u8 i = 0; i < 4; i++){						// For each direction
+		if(dir[i] != STANDSTILL){					// If direction is valid
+			validMoves[validMovesCount] = dir[i];	// Mark is as a valid move
+			validMovesCount++;						// Increment valid move counter
 		}
 	}
 
 	/* Select random move and return it */
-	u8 i = floor( rand() % index );
-	return moves[ i ];
+	u8 i = floor( rand() % validMovesCount);
+	return validMoves[i];
 }
+
+
 
 /* Return the move that gets the entity closest to the target
  * The decision to whether or not the spot is closer is based in the Euclidean distance
@@ -92,127 +88,78 @@ Move getMoveEasy(Entity *entity, World *world){
  * To enhance the performance the power and square root is not performed
  * */
 Move getMoveHard(Entity *entity, World *world, Entity *target){
-	const u8 x = entity->pos.x;
-	const u8 y = entity->pos.y;
-	Move dir[4];
-	/* Can the entity move up */
-	dir[0] 	= (y < EDGE_TOP    && world->cells[x][y+1] != WALL ? UP : STANDSTILL);
+	const Move 		moves[] = {UP, 		 DOWN, 		  LEFT,      RIGHT};
+	const Direction dirs[]  = {D_UP, 	 D_DOWN, 	  D_LEFT,    D_RIGHT};
+	const u8        edges[] = {EDGE_TOP, EDGE_BOTTOM, EDGE_LEFT, EDGE_RIGHT};
 
-	/* Can the entity move down */
-	dir[1] 	= (y > EDGE_BOTTOM && world->cells[x][y-1] != WALL ? DOWN : STANDSTILL);
+	const u8 x = entity->pos.x;	// Read X
+	const u8 y = entity->pos.y;	// Read Y
+	Move dir[4];				// Array of directions
 
-	/* Can the entity move left */
-	dir[2] 	= (x > EDGE_LEFT   && world->cells[x-1][y] != WALL ? LEFT : STANDSTILL);
+	dir[0] 	= (y < edges[0] ? moves[0] : STANDSTILL);
+	dir[1] 	= (y > edges[1] ? moves[1] : STANDSTILL);
+	dir[2] 	= (x > edges[2] ? moves[2] : STANDSTILL);
+	dir[3] 	= (x < edges[3] ? moves[3] : STANDSTILL);
 
-	/* Can the entity move right */
-	dir[3] 	= (x < EDGE_RIGHT  && world->cells[x+1][y] != WALL ? RIGHT : STANDSTILL);
-
-	/* Remove possibility for moving backwards */
-	dir[0] = (entity->lastMove == DOWN 	? STANDSTILL : dir[0]);
-	dir[1] = (entity->lastMove == UP	? STANDSTILL : dir[1]);
-	dir[2] = (entity->lastMove == RIGHT ? STANDSTILL : dir[2]);
-	dir[3] = (entity->lastMove == LEFT 	? STANDSTILL : dir[3]);
-
-	/* If entity cannot move */
-//	if(!(dir[0] || dir[1] || dir[2] || dir[3])){
-//		return STANDSTILL;
-//	}
+	for(u8 i = 0; i < 4; i++){
+		dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]);	// Check walls
+		if(moves[i] == UP || moves[i] == LEFT){
+			dir[i] = (entity->lastMove == moves[i+1] 				 ? STANDSTILL : dir[i]);	// Check if last move
+		}else{
+			dir[i] = (entity->lastMove == moves[i-1] 				 ? STANDSTILL : dir[i]);	// Check if last move
+		}
+	}
 
 	/* Find 'distances' and thereby the best move */
-	f32 tx = target->pos.x;							// Read target x position
-	f32 ty = target->pos.y;							// Read target y position
+	const u8 tx = target->pos.x;					// Read target x position
+	const u8 ty = target->pos.y;					// Read target y position
 	f32 currentBestDist = INFTY;					// Initialize variable to keep track of best dist
 	u8 currentBest = 0;								// Mark the current best distance
 	for(u8 i = 0; i < 4; i++){						// For each direction
+		Direction d = dirs[i];
 		if(dir[i] != STANDSTILL){					// Check if it is a valid move
-			f32 nx = x;								// Copy entity x pos
-			f32 ny = y;								// Copy entity y pos
-			switch(dir[i]){							// Find the current move
-				case UP:							// If Up
-					ny = y + 1.0;					// Add one to the y pos
-					break;
-				case DOWN:							// If Down
-					ny = y - 1.0;					// Subtract one from the y pos
-					break;
-				case RIGHT:							// If Right
-					nx = x + 1.0;					// Add one to the x pos
-					break;
-				case LEFT:							// If Left
-					nx = x - 1.0;					// Subtract one from the x pos
-					break;
-				default:
-					break;
-			}
-			f32 distance = (abs(((f32)tx - nx)) +	// Get 'distance'
-							abs(((f32)ty - ny)));
-			if(currentBestDist >= distance){		// If distance is better than the current best
+			u8 nx = x + d.x;
+			u8 ny = y + d.y;
+			u8 dist = abs(tx - nx) + abs(ty - ny);  // Get 'distance'
+			if(currentBestDist >= dist){			// If distance is better than the current best
 				currentBest 	= i;				// Mark move as the best
-				currentBestDist = distance;			// Save current best distance
+				currentBestDist = dist;				// Save current best distance
 			}
 		}
 	}
-	return dir[currentBest];
+	return dir[currentBest];						// Return best move
 }
+
 
 
 /* Move the specified entity in the specified direction (if possible)*/
 void moveEntity(Entity *e, World *world, World *food, Move m){
-	u8 x = e->pos.x;
-	u8 y = e->pos.y;
-	u8 newX = x;
-	u8 newY = y;
-	switch(m){
-		case UP:
-			/* Check that the entity is not on the top row of pixels */
-			if(y < EDGE_TOP){
-				/* Move the entity if there is not wall on the new position */
-				newY 		= (world->cells[x][y+1] != WALL ? y+1 : y);
+	const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_LEFT, D_RIGHT};
+	const u8 x = e->pos.x;
+	const u8 y = e->pos.y;
+	s8 newX = x + dirs[m].x;
+	s8 newY = y + dirs[m].y;
+	Move move = m;
 
-				/* Save the move in the entity */
-				e->lastMove = ( newY > y ? UP : STANDSTILL);
-			}
-			break;
-		case DOWN:
-			if(y > EDGE_BOTTOM){
-				/* Move the entity if there is not wall on the new position */
-				newY 		= (world->cells[x][y-1] != WALL ? y-1 : y);
-
-				/* Save the move in the entity */
-				e->lastMove = ( newY < y ? DOWN : STANDSTILL);
-			}
-			break;
-		case LEFT:
-			if(x > EDGE_LEFT){
-				/* Move the entity if there is not wall on the new position */
-				newX 		= (world->cells[x-1][y] != WALL ? x-1 : x);
-
-				/* Save the move in the entity */
-				e->lastMove = ( newX < x ? LEFT : STANDSTILL);
-			}
-			break;
-		case RIGHT:
-			if(x < EDGE_RIGHT){
-				/* Move the entity if there is not wall on the new position */
-				newX 		= (world->cells[x+1][y] != WALL ? x+1 : x);
-
-				/* Save the move in the entity */
-				e->lastMove = ( newX > x ? RIGHT : STANDSTILL);
-			}
-			break;
-		case STANDSTILL:
-			/* Entity stays where it is */
-			e->lastMove = STANDSTILL;
-			break;
-		default:
-			/* Entity stays where it is */
-			e->lastMove = STANDSTILL;
-			break;
+	if(newX < EDGE_BOTTOM || newX > EDGE_TOP){
+		newX = x;
+		move = STANDSTILL;
+	}
+	if(newY < EDGE_LEFT || newY > EDGE_RIGHT){
+		newY = y;
+		move = STANDSTILL;
+	}
+	if(world->cells[newX][newY] == WALL){
+		newX = x;
+		newY = y;
+		move = STANDSTILL;
 	}
 
 	/* Save last position and write the new position to the entity */
-	e->lastPos = e->pos;
-	e->pos.x = newX;
-	e->pos.y = newY;
+	e->lastPos 	= e->pos;
+	e->lastMove = move;
+	e->pos.x 	= newX;
+	e->pos.y 	= newY;
 
 	/* If the entity is a player and is moving into a cell with food.
 	 * Increment the players score */

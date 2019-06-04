@@ -61,7 +61,6 @@ void pacman(u8 enemyCount, Difficulty difficulty){
 		while(!gameover){
 			nextMove = getMovement();									// Read next player movement
 
-
 			/* Load world */
 			world = blankWorld;											// Load a blank world
 
