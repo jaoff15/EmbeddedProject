@@ -43,22 +43,23 @@ Move controlEntity(Entity *entity, World *world, Entity *target){
 /* Find the next move for a given entity
  * The returned move is a move in a random direction that is not backwards. */
 Move getMoveEasy(Entity *entity, World *world){
-	const Move 		moves[] = {UP, 		 DOWN, 		  LEFT,      RIGHT};
-	const Direction dirs[]  = {D_UP, 	 D_DOWN, 	  D_LEFT,    D_RIGHT};
-	const u8        edges[] = {EDGE_TOP, EDGE_BOTTOM, EDGE_LEFT, EDGE_RIGHT};
+	const Move 		moves[] = {UP, 		 DOWN, 		  RIGHT, 	  LEFT};
+	const Pos 		dirs [] = {D_UP, 	 D_DOWN, 	  D_RIGHT,    D_LEFT};
+	const u8        edges[] = {EDGE_TOP, EDGE_BOTTOM, EDGE_RIGHT, EDGE_LEFT};
 
 	const u8 x = entity->pos.x;	// Read X
 	const u8 y = entity->pos.y;	// Read Y
 	Move dir[4];				// Array of directions
 
-	dir[0] 	= (y < edges[0] ? moves[0] : STANDSTILL);
-	dir[1] 	= (y > edges[1] ? moves[1] : STANDSTILL);
-	dir[2] 	= (x > edges[2] ? moves[2] : STANDSTILL);
-	dir[3] 	= (x < edges[3] ? moves[3] : STANDSTILL);
+	dir[0] 	= (y >= edges[0] ? STANDSTILL: moves[0]);	// UP
+	dir[1] 	= (y <= edges[1] ? STANDSTILL: moves[1]);	// Down
+	dir[2] 	= (x >= edges[2] ? STANDSTILL: moves[2]);	// Right
+	dir[3] 	= (x <= edges[3] ? STANDSTILL: moves[3]);	// Left
+
 
 	for(u8 i = 0; i < 4; i++){
 		dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]);	// Check walls
-		if(moves[i] == UP || moves[i] == LEFT){
+		if(moves[i] == UP || moves[i] == RIGHT){
 			dir[i] = (entity->lastMove == moves[i+1] 				 ? STANDSTILL : dir[i]);	// Check if last move
 		}else{
 			dir[i] = (entity->lastMove == moves[i-1] 				 ? STANDSTILL : dir[i]);	// Check if last move
@@ -88,22 +89,22 @@ Move getMoveEasy(Entity *entity, World *world){
  * To enhance the performance the power and square root is not performed
  * */
 Move getMoveHard(Entity *entity, World *world, Entity *target){
-	const Move 		moves[] = {UP, 		 DOWN, 		  LEFT,      RIGHT};
-	const Direction dirs[]  = {D_UP, 	 D_DOWN, 	  D_LEFT,    D_RIGHT};
-	const u8        edges[] = {EDGE_TOP, EDGE_BOTTOM, EDGE_LEFT, EDGE_RIGHT};
+	const Move 		moves[] = {UP, 		 DOWN, 		  RIGHT, 	  LEFT};
+	const Pos 		dirs [] = {D_UP, 	 D_DOWN, 	  D_RIGHT,    D_LEFT};
+	const u8        edges[] = {EDGE_TOP, EDGE_BOTTOM, EDGE_RIGHT, EDGE_LEFT};
 
 	const u8 x = entity->pos.x;	// Read X
 	const u8 y = entity->pos.y;	// Read Y
 	Move dir[4];				// Array of directions
 
-	dir[0] 	= (y < edges[0] ? moves[0] : STANDSTILL);
-	dir[1] 	= (y > edges[1] ? moves[1] : STANDSTILL);
-	dir[2] 	= (x > edges[2] ? moves[2] : STANDSTILL);
-	dir[3] 	= (x < edges[3] ? moves[3] : STANDSTILL);
+	dir[0] 	= (y >= edges[0] ? STANDSTILL: moves[0]);	// UP
+	dir[1] 	= (y <= edges[1] ? STANDSTILL: moves[1]);	// Down
+	dir[2] 	= (x >= edges[2] ? STANDSTILL: moves[2]);	// Right
+	dir[3] 	= (x <= edges[3] ? STANDSTILL: moves[3]);	// Left
 
 	for(u8 i = 0; i < 4; i++){
 		dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]);	// Check walls
-		if(moves[i] == UP || moves[i] == LEFT){
+		if(moves[i] == UP || moves[i] == RIGHT){
 			dir[i] = (entity->lastMove == moves[i+1] 				 ? STANDSTILL : dir[i]);	// Check if last move
 		}else{
 			dir[i] = (entity->lastMove == moves[i-1] 				 ? STANDSTILL : dir[i]);	// Check if last move
@@ -116,7 +117,7 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 	f32 currentBestDist = INFTY;					// Initialize variable to keep track of best dist
 	u8 currentBest = 0;								// Mark the current best distance
 	for(u8 i = 0; i < 4; i++){						// For each direction
-		Direction d = dirs[i];
+		Pos d = dirs[i];
 		if(dir[i] != STANDSTILL){					// Check if it is a valid move
 			u8 nx = x + d.x;
 			u8 ny = y + d.y;
@@ -134,7 +135,7 @@ Move getMoveHard(Entity *entity, World *world, Entity *target){
 
 /* Move the specified entity in the specified direction (if possible)*/
 void moveEntity(Entity *e, World *world, World *food, Move m){
-	const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_LEFT, D_RIGHT};
+	const Pos dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
 	const u8 x = e->pos.x;
 	const u8 y = e->pos.y;
 	s8 newX = x + dirs[m].x;

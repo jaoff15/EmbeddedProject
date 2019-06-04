@@ -9584,3 +9584,1436 @@ arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
   88756	   2780	  24160	 115696	  1c3f0	pacman.elf
 Finished building: pacman.elf.size
  
+17:29:29 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:29:35 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:29:51 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building file: ../src/sources/game.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/game.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/game.d" -MT"src/sources/game.o" -o "src/sources/game.o" "../src/sources/game.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/game.h:13,
+                 from ../src/sources/game.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/game.c
+ 
+Building file: ../src/sources/io_devices.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/io_devices.c
+ 
+Building file: ../src/sources/led_matrix.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/led_matrix.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/led_matrix.d" -MT"src/sources/led_matrix.o" -o "src/sources/led_matrix.o" "../src/sources/led_matrix.c"
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/led_matrix.c
+ 
+Building file: ../src/sources/movement.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:24:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  if(y < -MIN_VALUE && y < abs(x)){
+                           ^~~
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/movement.c:9:
+At top level:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/sources/movement.c
+ 
+Building file: ../src/sources/pacman.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/../headers/pacman.h:19,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+In file included from ../src/sources/../headers/pacman.h:14:0,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/../headers/pacman.h:14,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/pacman.h:13,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/pacman.c
+ 
+Building file: ../src/sources/world.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/world.c:10:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+Finished building: ../src/sources/world.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+In file included from ../src/headers/pacman.h:14:0,
+                 from ../src/main.c:7:
+../src/headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/headers/world.h:16:0,
+                 from ../src/headers/pacman.h:14,
+                 from ../src/main.c:7:
+../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/headers/entity.h:18:0,
+                 from ../src/headers/pacman.h:13,
+                 from ../src/main.c:7:
+../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+In file included from ../src/main.c:6:0:
+../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:31:04 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building file: ../src/sources/game.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/game.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/game.d" -MT"src/sources/game.o" -o "src/sources/game.o" "../src/sources/game.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/game.h:13,
+                 from ../src/sources/game.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/game.c
+ 
+Building file: ../src/sources/io_devices.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/io_devices.c
+ 
+Building file: ../src/sources/led_matrix.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/led_matrix.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/led_matrix.d" -MT"src/sources/led_matrix.o" -o "src/sources/led_matrix.o" "../src/sources/led_matrix.c"
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/led_matrix.c
+ 
+Building file: ../src/sources/movement.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:24:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  if(y < -MIN_VALUE && y < abs(x)){
+                           ^~~
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/movement.c:9:
+At top level:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/sources/movement.c
+ 
+Building file: ../src/sources/pacman.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/../headers/pacman.h:19,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+In file included from ../src/sources/../headers/pacman.h:14:0,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/../headers/pacman.h:14,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/pacman.h:13,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/pacman.c
+ 
+Building file: ../src/sources/world.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/world.c:10:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+Finished building: ../src/sources/world.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+In file included from ../src/headers/pacman.h:14:0,
+                 from ../src/main.c:7:
+../src/headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/headers/world.h:16:0,
+                 from ../src/headers/pacman.h:14,
+                 from ../src/main.c:7:
+../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/headers/entity.h:18:0,
+                 from ../src/headers/pacman.h:13,
+                 from ../src/main.c:7:
+../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+In file included from ../src/main.c:6:0:
+../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:31:48 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:31:52 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:33:15 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:34:02 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:34:37 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:34:42 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:34:53 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88756	   2780	  24160	 115696	  1c3f0	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:37:19 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:93:8: error: unknown type name 'pos'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+        ^~~
+../src/sources/entity.c:93:25: error: incompatible types when initializing type 'int' using type 'Direction {aka const struct s_Direction}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                         ^~~~
+../src/sources/entity.c:93:33: error: incompatible types when initializing type 'int' using type 'Direction {aka const struct s_Direction}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                 ^~~~~~
+../src/sources/entity.c:93:44: error: incompatible types when initializing type 'int' using type 'Direction {aka const struct s_Direction}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                            ^~~~~~~
+../src/sources/entity.c:93:56: error: incompatible types when initializing type 'int' using type 'Direction {aka const struct s_Direction}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                        ^~~~~~
+../src/sources/entity.c:107:37: error: request for member 'x' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                     ^
+../src/sources/entity.c:107:25: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                         ^
+../src/sources/entity.c:107:52: error: request for member 'y' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                    ^
+../src/sources/entity.c:107:40: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                        ^
+../src/sources/entity.c:107:56: warning: comparison between pointer and integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                        ^~
+../src/sources/entity.c:121:17: error: invalid initializer
+   Direction d = dirs[i];
+                 ^~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:37:23 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveEasy':
+../src/sources/entity.c:47:8: error: unknown type name 'Direction'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:47:29: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                             ^~~~
+../src/sources/entity.c:47:37: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                     ^~~~~~
+../src/sources/entity.c:47:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                ^~~~~~~
+../src/sources/entity.c:47:60: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                            ^~~~~~
+../src/sources/entity.c:61:37: error: request for member 'x' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                     ^
+../src/sources/entity.c:61:25: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                         ^
+../src/sources/entity.c:61:52: error: request for member 'y' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                    ^
+../src/sources/entity.c:61:40: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                        ^
+../src/sources/entity.c:61:56: warning: comparison between pointer and integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                        ^~
+../src/sources/entity.c:47:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                  ^~~~
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:93:8: error: unknown type name 'pos'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+        ^~~
+../src/sources/entity.c:93:25: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                         ^~~~
+../src/sources/entity.c:93:33: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                 ^~~~~~
+../src/sources/entity.c:93:44: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                            ^~~~~~~
+../src/sources/entity.c:93:56: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const pos   dirs[]  = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                        ^~~~~~
+../src/sources/entity.c:107:37: error: request for member 'x' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                     ^
+../src/sources/entity.c:107:25: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                         ^
+../src/sources/entity.c:107:52: error: request for member 'y' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                    ^
+../src/sources/entity.c:107:40: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                        ^
+../src/sources/entity.c:107:56: warning: comparison between pointer and integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                        ^~
+../src/sources/entity.c:121:3: error: unknown type name 'Direction'; did you mean '__section'?
+   Direction d = dirs[i];
+   ^~~~~~~~~
+   __section
+../src/sources/entity.c:123:17: error: request for member 'x' in something not a structure or union
+    u8 nx = x + d.x;
+                 ^
+../src/sources/entity.c:123:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+    u8 nx = x + d.x;
+            ^
+../src/sources/entity.c:124:17: error: request for member 'y' in something not a structure or union
+    u8 ny = y + d.y;
+                 ^
+../src/sources/entity.c:124:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+    u8 ny = y + d.y;
+            ^
+../src/sources/entity.c:121:13: warning: variable 'd' set but not used [-Wunused-but-set-variable]
+   Direction d = dirs[i];
+             ^
+../src/sources/entity.c: In function 'moveEntity':
+../src/sources/entity.c:139:8: error: unknown type name 'Direction'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:139:28: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+                            ^~~~~~~~~~~~
+../src/sources/entity.c:139:42: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                          ^~~~
+../src/sources/entity.c:139:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                ^~~~~~
+../src/sources/entity.c:139:56: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                        ^~~~~~~
+../src/sources/entity.c:139:65: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                                 ^~~~~~
+../src/sources/entity.c:142:23: error: request for member 'x' in something not a structure or union
+  s8 newX = x + dirs[m].x;
+                       ^
+../src/sources/entity.c:142:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  s8 newX = x + dirs[m].x;
+            ^
+../src/sources/entity.c:143:23: error: request for member 'y' in something not a structure or union
+  s8 newY = y + dirs[m].y;
+                       ^
+../src/sources/entity.c:143:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  s8 newY = y + dirs[m].y;
+            ^
+../src/sources/entity.c:139:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                  ^~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+make: *** [src/sources/entity.o] Error 1
+17:37:34 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveEasy':
+../src/sources/entity.c:47:8: error: unknown type name 'Direction'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:47:29: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                             ^~~~
+../src/sources/entity.c:47:37: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                     ^~~~~~
+../src/sources/entity.c:47:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                ^~~~~~~
+../src/sources/entity.c:47:60: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                            ^~~~~~
+../src/sources/entity.c:61:37: error: request for member 'x' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                     ^
+../src/sources/entity.c:61:25: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                         ^
+../src/sources/entity.c:61:52: error: request for member 'y' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                    ^
+../src/sources/entity.c:61:40: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                        ^
+../src/sources/entity.c:61:56: warning: comparison between pointer and integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                        ^~
+../src/sources/entity.c:47:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                  ^~~~
+../src/sources/entity.c: In function 'getMoveHard':
+../src/sources/entity.c:121:3: error: unknown type name 'Direction'; did you mean '__section'?
+   Direction d = dirs[i];
+   ^~~~~~~~~
+   __section
+../src/sources/entity.c:121:17: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+   Direction d = dirs[i];
+                 ^~~~
+../src/sources/entity.c:123:17: error: request for member 'x' in something not a structure or union
+    u8 nx = x + d.x;
+                 ^
+../src/sources/entity.c:123:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+    u8 nx = x + d.x;
+            ^
+../src/sources/entity.c:124:17: error: request for member 'y' in something not a structure or union
+    u8 ny = y + d.y;
+                 ^
+../src/sources/entity.c:124:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+    u8 ny = y + d.y;
+            ^
+../src/sources/entity.c:121:13: warning: variable 'd' set but not used [-Wunused-but-set-variable]
+   Direction d = dirs[i];
+             ^
+../src/sources/entity.c: In function 'moveEntity':
+../src/sources/entity.c:139:8: error: unknown type name 'Direction'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:139:28: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                            ^~~~~~~~~~~~
+../src/sources/entity.c:139:42: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                          ^~~~
+../src/sources/entity.c:139:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                ^~~~~~
+../src/sources/entity.c:139:56: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                        ^~~~~~~
+../src/sources/entity.c:139:65: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                                 ^~~~~~
+../src/sources/entity.c:142:23: error: request for member 'x' in something not a structure or union
+  s8 newX = x + dirs[m].x;
+                       ^
+../src/sources/entity.c:142:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  s8 newX = x + dirs[m].x;
+            ^
+../src/sources/entity.c:143:23: error: request for member 'y' in something not a structure or union
+  s8 newY = y + dirs[m].y;
+                       ^
+../src/sources/entity.c:143:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  s8 newY = y + dirs[m].y;
+            ^
+../src/sources/entity.c:139:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                  ^~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+make: *** [src/sources/entity.o] Error 1
+17:37:39 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveEasy':
+../src/sources/entity.c:47:8: error: unknown type name 'Direction'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:47:29: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                             ^~~~
+../src/sources/entity.c:47:37: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                     ^~~~~~
+../src/sources/entity.c:47:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                ^~~~~~~
+../src/sources/entity.c:47:60: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                            ^~~~~~
+../src/sources/entity.c:61:37: error: request for member 'x' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                     ^
+../src/sources/entity.c:61:25: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                         ^
+../src/sources/entity.c:61:52: error: request for member 'y' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                    ^
+../src/sources/entity.c:61:40: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                        ^
+../src/sources/entity.c:61:56: warning: comparison between pointer and integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                        ^~
+../src/sources/entity.c:47:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                  ^~~~
+../src/sources/entity.c: In function 'moveEntity':
+../src/sources/entity.c:139:8: error: unknown type name 'Direction'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:139:28: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                            ^~~~~~~~~~~~
+../src/sources/entity.c:139:42: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                          ^~~~
+../src/sources/entity.c:139:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                ^~~~~~
+../src/sources/entity.c:139:56: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                        ^~~~~~~
+../src/sources/entity.c:139:65: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                                                                 ^~~~~~
+../src/sources/entity.c:142:23: error: request for member 'x' in something not a structure or union
+  s8 newX = x + dirs[m].x;
+                       ^
+../src/sources/entity.c:142:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  s8 newX = x + dirs[m].x;
+            ^
+../src/sources/entity.c:143:23: error: request for member 'y' in something not a structure or union
+  s8 newY = y + dirs[m].y;
+                       ^
+../src/sources/entity.c:143:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  s8 newY = y + dirs[m].y;
+            ^
+../src/sources/entity.c:139:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs[] = {D_STANDSTILL, D_UP, D_DOWN, D_RIGHT, D_LEFT};
+                  ^~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:37:46 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+../src/sources/entity.c: In function 'getMoveEasy':
+../src/sources/entity.c:47:8: error: unknown type name 'Direction'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+        ^~~~~~~~~
+../src/sources/entity.c:47:29: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                             ^~~~
+../src/sources/entity.c:47:37: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                     ^~~~~~
+../src/sources/entity.c:47:48: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                ^~~~~~~
+../src/sources/entity.c:47:60: error: incompatible types when initializing type 'int' using type 'Pos {aka const struct s_Pos}'
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                                                            ^~~~~~
+../src/sources/entity.c:61:37: error: request for member 'x' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                     ^
+../src/sources/entity.c:61:25: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                         ^
+../src/sources/entity.c:61:52: error: request for member 'y' in something not a structure or union
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                    ^
+../src/sources/entity.c:61:40: error: array subscript is not an integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                        ^
+../src/sources/entity.c:61:56: warning: comparison between pointer and integer
+   dir[i] = (world->cells[x + dirs[i].x][y + dirs[i].y] == WALL ? STANDSTILL : dir[i]); // Check walls
+                                                        ^~
+../src/sources/entity.c:47:18: warning: variable 'dirs' set but not used [-Wunused-but-set-variable]
+  const Direction dirs [] = {D_UP,   D_DOWN,    D_RIGHT,    D_LEFT};
+                  ^~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+At top level:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+src/sources/subdir.mk:42: recipe for target 'src/sources/entity.o' failed
+make: *** [src/sources/entity.o] Error 1
+17:37:50 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building file: ../src/sources/game.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/game.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/game.d" -MT"src/sources/game.o" -o "src/sources/game.o" "../src/sources/game.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/game.h:13,
+                 from ../src/sources/game.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/game.c
+ 
+Building file: ../src/sources/io_devices.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/io_devices.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/io_devices.d" -MT"src/sources/io_devices.o" -o "src/sources/io_devices.o" "../src/sources/io_devices.c"
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/movement.h:12:0,
+                 from ../src/sources/../headers/io_devices.h:15,
+                 from ../src/sources/io_devices.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xadcps.h:195:0,
+                 from ../src/sources/../headers/io_devices.h:13,
+                 from ../src/sources/io_devices.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/io_devices.c
+ 
+Building file: ../src/sources/led_matrix.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/led_matrix.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/led_matrix.d" -MT"src/sources/led_matrix.o" -o "src/sources/led_matrix.o" "../src/sources/led_matrix.c"
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/sources/../headers/led_matrix.h:16:0,
+                 from ../src/sources/led_matrix.c:9:
+../src/sources/../headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xbram.h:136:0,
+                 from ../src/sources/../headers/led_matrix.h:13,
+                 from ../src/sources/led_matrix.c:9:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+Finished building: ../src/sources/led_matrix.c
+ 
+Building file: ../src/sources/movement.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/movement.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/movement.d" -MT"src/sources/movement.o" -o "src/sources/movement.o" "../src/sources/movement.c"
+../src/sources/movement.c: In function 'getMovement':
+../src/sources/movement.c:24:27: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  if(y < -MIN_VALUE && y < abs(x)){
+                           ^~~
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/movement.c:9:
+At top level:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/sources/movement.c
+ 
+Building file: ../src/sources/pacman.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/pacman.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/pacman.d" -MT"src/sources/pacman.o" -o "src/sources/pacman.o" "../src/sources/pacman.c"
+In file included from ../src/sources/../headers/movement.h:14:0,
+                 from ../src/sources/../headers/pacman.h:19,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/sources/../headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+In file included from ../src/sources/../headers/pacman.h:14:0,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/../headers/pacman.h:14,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/../headers/pacman.h:13,
+                 from ../src/sources/pacman.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/pacman.c
+ 
+Building file: ../src/sources/world.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/world.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/world.d" -MT"src/sources/world.o" -o "src/sources/world.o" "../src/sources/world.c"
+In file included from ../src/sources/../headers/world.h:16:0,
+                 from ../src/sources/world.c:10:
+../src/sources/../headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+Finished building: ../src/sources/world.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:28:0: warning: "FALSE" redefined
+ #define FALSE 0
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:69:0: note: this is the location of the previous definition
+ #  define FALSE  0U
+ 
+In file included from ../src/headers/movement.h:12:0,
+                 from ../src/headers/io_devices.h:15,
+                 from ../src/main.c:6:
+../src/headers/types.h:29:0: warning: "TRUE" redefined
+ #define TRUE 1
+ 
+In file included from ../../pacman_bsp/ps7_cortexa9_0/include/xil_io.h:64:0,
+                 from ../src/main.c:4:
+../../pacman_bsp/ps7_cortexa9_0/include/xil_types.h:65:0: note: this is the location of the previous definition
+ #  define TRUE  1U
+ 
+In file included from ../src/headers/pacman.h:14:0,
+                 from ../src/main.c:7:
+../src/headers/world.h:33:11: warning: 'gameOver' defined but not used [-Wunused-variable]
+ static u8 gameOver[WIDTH][HEIGHT] = {
+           ^~~~~~~~
+In file included from ../src/headers/world.h:16:0,
+                 from ../src/headers/pacman.h:14,
+                 from ../src/main.c:7:
+../src/headers/led_matrix.h:22:11: warning: 'matrix' defined but not used [-Wunused-variable]
+ static u8 matrix[WIDTH][HEIGHT][COLOR_COUNT];
+           ^~~~~~
+In file included from ../src/headers/entity.h:18:0,
+                 from ../src/headers/pacman.h:13,
+                 from ../src/main.c:7:
+../src/headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+In file included from ../src/main.c:6:0:
+../src/headers/io_devices.h:33:12: warning: 'offsetY' defined but not used [-Wunused-variable]
+ static u16 offsetY;
+            ^~~~~~~
+../src/headers/io_devices.h:32:12: warning: 'offsetX' defined but not used [-Wunused-variable]
+ static u16 offsetX;
+            ^~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88820	   2780	  24160	 115760	  1c430	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:38:03 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88820	   2780	  24160	 115760	  1c430	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:44:10 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88820	   2780	  24160	 115760	  1c430	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:44:14 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88820	   2780	  24160	 115760	  1c430	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:45:25 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:45:56 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+17:46:26 **** Incremental Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88820	   2780	  24160	 115760	  1c430	pacman.elf
+Finished building: pacman.elf.size
+ 
+17:47:32 **** Auto Build of configuration Debug for project pacman ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/sources/entity.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sources/entity.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../pacman_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sources/entity.d" -MT"src/sources/entity.o" -o "src/sources/entity.o" "../src/sources/entity.c"
+In file included from ../src/sources/../headers/entity.h:18:0,
+                 from ../src/sources/entity.c:9:
+../src/sources/../headers/score.h:19:12: warning: 'highscore' defined but not used [-Wunused-variable]
+ static u16 highscore = 0;
+            ^~~~~~~~~
+../src/sources/../headers/score.h:18:12: warning: 'score' defined but not used [-Wunused-variable]
+ static u16 score = 0;
+            ^~~~~
+Finished building: ../src/sources/entity.c
+ 
+Building target: pacman.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pacman_bsp/ps7_cortexa9_0/lib -o "pacman.elf"  ./src/sources/entity.o ./src/sources/food.o ./src/sources/game.o ./src/sources/io_devices.o ./src/sources/led_matrix.o ./src/sources/movement.o ./src/sources/pacman.o ./src/sources/score.o ./src/sources/world.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: pacman.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size pacman.elf  |tee "pacman.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88820	   2780	  24160	 115760	  1c430	pacman.elf
+Finished building: pacman.elf.size
+ 

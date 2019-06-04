@@ -42,21 +42,16 @@ typedef enum e_Move{
 	STANDSTILL,				// Entity does not move
 	UP,						// Entity moves up
 	DOWN,					// Entity moves down
-	LEFT,					// Entity moves to the left
-	RIGHT					// Entity moves to the right
+	RIGHT,					// Entity moves to the right
+	LEFT					// Entity moves to the left
 }Move;
 
-typedef struct s_Direction{
-	u8 x;
-	u8 y;
-} Direction;
 
-const static Direction D_STANDSTILL 	= {.x =  0, .y =  0};
-const static Direction D_UP 			= {.x =  0, .y =  1};
-const static Direction D_DOWN 	 		= {.x =  0, .y = -1};
-const static Direction D_LEFT 			= {.x = -1, .y =  0};
-const static Direction D_RIGHT 	 		= {.x =  1, .y =  0};
-
+const static Pos D_STANDSTILL 	= {.x =  0, .y =  0};
+const static Pos D_UP 			= {.x =  0, .y =  1};
+const static Pos D_DOWN 	 	= {.x =  0, .y = -1};
+const static Pos D_RIGHT 	 	= {.x =  1, .y =  0};
+const static Pos D_LEFT 		= {.x = -1, .y =  0};
 
 /* A structure used to hold all data for a specific entity */
 typedef struct s_Entity{
